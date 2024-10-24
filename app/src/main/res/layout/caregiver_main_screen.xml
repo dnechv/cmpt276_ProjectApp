@@ -13,12 +13,31 @@
         android:id="@+id/patientsTextOnTopOfTheCaregiverMainScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Patients"
+        android:text="List of Patients will be here. Pulled from the database and displayed in RecyclerView"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Placeholder Text that will overlay the RecyclerView -->
+    <TextView
+        android:id="@+id/placeholderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to view patient details"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- This View will be displaying the database elements    -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/patientRecyclerView"
         android:layout_width="0dp"
@@ -27,4 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

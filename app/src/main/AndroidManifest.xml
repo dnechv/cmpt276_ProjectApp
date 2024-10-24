@@ -29,6 +29,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--declares activity: patient_screen_that_displays_tab_layout   -->
+        <activity android:name=".patient_screen_that_displays_tab_layout" />
+
+
     </application>
 
 </manifest>
