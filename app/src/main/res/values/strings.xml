@@ -1,3 +1,10 @@
 <resources>
+
+    <!-- This contains text files for the app -->
+    <!-- They are defined separately for usability -->
+
     <string name="app_name">MemoryConnect</string>
+    <string name="action_bar_icon">MemoryConnect</string>
+    <string name="settings">Settings</string>
+
 </resources>
