@@ -4,7 +4,7 @@ package com.example.memoryconnect;
 
 //the screen shows patients list to caregiver
 //TODO - populate list as entries in data bases added
-//TODO - PIN
+//TODO - PINgit remote
 
 import android.os.Bundle;
 
