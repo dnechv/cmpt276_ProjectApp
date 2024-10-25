@@ -25,9 +25,12 @@ import androidx.appcompat.widget.Toolbar;
 //imports will go here
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.memoryconnect.controllers.CreatePatientActivity;
 
 
 public class caregiver_main_screen extends AppCompatActivity {
@@ -60,6 +63,20 @@ public class caregiver_main_screen extends AppCompatActivity {
             }
         });
 
+        //////////////////////////DB
+        // Find the Add New Patient button
+        Button addNewPatientButton = findViewById(R.id.add_new_patient);
+
+        // Set an OnClickListener on the button
+        addNewPatientButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start CreatePatientActivity
+                Intent intent = new Intent(caregiver_main_screen.this, CreatePatientActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     //oncreate options menu -> action bar
@@ -85,6 +102,7 @@ public class caregiver_main_screen extends AppCompatActivity {
     }
 
 
+///////////////////////////////////////DATABASE////////////
 
 
 }
