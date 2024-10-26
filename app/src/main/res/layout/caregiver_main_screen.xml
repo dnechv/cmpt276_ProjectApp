@@ -17,33 +17,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- RecyclerView to display patient list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/patientRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/patientsTextOnTopOfTheCaregiverMainScreen"
-        app:layout_constraintBottom_toTopOf="@id/add_new_patient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Placeholder Text to overlay RecyclerView when empty -->
-    <TextView
-        android:id="@+id/placeholderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tap to view patient details"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:gravity="center"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toTopOf="@id/patientRecyclerView"
-        app:layout_constraintBottom_toBottomOf="@id/patientRecyclerView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
+<!--    &lt;!&ndash; Placeholder Text to overlay RecyclerView when empty &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/placeholderButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Tap to view patient details"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@android:color/black"-->
+<!--        android:gravity="center"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:background="@android:color/darker_gray"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/patientRecyclerView"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/patientRecyclerView"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
     <!-- Add New Patient button at the bottom -->
     <Button

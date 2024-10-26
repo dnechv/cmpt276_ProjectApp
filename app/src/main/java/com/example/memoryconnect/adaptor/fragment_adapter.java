@@ -1,4 +1,4 @@
-package com.example.memoryconnect;
+package com.example.memoryconnect.adaptor;
 
 
 //imports
