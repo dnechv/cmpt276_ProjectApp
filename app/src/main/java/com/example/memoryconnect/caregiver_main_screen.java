@@ -33,6 +33,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.memoryconnect.adaptor.PatientAdapter;
+import com.example.memoryconnect.controllers.CreatePatientActivity;
 import com.example.memoryconnect.controllers.patient_screen_that_displays_tab_layout;
 
 
@@ -81,7 +82,7 @@ public class caregiver_main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start CreatePatientActivity
-                Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
+                Intent intent = new Intent(caregiver_main_screen.this, CreatePatientActivity.class);
                 startActivity(intent);
             }
         });
