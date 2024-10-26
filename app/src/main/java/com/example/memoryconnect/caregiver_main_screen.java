@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
-import androidx.appcompat.widget.Toolbar;
 
 //main screen - start of the app
 //displays the patients list -> pulls data from the database
@@ -25,26 +24,24 @@ import androidx.appcompat.widget.Toolbar;
 
 
 //imports will go here
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.memoryconnect.adaptor.PatientAdapter;
-import com.example.memoryconnect.controllers.CreatePatientActivity;
-import com.example.memoryconnect.controllers.PatientDetailActivity;
+import com.example.memoryconnect.controllers.patient_screen_that_displays_tab_layout;
+
 
 import java.util.ArrayList;
 
 
 public class caregiver_main_screen extends AppCompatActivity {
 
-
+    private PatientViewModel patientViewModel;
 //overriding methods
 
 
@@ -59,21 +56,21 @@ public class caregiver_main_screen extends AppCompatActivity {
         // Initialize ViewModel
         PatientViewModel patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
-        //placeholder button logic
-
-        //finding the textview by id
-        TextView placeHolderButtonToGoToPatientScreen = findViewById(R.id.placeholderButton);
-
-        //setting on click listener for the placeholder button
-        placeHolderButtonToGoToPatientScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //creating the intent to start the new activity-> patient_screen_that_displays_tab_layout.class
-                Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
-               //starting the activity
-                startActivity(intent);
-            }
-        });
+//        //placeholder button logic
+//
+//        //finding the textview by id
+//        TextView placeHolderButtonToGoToPatientScreen = findViewById(R.id.placeholderButton);
+//
+//        //setting on click listener for the placeholder button
+//        placeHolderButtonToGoToPatientScreen.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //creating the intent to start the new activity-> patient_screen_that_displays_tab_layout.class
+//                Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
+//               //starting the activity
+//                startActivity(intent);
+//            }
+//        });
 
         //////////////////////////DB
         // Find the Add New Patient button
@@ -84,7 +81,7 @@ public class caregiver_main_screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start CreatePatientActivity
-                Intent intent = new Intent(caregiver_main_screen.this, CreatePatientActivity.class);
+                Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
                 startActivity(intent);
             }
         });
@@ -92,8 +89,9 @@ public class caregiver_main_screen extends AppCompatActivity {
         // Initialize RecyclerView and Adapter
         RecyclerView recyclerView = findViewById(R.id.patientRecyclerView);
         PatientAdapter adapter = new PatientAdapter(new ArrayList<>(), patient -> {
-            // Handle click event - navigate to PatientDetailActivity
-            Intent intent = new Intent(caregiver_main_screen.this, PatientDetailActivity.class);
+            ////////////////////////////////////////////////
+            // Handle click event - navigate to tab layout Activity and then to patient info fragment
+            Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
             intent.putExtra("PATIENT_ID", patient.getId());
             startActivity(intent);
         });

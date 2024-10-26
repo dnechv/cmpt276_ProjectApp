@@ -34,7 +34,7 @@
         </activity>
 
         <!--declares activity: patient_screen_that_displays_tab_layout   -->
-        <activity android:name=".patient_screen_that_displays_tab_layout" />
+        <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
         <activity android:name=".controllers.CreatePatientActivity"/>
 
 
