@@ -4,9 +4,11 @@ package com.example.memoryconnect;
 //permissions go here
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.memoryconnect.ViewModel.PatientViewModel;
 import androidx.appcompat.widget.Toolbar;
 
 //main screen - start of the app
@@ -29,8 +31,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.memoryconnect.adaptor.PatientAdapter;
 import com.example.memoryconnect.controllers.CreatePatientActivity;
+import com.example.memoryconnect.controllers.PatientDetailActivity;
+
+import java.util.ArrayList;
 
 
 public class caregiver_main_screen extends AppCompatActivity {
@@ -46,6 +55,9 @@ public class caregiver_main_screen extends AppCompatActivity {
 
         //setting the content view from caregiver_main_screen.xml
         setContentView(R.layout.caregiver_main_screen);
+
+        // Initialize ViewModel
+        PatientViewModel patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
         //placeholder button logic
 
@@ -76,6 +88,30 @@ public class caregiver_main_screen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Initialize RecyclerView and Adapter
+        RecyclerView recyclerView = findViewById(R.id.patientRecyclerView);
+        PatientAdapter adapter = new PatientAdapter(new ArrayList<>(), patient -> {
+            // Handle click event - navigate to PatientDetailActivity
+            Intent intent = new Intent(caregiver_main_screen.this, PatientDetailActivity.class);
+            intent.putExtra("PATIENT_ID", patient.getId());
+            startActivity(intent);
+        });
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Observe patient data from ViewModel and update RecyclerView
+        patientViewModel.getAllPatients().observe(this, patients -> {
+            if (patients != null) {
+                adapter.setPatients(patients); // This method should call notifyDataSetChanged()
+            } else {
+                Log.d("MainActivity", "No patients found.");
+            }
+        });
+
+
+
 
     }
 

@@ -1,21 +1,29 @@
 package com.example.memoryconnect.ViewModel;
 
 import android.net.Uri;
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.repository.PatientRepository;
 import com.google.android.gms.tasks.OnSuccessListener;
+
+import java.util.List;
 import java.util.function.Consumer;
 
 public class PatientViewModel extends ViewModel {
     private final PatientRepository patientRepository;
+    private final LiveData<List<Patient>> allPatients;
     private final MutableLiveData<Boolean> isPatientSaved = new MutableLiveData<>();
     private final MutableLiveData<String> uploadError = new MutableLiveData<>();
 
+    //constructor
     public PatientViewModel() {
         patientRepository = new PatientRepository();
+        // Get all patients from the repository
+        allPatients = patientRepository.getAllPatients();
     }
 
     // LiveData to observe the save operation status
@@ -57,5 +65,19 @@ public class PatientViewModel extends ViewModel {
             // Set an error message to be observed
             uploadError.setValue("Failed to upload photo: " + error.getMessage());
         });
+    }
+
+    // Method to get the list of all patients for observation in the UI
+    public LiveData<List<Patient>> getAllPatients() {
+        LiveData<List<Patient>> patients = patientRepository.getAllPatients();
+        patients.observeForever(patientList -> {
+            Log.d("PatientViewModel", "Patients loaded: " + patientList.size());
+        });
+        return patients;
+    }
+
+    // Additional method to get details for a specific patient by ID
+    public LiveData<Patient> getPatientById(String patientId) {
+        return patientRepository.getPatientById(patientId);  // Implement this in repository as needed
     }
 }

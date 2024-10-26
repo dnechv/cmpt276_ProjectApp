@@ -17,15 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- RecyclerView to display patient list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/patientRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/patientsTextOnTopOfTheCaregiverMainScreen"
-        app:layout_constraintBottom_toTopOf="@id/add_new_patient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <!-- Placeholder Text to overlay RecyclerView when empty -->
     <TextView

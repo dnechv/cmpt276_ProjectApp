@@ -2,14 +2,27 @@ package com.example.memoryconnect.repository;
 
 
 import android.net.Uri;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.example.memoryconnect.model.Patient;
+
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class PatientRepository {
@@ -55,4 +68,58 @@ public class PatientRepository {
                         photoRef.getDownloadUrl().addOnSuccessListener(onSuccessListener))
                 .addOnFailureListener(onFailureListener);
     }
+
+    public LiveData<List<Patient>> getAllPatients() {
+        MutableLiveData<List<Patient>> patientsLiveData = new MutableLiveData<>();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("patients");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                List<Patient> patients = new ArrayList<>();
+               // Log.d("PatientRepository", "Snapshot exists: " + snapshot.exists());
+
+                for (DataSnapshot patientSnapshot : snapshot.getChildren()) {
+                    Patient patient = patientSnapshot.getValue(Patient.class);
+                    if (patient != null) {
+                        //Log.d("PatientRepository", "Loaded patient: " + patient.getName());
+                        patients.add(patient);
+                    }
+                }
+
+                // Update LiveData with loaded patients
+                patientsLiveData.setValue(patients);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.e("PatientRepository", "loadPatients:onCancelled", error.toException());
+            }
+        });
+
+        return patientsLiveData;
+    }
+
+
+    public LiveData<Patient> getPatientById(String patientId) {
+        MutableLiveData<Patient> patientLiveData = new MutableLiveData<>();
+
+        // Reference to the specific patient in the database
+        databaseReference.child("patients").child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Convert the DataSnapshot to a Patient object
+                Patient patient = snapshot.getValue(Patient.class);
+                patientLiveData.setValue(patient); // Update LiveData with the retrieved patient
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("PatientRepository", "getPatientById:onCancelled", error.toException());
+            }
+        });
+
+        return patientLiveData;
+    }
+
 }
