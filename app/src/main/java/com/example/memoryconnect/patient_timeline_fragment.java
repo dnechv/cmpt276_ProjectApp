@@ -20,6 +20,16 @@ import android.view.ViewGroup;
 
 //patient timeline fragment -> extends fragment class
 public class patient_timeline_fragment  extends Fragment{
+    private static final String ARG_PATIENT_ID = "patient_id"; // Define ARG_PATIENT_ID here
+    private String patientId;
+
+    public static patient_timeline_fragment newInstance(String patientId) {
+        patient_timeline_fragment fragment = new patient_timeline_fragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PATIENT_ID, patientId);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
