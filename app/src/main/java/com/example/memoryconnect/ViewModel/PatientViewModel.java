@@ -80,4 +80,14 @@ public class PatientViewModel extends ViewModel {
     public LiveData<Patient> getPatientById(String patientId) {
         return patientRepository.getPatientById(patientId);  // Implement this in repository as needed
     }
+
+    
+
+
+
+
+
+
+
+
 }

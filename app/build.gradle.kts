@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.memoryconnect"
-        minSdk = 33
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -46,7 +48,5 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics")
-    implementation ("com.google.firebase:firebase-storage:20.2.1")
-
-
+    implementation("com.google.firebase:firebase-storage:20.2.1")
 }

@@ -105,7 +105,7 @@ public class PatientRepository {
         MutableLiveData<Patient> patientLiveData = new MutableLiveData<>();
 
         // Reference to the specific patient in the database
-        databaseReference.child("patients").child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // Convert the DataSnapshot to a Patient object
@@ -121,5 +121,6 @@ public class PatientRepository {
 
         return patientLiveData;
     }
+
 
 }
