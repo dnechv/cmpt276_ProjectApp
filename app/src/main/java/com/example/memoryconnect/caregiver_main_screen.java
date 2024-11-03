@@ -4,6 +4,23 @@ package com.example.memoryconnect;
 //TODO - Delete Patients by the caregiver
 
 
+
+//Release #1
+
+//TODO - Database - Firebase - Done
+//TODO - Local - Database -> sync with Firebase -> Done
+//TODO - populate list as entries in data bases added -> Done
+//TODO - caregiver clicks on name -> it takes him to that patient screen -> Done
+//TODO - Database items showing and adding in recycler view -> Done
+
+
+//Release #2
+//TODO - permissions check
+//TODO - Showing databse entries from local databse when the device is online
+//TODO - remove / keep 3 dots on top
+//TODO - PIN Logic for entry
+git
+
 //permissions go here
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,17 +30,9 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
 
-//main screen - start of the app
+//caregiver_main_screen - start of the app
 //displays the patients list -> pulls data from the database
 
-
-//the screen shows patients list to caregiver
-//TODO - populate list as entries in data bases added
-//TODO - caregiver clicks on name -> it takes him to that patient screen
-//TODO - PIN Logic remote
-//TODO - permissions check
-//TODO - Database
-//TODO - Database items showing and adding in recycler view
 
 
 //imports will go here
@@ -58,7 +67,7 @@ public class caregiver_main_screen extends AppCompatActivity {
         setContentView(R.layout.caregiver_main_screen);
 
         // Initialize ViewModel
-        PatientViewModel patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+       patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
 
 
@@ -108,6 +117,9 @@ public class caregiver_main_screen extends AppCompatActivity {
                 Log.d("MainActivity", "No patients found.");
             }
         });
+
+
+
 
 
 

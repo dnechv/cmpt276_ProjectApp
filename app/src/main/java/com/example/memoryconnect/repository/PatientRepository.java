@@ -61,7 +61,7 @@ public class PatientRepository {
         localdatabaseDao = localDatabase.localdatabaseDao();//dao
 
 
-        //synch room and local databases
+        //sync room and local databases
         synchLocalDatabase();
 
 
@@ -99,6 +99,8 @@ public class PatientRepository {
     }
 
 
+    //Local database functions:
+
     //sync local database with the firebase database
     private void synchLocalDatabase() {
         // Get all patients from Firebase Realtime Database
@@ -127,6 +129,14 @@ public class PatientRepository {
                 Log.e("PatientRepository", "synchLocalDatabase:onCancelled", error.toException());
             }
         });
+    }
+
+
+
+
+    //get all patients from the local database
+    public LiveData<List<Patient>> getAllPatientsFromLocalDatabase() {
+        return localdatabaseDao.getAllPatients();
     }
 
     public LiveData<List<Patient>> getAllPatients() {
