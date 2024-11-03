@@ -96,10 +96,10 @@
 
         <!-- Back Button -->
         <Button
-            android:id="@+id/delete"
+            android:id="@+id/logoutButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete User" />
+            android:text="Logout" />
 
     </LinearLayout>
 </ScrollView>

@@ -2,14 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <!--Declarations of what is app going to do   -->
-
 
     <!-- TODO: Add Permissions  -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
 
     <application
         android:allowBackup="true"
@@ -22,21 +19,22 @@
         android:theme="@style/Theme.MemoryConnect"
         tools:targetApi="31">
 
-        <!--declares activity: caregiver_main_screen   -->
         <activity
-            android:name=".caregiver_main_screen"
+            android:name=".controllers.ClientLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--declares activity: patient_screen_that_displays_tab_layout   -->
+        <!-- Other activities -->
+        <activity android:name=".caregiver_main_screen" android:exported="true" />
         <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
-        <activity android:name=".controllers.CreatePatientActivity"/>
+        <activity android:name=".controllers.CreatePatientActivity" />
 
+        <!-- Add the EditInfo activity here -->
+        <activity android:name=".ViewModel.EditInfo" />
 
     </application>
 

@@ -1,4 +1,6 @@
 package com.example.memoryconnect;
+import com.example.memoryconnect.controllers.ClientLogin;
+import com.example.memoryconnect.ViewModel.EditInfo;
 
 //imports
 import android.os.Bundle;
@@ -6,6 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import android.content.Intent;
+
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
@@ -13,6 +18,7 @@ import com.bumptech.glide.Glide;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.memoryconnect.ViewModel.PatientViewModel;
 
@@ -27,6 +33,9 @@ import com.example.memoryconnect.ViewModel.PatientViewModel;
 //patient info class extends fragment
 
 public class patient_info_fragment extends Fragment {
+
+    private Button editInfoButton;
+    private Button logoutButton;
     private static final String ARG_PATIENT_ID = "patient_id";
     private String patientId;
 
@@ -51,6 +60,8 @@ public class patient_info_fragment extends Fragment {
         ageTextView = view.findViewById(R.id.patientAge);
         commentTextView = view.findViewById(R.id.patientComment);
         patientProfilePicture = view.findViewById(R.id.patientProfilePicture);
+        logoutButton = view.findViewById(R.id.logoutButton);
+        editInfoButton = view.findViewById(R.id.editInfoButton);
 
         return view;
     }
@@ -83,5 +94,20 @@ public class patient_info_fragment extends Fragment {
                         .into(patientProfilePicture);
             }
         });
+        logoutButton.setOnClickListener(v -> logoutStep());
+        editInfoButton.setOnClickListener(v -> editInfoStep());
     }
+// Steps logout and edit
+private void logoutStep() {
+    Toast.makeText(requireContext(), "Logging out...", Toast.LENGTH_SHORT).show();
+    Intent intent = new Intent(requireContext(), ClientLogin.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
+    requireActivity().finish();
+}
+    private void editInfoStep() {
+        Intent intent = new Intent(requireContext(), EditInfo.class);
+        startActivity(intent);
+    }
+
 }

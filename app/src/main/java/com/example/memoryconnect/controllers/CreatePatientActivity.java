@@ -1,5 +1,4 @@
 package com.example.memoryconnect.controllers;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,19 +9,16 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.memoryconnect.R;
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
-import com.google.firebase.auth.FirebaseAuth;
 import java.util.UUID;
 
 public class CreatePatientActivity extends AppCompatActivity {
     private PatientViewModel patientViewModel;
     private Uri selectedPhotoUri;
-
     private ImageView photoImageView;
     private EditText nameEditText;
     private EditText nicknameEditText;
@@ -99,7 +95,6 @@ public class CreatePatientActivity extends AppCompatActivity {
 
     // Save patient information
     private void savePatient() {
-        // Retrieve input values
         String name = nameEditText.getText().toString();
         String nickname = nicknameEditText.getText().toString();
         String ageText = ageEditText.getText().toString();
