@@ -1,13 +1,17 @@
 package com.example.memoryconnect;
 
 
+//TODO - Delete Patients by the caregiver
+
+
 //permissions go here
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import com.example.memoryconnect.ViewModel.PatientViewModel;
 
 //main screen - start of the app
 //displays the patients list -> pulls data from the database
@@ -23,16 +27,25 @@ import androidx.appcompat.widget.Toolbar;
 
 
 //imports will go here
-import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.memoryconnect.adaptor.PatientAdapter;
+import com.example.memoryconnect.controllers.CreatePatientActivity;
+import com.example.memoryconnect.controllers.patient_screen_that_displays_tab_layout;
+
+
+import java.util.ArrayList;
 
 
 public class caregiver_main_screen extends AppCompatActivity {
 
-
+    private PatientViewModel patientViewModel;
 //overriding methods
 
 
@@ -44,21 +57,60 @@ public class caregiver_main_screen extends AppCompatActivity {
         //setting the content view from caregiver_main_screen.xml
         setContentView(R.layout.caregiver_main_screen);
 
-        //placeholder button logic
+        // Initialize ViewModel
+        PatientViewModel patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
-        //finding the textview by id
-        TextView placeHolderButtonToGoToPatientScreen = findViewById(R.id.placeholderButton);
 
-        //setting on click listener for the placeholder button
-        placeHolderButtonToGoToPatientScreen.setOnClickListener(new View.OnClickListener() {
+
+        //////////////////////////DB
+        // Find the Add New Patient button
+        Button addNewPatientButton = findViewById(R.id.add_new_patient);
+
+        //adding plus sign to the button
+        addNewPatientButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.plus, 0, 0, 0);
+
+        // Set an OnClickListener on the button
+        addNewPatientButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //creating the intent to start the new activity-> patient_screen_that_displays_tab_layout.class
-                Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
-               //starting the activity
+                // Create an Intent to start CreatePatientActivity
+                Intent intent = new Intent(caregiver_main_screen.this, CreatePatientActivity.class);
                 startActivity(intent);
             }
         });
+
+        // Initialize RecyclerView and Adapter -displaying the patients
+
+        // Find the RecyclerView from the xml -> assign to recyclerView variable
+        RecyclerView recyclerView = findViewById(R.id.patientRecyclerView);
+
+        //setting layout view for the recycler manager -> position linearly
+         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        //setting up the adapter
+        PatientAdapter adapter = new PatientAdapter(new ArrayList<>(), patient -> {
+            ////////////////////////////////////////////////
+            // Handle click event - navigate to tab layout Activity and then to patient info fragment
+            Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
+            intent.putExtra("PATIENT_ID", patient.getId());
+            startActivity(intent);
+        });
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Observe patient data from ViewModel and update RecyclerView
+        patientViewModel.getAllPatients().observe(this, patients -> {
+            if (patients != null) {
+                adapter.setPatients(patients); // This method should call notifyDataSetChanged()
+            } else {
+                Log.d("MainActivity", "No patients found.");
+            }
+        });
+
+
+
 
     }
 
@@ -85,6 +137,7 @@ public class caregiver_main_screen extends AppCompatActivity {
     }
 
 
+///////////////////////////////////////DATABASE////////////
 
 
 }
