@@ -7,7 +7,6 @@
 - Constants: Use UPPER_CASE (MAX_LIMIT).
 
 2. Formatting
-- Indentation: 4 spaces per indentation level.
 - Line Length: Max 100 characters per line.
 - Braces: Same Line Braces.
 
