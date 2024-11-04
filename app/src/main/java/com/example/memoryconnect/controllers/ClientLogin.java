@@ -21,7 +21,7 @@ public class ClientLogin extends AppCompatActivity {
     private EditText email;
 
     // Hardcoded for now for testing TODO: implement actual login at login page *for now if database is edited,patient ID have to be updated manually*
-    private static final String PATIENT_ID = "9ae502de-0b61-4227-8481-e5cc35d70a52";
+    private static final String PATIENT_ID = "3379f10c-1ffd-4db2-8327-a153eec25755";
     private PatientRepository patientRepository;
 
     @Override
