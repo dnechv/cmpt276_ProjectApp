@@ -19,7 +19,6 @@ package com.example.memoryconnect;
 //TODO - Showing databse entries from local databse when the device is online
 //TODO - remove / keep 3 dots on top
 //TODO - PIN Logic for entry
-git
 
 //permissions go here
 import android.content.Intent;
