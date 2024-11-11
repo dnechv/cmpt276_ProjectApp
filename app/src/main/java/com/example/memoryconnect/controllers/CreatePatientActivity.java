@@ -1,8 +1,10 @@
 package com.example.memoryconnect.controllers;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +33,9 @@ public class CreatePatientActivity extends AppCompatActivity {
     private Button saveButton;
     private Button cancelButton;
 
+    private Button takephotoButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,7 @@ public class CreatePatientActivity extends AppCompatActivity {
         commentEditText = findViewById(R.id.commentEditText);
         saveButton = findViewById(R.id.saveButton);
         cancelButton = findViewById(R.id.cancelButton);
+        takephotoButton = findViewById(R.id.takephotoButton);
 
         // Initialize ViewModel
         patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
@@ -59,6 +65,9 @@ public class CreatePatientActivity extends AppCompatActivity {
 
         // Observe ViewModel LiveData for save success or error handling
         observeViewModel();
+
+        // set up take picture button
+        takephotoButton.setOnClickListener(v -> takepic());
     }
 
     // Launch photo picker
@@ -131,6 +140,21 @@ public class CreatePatientActivity extends AppCompatActivity {
             // Create Patient object without a photo URL
             Patient patient = new Patient(patientId, name, nickname, age, comment, null);
             patientViewModel.savePatient(patient);
+        }
+    }
+    public void takepic(){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA_ACTION_CODE);
+    }
+    public static final int CAMERA_ACTION_CODE = 1;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CAMERA_ACTION_CODE && resultCode == RESULT_OK && data != null){
+           Bundle bundle = data.getExtras();
+           Bitmap finalphoto = (Bitmap) bundle.get("data");
+           photoImageView.setImageBitmap(finalphoto);
         }
     }
 }
