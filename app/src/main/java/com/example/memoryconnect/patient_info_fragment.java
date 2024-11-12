@@ -1,6 +1,7 @@
 package com.example.memoryconnect;
 
 //imports
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -113,19 +114,32 @@ public class patient_info_fragment extends Fragment {
 
         // Observe patient data using patientId
         patientViewModel.getPatientById(patientId).observe(getViewLifecycleOwner(), patient -> {
-            if (patient != null) {
-                // Update UI elements with patient details
-                nameTextView.setText(patient.getName());
-                nicknameTextView.setText(patient.getNickname());
-                ageTextView.setText(String.valueOf(patient.getAge()));
-                commentTextView.setText(patient.getComment());
+                    if (patient != null) {
+                        // Update UI elements with patient details
+                        nameTextView.setText(patient.getName());
+                        nicknameTextView.setText(patient.getNickname());
+                        ageTextView.setText(String.valueOf(patient.getAge()));
+                        commentTextView.setText(patient.getComment());
 
-                // Load image using Glide
-                Glide.with(this)
-                        .load(patient.getPhotoUrl())
-                        .placeholder(R.drawable.ic_default_photo) // Fallback image
-                        .into(patientProfilePicture);
-            }
+                        // Load image using Glide
+                        Glide.with(this)
+                                .load(patient.getPhotoUrl())
+                                .placeholder(R.drawable.ic_default_photo) // Fallback image
+                                .into(patientProfilePicture);
+                    }
+                });
+
+            editButton.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), EditUserActivity.class);
+                intent.putExtra("user_id", patientId); // Pass patient ID to EditUserActivity
+                startActivity(intent);
+
+        });
+
+        deleteButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), DeleteUserActivity.class);
+            intent.putExtra("user_id", patientId); // Pass user ID to DeleteUserActivity
+            startActivity(intent);
         });
     }
 }
