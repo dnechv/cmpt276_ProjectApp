@@ -1,8 +1,11 @@
 package com.example.memoryconnect.controllers;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +20,10 @@ import com.example.memoryconnect.R;
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.UUID;
 
 public class CreatePatientActivity extends AppCompatActivity {
@@ -31,6 +38,9 @@ public class CreatePatientActivity extends AppCompatActivity {
     private Button saveButton;
     private Button cancelButton;
 
+    private Button takephotoButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +54,7 @@ public class CreatePatientActivity extends AppCompatActivity {
         commentEditText = findViewById(R.id.commentEditText);
         saveButton = findViewById(R.id.saveButton);
         cancelButton = findViewById(R.id.cancelButton);
+        takephotoButton = findViewById(R.id.takephotoButton);
 
         // Initialize ViewModel
         patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
@@ -59,6 +70,9 @@ public class CreatePatientActivity extends AppCompatActivity {
 
         // Observe ViewModel LiveData for save success or error handling
         observeViewModel();
+
+        // set up take picture button
+        takephotoButton.setOnClickListener(v -> takepic());
     }
 
     // Launch photo picker
@@ -133,4 +147,48 @@ public class CreatePatientActivity extends AppCompatActivity {
             patientViewModel.savePatient(patient);
         }
     }
+    public void takepic(){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA_ACTION_CODE);
+    }
+    public static final int CAMERA_ACTION_CODE = 1;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if(requestCode == CAMERA_ACTION_CODE && resultCode == RESULT_OK && data != null){
+           Bundle bundle = data.getExtras();
+           Bitmap finalphoto = (Bitmap) bundle.get("data");
+           photoImageView.setImageBitmap(finalphoto);
+
+           Uri photoUri = saveBitmapToFile(finalphoto);
+           if (photoUri != null) {
+               selectedPhotoUri = photoUri;
+               photoImageView.setImageURI(photoUri);
+
+           }
+        }
+    }
+
+    private Uri saveBitmapToFile(Bitmap bitmap) {
+        try {
+            // Create a temporary file
+            File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+            File photoFile = new File(storageDir, "photo_" + UUID.randomUUID().toString() + ".jpg");
+
+            // Write the bitmap to the file
+            FileOutputStream fos = new FileOutputStream(photoFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.close();
+
+            // Return URI from the file
+            return Uri.fromFile(photoFile);
+        } catch (IOException e) {
+            Log.e("CreatePatientActivity", "Error saving photo", e);
+            return null;
+        }
+    }
+
 }
