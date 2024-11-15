@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
@@ -19,6 +20,10 @@ import com.example.memoryconnect.R;
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.UUID;
 
 public class CreatePatientActivity extends AppCompatActivity {
@@ -151,10 +156,39 @@ public class CreatePatientActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+
         if(requestCode == CAMERA_ACTION_CODE && resultCode == RESULT_OK && data != null){
            Bundle bundle = data.getExtras();
            Bitmap finalphoto = (Bitmap) bundle.get("data");
            photoImageView.setImageBitmap(finalphoto);
+
+           Uri photoUri = saveBitmapToFile(finalphoto);
+           if (photoUri != null) {
+               selectedPhotoUri = photoUri;
+               photoImageView.setImageURI(photoUri);
+
+           }
         }
     }
+
+    private Uri saveBitmapToFile(Bitmap bitmap) {
+        try {
+            // Create a temporary file
+            File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+            File photoFile = new File(storageDir, "photo_" + UUID.randomUUID().toString() + ".jpg");
+
+            // Write the bitmap to the file
+            FileOutputStream fos = new FileOutputStream(photoFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.close();
+
+            // Return URI from the file
+            return Uri.fromFile(photoFile);
+        } catch (IOException e) {
+            Log.e("CreatePatientActivity", "Error saving photo", e);
+            return null;
+        }
+    }
+
 }
