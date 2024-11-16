@@ -1,5 +1,6 @@
 package com.example.memoryconnect.controllers;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,28 +31,31 @@ public class SignUpActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Initialize UI components
+        // UI references
         fullNameField = findViewById(R.id.full_name);
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.password);
         confirmPasswordField = findViewById(R.id.confirm_password);
         signUpButton = findViewById(R.id.sign_up_button);
-        loginRedirect = findViewById(R.id.login_redirect);
+
+        // Retrieve email and password passed from LoginActivity
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        String password = intent.getStringExtra("password");
+
+        // Pre-fill fields
+        if (email != null) {
+            emailField.setText(email);
+        }
+        if (password != null) {
+            passwordField.setText(password);
+        }
 
         // Set up the Sign-Up button click listener
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signUpUser();
-            }
-        });
-
-        // Redirect to Login page
-        loginRedirect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-                finish();
             }
         });
     }
@@ -96,7 +100,7 @@ public class SignUpActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(SignUpActivity.this, "Sign-up successful!", Toast.LENGTH_SHORT).show();
 
-                        // Optionally redirect to another activity
+                        // Redirect to ProfileActivity
                         startActivity(new Intent(SignUpActivity.this, ProfileActivity.class));
                         finish();
                     } else {

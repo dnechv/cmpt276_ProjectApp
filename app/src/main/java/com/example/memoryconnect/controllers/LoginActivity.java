@@ -45,7 +45,14 @@ public class LoginActivity extends AppCompatActivity {
         signUpRedirectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                String email = emailField.getText().toString().trim();
+                String password = passwordField.getText().toString().trim();
+
+                // Pass email and password to SignUpActivity
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                intent.putExtra("email", email);
+                intent.putExtra("password", password);
+                startActivity(intent);
                 finish();
             }
         });
