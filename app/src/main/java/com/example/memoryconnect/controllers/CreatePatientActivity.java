@@ -10,13 +10,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.memoryconnect.R;
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
-import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.UUID;
 
 public class CreatePatientActivity extends AppCompatActivity {
@@ -99,11 +98,14 @@ public class CreatePatientActivity extends AppCompatActivity {
 
     // Save patient information
     private void savePatient() {
-        // Retrieve input values
-        String name = nameEditText.getText().toString();
-        String nickname = nicknameEditText.getText().toString();
-        String ageText = ageEditText.getText().toString();
-        String comment = commentEditText.getText().toString();
+        // Generate a unique patient ID
+        String patientId = UUID.randomUUID().toString();
+
+        // Validate user inputs
+        String name = nameEditText.getText().toString().trim();
+        String nickname = nicknameEditText.getText().toString().trim();
+        String ageText = ageEditText.getText().toString().trim();
+        String comment = commentEditText.getText().toString().trim();
 
         if (name.isEmpty() || nickname.isEmpty() || ageText.isEmpty()) {
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
@@ -114,23 +116,32 @@ public class CreatePatientActivity extends AppCompatActivity {
         try {
             age = Integer.parseInt(ageText);
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Please enter a valid age.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Age must be a number.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String patientId = UUID.randomUUID().toString(); // Use UUID for unique ID
-
         // Check if a photo was selected
         if (selectedPhotoUri != null) {
-            patientViewModel.uploadPhoto(selectedPhotoUri, uri -> {
-                // Create Patient object with photo URL and save it
-                Patient patient = new Patient(patientId, name, nickname, age, comment, uri.toString());
-                patientViewModel.savePatient(patient);
-            });
+            // Upload the photo and get the URL
+            patientViewModel.uploadPhoto(selectedPhotoUri,
+                    uri -> {
+                        // Photo uploaded successfully
+                        Patient patient = new Patient(patientId, name, nickname, age, comment, uri.toString());
+                        savePatientToDatabase(patient);
+                    },
+                    error -> Toast.makeText(this, "Failed to upload photo: " + error.getMessage(), Toast.LENGTH_SHORT).show()
+            );
         } else {
-            // Create Patient object without a photo URL
+            // Save patient without photo URL
             Patient patient = new Patient(patientId, name, nickname, age, comment, null);
-            patientViewModel.savePatient(patient);
+            savePatientToDatabase(patient);
         }
+    }
+
+    // Helper method to save patient and display confirmation
+    private void savePatientToDatabase(Patient patient) {
+        patientViewModel.savePatient(patient);
+        Toast.makeText(this, "Patient saved successfully!", Toast.LENGTH_SHORT).show();
+        finish(); // Close activity
     }
 }
