@@ -6,13 +6,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.lifecycle.ViewModelProvider;
+import com.example.memoryconnect.ViewModel.PatientViewModel;
+import com.example.memoryconnect.model.Patient;
 
 public class EditUserActivity extends AppCompatActivity {
     private EditText editName, editNickname, editAge, editComment;
     private Button saveButton;
-    private DatabaseReference userRef;
+    private PatientViewModel patientViewModel;
     private String userId;
 
     @Override
@@ -27,6 +28,9 @@ public class EditUserActivity extends AppCompatActivity {
         editComment = findViewById(R.id.editComment);
         saveButton = findViewById(R.id.saveButton);
 
+        // Initialize ViewModel
+        patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+
         // Get the user ID from the Intent
         userId = getIntent().getStringExtra("user_id");
         if (userId == null) {
@@ -35,59 +39,61 @@ public class EditUserActivity extends AppCompatActivity {
             return;
         }
 
-        // Initialize userRef to point to the specific user's data in Firebase
-        userRef = FirebaseDatabase.getInstance().getReference("patients").child(userId);
+        // Fetch and observe patient data from ViewModel
+        patientViewModel.getPatientById(userId).observe(this, patient -> {
+            if (patient != null) {
+                // Populate UI with patient data
+                editName.setText(patient.getName());
+                editNickname.setText(patient.getNickname());
+                editAge.setText(String.valueOf(patient.getAge()));
+                editComment.setText(patient.getComment());
 
-        // Load existing data from Firebase
-        loadUserData();
+                // Save button click listener
+                saveButton.setOnClickListener(v -> {
+                    // Get updated values from the fields
+                    String name = editName.getText().toString().trim();
+                    String nickname = editNickname.getText().toString().trim();
+                    String ageText = editAge.getText().toString().trim();
+                    String comment = editComment.getText().toString().trim();
 
-        // Save updated data to Firebase
-        saveButton.setOnClickListener(v -> {
-            String name = editName.getText().toString();
-            String nickname = editNickname.getText().toString();
-            int age = Integer.parseInt(editAge.getText().toString());
-            String comment = editComment.getText().toString();
+                    // Validate inputs
+                    if (name.isEmpty() || nickname.isEmpty() || ageText.isEmpty()) {
+                        Toast.makeText(EditUserActivity.this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-            userRef.child("name").setValue(name);
-            userRef.child("nickname").setValue(nickname);
-            userRef.child("age").setValue(age);
-            userRef.child("comment").setValue(comment)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(EditUserActivity.this, "Info updated successfully", Toast.LENGTH_SHORT).show();
+                    int age;
+                    try {
+                        age = Integer.parseInt(ageText);
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(EditUserActivity.this, "Age must be a number.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                            // Navigate back to caregiver_main_screen
-                            Intent intent = new Intent(EditUserActivity.this, caregiver_main_screen.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                            finish(); // Close EditUserActivity
-                        } else {
-                            Toast.makeText(EditUserActivity.this, "Failed to update info", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        });
-    }
+                    // Create updated Patient object, retaining the existing photo URL
+                    Patient updatedPatient = new Patient(
+                            userId,
+                            name,
+                            nickname,
+                            age,
+                            comment,
+                            patient.getPhotoUrl() // Keep the existing photo URL
+                    );
 
-    private void loadUserData() {
-        // Retrieve data from Firebase and display it in EditText fields
-        userRef.get().addOnSuccessListener(snapshot -> {
-            if (snapshot.exists()) {
-                // Get values from Firebase
-                String name = snapshot.child("name").getValue(String.class);
-                String nickname = snapshot.child("nickname").getValue(String.class);
-                Long age = snapshot.child("age").getValue(Long.class); // Use Long for Firebase integers
-                String comment = snapshot.child("comment").getValue(String.class);
+                    // Save patient data using ViewModel
+                    patientViewModel.savePatient(updatedPatient);
 
-                // Populate EditText fields with the retrieved data
-                editName.setText(name);
-                editNickname.setText(nickname);
-                editAge.setText(age != null ? String.valueOf(age) : "");
-                editComment.setText(comment);
+                    // Provide feedback and navigate back to the main screen
+                    Toast.makeText(EditUserActivity.this, "Patient updated successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EditUserActivity.this, caregiver_main_screen.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish(); // Close activity after saving
+                });
             } else {
-                Toast.makeText(this, "User data not found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Patient not found", Toast.LENGTH_SHORT).show();
+                finish(); // Close activity if patient is not found
             }
-        }).addOnFailureListener(e -> {
-            Toast.makeText(this, "Failed to load user data", Toast.LENGTH_SHORT).show();
         });
     }
 }

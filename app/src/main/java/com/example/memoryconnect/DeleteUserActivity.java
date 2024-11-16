@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.lifecycle.ViewModelProvider;
+import com.example.memoryconnect.ViewModel.PatientViewModel;
 
 public class DeleteUserActivity extends AppCompatActivity {
+
     private Button yesButton, noButton;
-    private DatabaseReference userRef;
+    private PatientViewModel patientViewModel;
     private String userId;
 
     @Override
@@ -18,36 +19,47 @@ public class DeleteUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_user);
 
-        // Initialize buttons
+        // Initialize views
         yesButton = findViewById(R.id.yesButton);
         noButton = findViewById(R.id.noButton);
 
+        // Initialize ViewModel
+        patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+
         // Get the user ID from the Intent
         userId = getIntent().getStringExtra("user_id");
-        userRef = FirebaseDatabase.getInstance().getReference("patients").child(userId);
+        if (userId == null) {
+            Toast.makeText(this, "Error: User ID not provided", Toast.LENGTH_SHORT).show();
+            finish(); // Close activity if userId is missing
+            return;
+        }
 
-        // Handle the "Yes" button click (deletes user data)
+        // Handle "Yes" button click (delete user data and photo)
         yesButton.setOnClickListener(v -> {
-            userRef.removeValue()
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            // Show success message
-                            Toast.makeText(DeleteUserActivity.this, "User deleted successfully", Toast.LENGTH_SHORT).show();
+            // Use ViewModel to delete patient and their photo
+            patientViewModel.deletePatientAndPhoto(userId, new PatientViewModel.OnDeleteCompleteListener() {
+                @Override
+                public void onSuccess() {
+                    // Show success message
+                    Toast.makeText(DeleteUserActivity.this, "User deleted successfully", Toast.LENGTH_SHORT).show();
 
-                            // Navigate back to caregiver_main_screen
-                            Intent intent = new Intent(DeleteUserActivity.this, caregiver_main_screen.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
+                    // Navigate back to caregiver_main_screen
+                    Intent intent = new Intent(DeleteUserActivity.this, caregiver_main_screen.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
 
-                            finish(); // Close DeleteUserActivity
-                        } else {
-                            // Show failure message
-                            Toast.makeText(DeleteUserActivity.this, "Failed to delete user", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    finish(); // Close DeleteUserActivity
+                }
+
+                @Override
+                public void onFailure(String errorMessage) {
+                    // Show failure message
+                    Toast.makeText(DeleteUserActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+                }
+            });
         });
 
-        // Handle the "No" button click (cancel deletion)
+        // Handle "No" button click (cancel deletion)
         noButton.setOnClickListener(v -> finish()); // Close activity without any action
     }
 }

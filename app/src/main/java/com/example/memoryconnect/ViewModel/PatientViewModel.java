@@ -4,93 +4,113 @@ import android.app.Application;
 import android.net.Uri;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.repository.PatientRepository;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class PatientViewModel extends AndroidViewModel {
     private final PatientRepository patientRepository;
-    private final LiveData<List<Patient>> allPatients;
+    private final LiveData<List<Patient>> patients;
     private final MutableLiveData<Boolean> isPatientSaved = new MutableLiveData<>();
     private final MutableLiveData<String> uploadError = new MutableLiveData<>();
 
-    //constructor
-    public PatientViewModel(Application application) {
+    // Constructor
+    public PatientViewModel(@NonNull Application application) {
         super(application);
         patientRepository = new PatientRepository(application);
-        // Get all patients from the repository
-        allPatients = patientRepository.getAllPatients();
+        patients = patientRepository.getAllPatients();
     }
 
-    // LiveData to observe the save operation status
-    public LiveData<Boolean> getIsPatientSaved() {
-        return isPatientSaved;
+    // Retrieve all patients
+    public LiveData<List<Patient>> getAllPatients() {
+        return patients;
     }
 
-    // LiveData to observe any error messages related to the upload
-    public LiveData<String> getUploadError() {
-        return uploadError;
-    }
-
-    /**
-     * Save a patient in Firebase Database.
-     *
-     * @param patient The Patient object to save.
-     */
-    public void savePatient(Patient patient) {
-        patientRepository.savePatient(patient, task -> {
-            if (task.isSuccessful()) {
-                isPatientSaved.setValue(true);
+    // Delete patient and their photo
+    public void deletePatientAndPhoto(String patientId, OnDeleteCompleteListener listener) {
+        patientRepository.getPatientById(patientId).observeForever(patient -> {
+            if (patient != null) {
+                String photoUrl = patient.getPhotoUrl();
+                if (photoUrl != null && !photoUrl.isEmpty()) {
+                    // Delete photo first, then delete patient
+                    patientRepository.deletePhoto(photoUrl, aVoid -> {
+                        // Photo deleted successfully, now delete patient data
+                        patientRepository.deletePatient(patientId, task -> {
+                            if (task.isSuccessful()) {
+                                listener.onSuccess();
+                            } else {
+                                listener.onFailure("Failed to delete patient data.");
+                            }
+                        });
+                    }, error -> listener.onFailure("Failed to delete photo: " + error.getMessage()));
+                } else {
+                    // No photo, just delete patient
+                    patientRepository.deletePatient(patientId, task -> {
+                        if (task.isSuccessful()) {
+                            listener.onSuccess();
+                        } else {
+                            listener.onFailure("Failed to delete patient data.");
+                        }
+                    });
+                }
             } else {
-                isPatientSaved.setValue(false);
+                listener.onFailure("Patient not found.");
             }
         });
     }
 
-    /**
-     * Upload a patient's photo to Firebase Storage.
-     *
-     * @param photoUri The Uri of the photo to upload.
-     * @param onSuccess Callback to receive the download URL of the uploaded photo.
-     */
-    public void uploadPhoto(Uri photoUri, Consumer<Uri> onSuccess) {
-        patientRepository.uploadPatientPhoto(photoUri, uri -> {
-            // Pass the URI back to the calling code for further processing
-            onSuccess.accept(uri);
-        }, error -> {
-            // Set an error message to be observed
-            uploadError.setValue("Failed to upload photo: " + error.getMessage());
-        });
+    // Callback Interface for Deletion
+    public interface OnDeleteCompleteListener {
+        void onSuccess();
+        void onFailure(String errorMessage);
     }
 
-    // Method to get the list of all patients for observation in the UI
-    public LiveData<List<Patient>> getAllPatients() {
-        LiveData<List<Patient>> patients = patientRepository.getAllPatients();
-        patients.observeForever(patientList -> {
-            Log.d("PatientViewModel", "Patients loaded: " + patientList.size());
-        });
-        return patients;
-    }
-
-    // Additional method to get details for a specific patient by ID
+    // Retrieve a single patient by ID
     public LiveData<Patient> getPatientById(String patientId) {
-        return patientRepository.getPatientById(patientId);  // Implement this in repository as needed
+        return patientRepository.getPatientById(patientId);
     }
 
-    
+    // Save patient data
+    public void savePatient(Patient patient) {
+        patientRepository.savePatient(patient, task -> {
+            if (task.isSuccessful()) {
+                isPatientSaved.postValue(true);
+                Log.d("PatientViewModel", "Patient updated successfully.");
+            } else {
+                isPatientSaved.postValue(false);
+                Log.e("PatientViewModel", "Failed to update patient.");
+            }
+        });
+    }
+
+    // Upload photo for a patient
+    public void uploadPhoto(Uri photoUri, OnSuccessListener<Uri> onSuccessListener, OnFailureListener onFailureListener) {
+        patientRepository.uploadPatientPhoto(photoUri, onSuccessListener, onFailureListener);
+    }
 
 
+    // Observe save status
+    public LiveData<Boolean> getIsPatientSaved() {
+        return isPatientSaved;
+    }
 
+    // Observe upload error
+    public LiveData<String> getUploadError() {
+        return uploadError;
+    }
 
-
-
-
-
+    // Callback Interface for Photo Upload
+    public interface OnPhotoUploadListener {
+        void onSuccess(String photoUrl);
+        void onFailure(String errorMessage);
+    }
 }
