@@ -1,6 +1,9 @@
 package com.example.memoryconnect;
 
 
+//view model - > manages the UI and data
+
+
 //TODO - Delete Patients by the caregiver
 
 
@@ -19,7 +22,7 @@ package com.example.memoryconnect;
 //TODO - Showing databse entries from local databse when the device is online
 //TODO - remove / keep 3 dots on top
 //TODO - PIN Logic for entry
-git
+
 
 //permissions go here
 import android.content.Intent;
@@ -102,26 +105,24 @@ public class caregiver_main_screen extends AppCompatActivity {
             ////////////////////////////////////////////////
             // Handle click event - navigate to tab layout Activity and then to patient info fragment
             Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
-            intent.putExtra("PATIENT_ID", patient.getId());
+
+            intent.putExtra("PATIENT_ID", patient.getId()); // passing the patient id to the next activity -> displays patients
+
             startActivity(intent);
         });
 
         recyclerView.setAdapter(adapter);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Observe patient data from ViewModel and update RecyclerView
+        // observes data and updates the UI
         patientViewModel.getAllPatients().observe(this, patients -> {
             if (patients != null) {
-                adapter.setPatients(patients); // This method should call notifyDataSetChanged()
+                adapter.setPatients(patients);
             } else {
                 Log.d("MainActivity", "No patients found.");
             }
         });
-
-
-
-
-
 
 
     }
@@ -147,6 +148,8 @@ public class caregiver_main_screen extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 ///////////////////////////////////////DATABASE////////////

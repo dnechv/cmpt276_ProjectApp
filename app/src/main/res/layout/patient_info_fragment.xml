@@ -21,110 +21,141 @@
             android:orientation="vertical"
             android:gravity="start">
 
-            <!-- Patient Profile Picture -->
-            <!-- CardView provides a nice background for it -->
+            <!-- Patient Profile Picture -> card view for elevated effect -->
             <androidx.cardview.widget.CardView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/colorPrimary"
                 app:cardBackgroundColor="@android:color/white">
 
-                <!-- ImageView that displays the image -->
                 <ImageView
                     android:id="@+id/patientProfilePicture"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_default_photo" />
+                     />
             </androidx.cardview.widget.CardView>
-            <!-- Patient Details -->
 
-            <!-- Name -->
+            <!-- Patient Details -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="10dp">
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name:"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+
+
                 <TextView
                     android:id="@+id/patientName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginStart="8dp" />
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/textSecondary" />
+
+
             </LinearLayout>
 
-            <!-- Nickname -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="10dp">
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nickname:"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+
+
                 <TextView
                     android:id="@+id/patientNickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginStart="8dp" />
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/textSecondary" />
+
+
             </LinearLayout>
 
-            <!-- Age -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="10dp">
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Age:"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+
+
                 <TextView
                     android:id="@+id/patientAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginStart="8dp" />
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/textSecondary" />
+
+
             </LinearLayout>
 
-            <!-- Comment -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="10dp">
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Comment:"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textPrimary" />
+
+
                 <TextView
                     android:id="@+id/patientComment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:layout_marginStart="8dp" />
+                    android:textSize="20sp"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/textSecondary" />
+
+
             </LinearLayout>
+
         </LinearLayout>
+
+
     </ScrollView>
 
-    <!-- buttons are placed at the bottom of the screen in the container -->
+    <!-- Buttons  -->
     <LinearLayout
         android:id="@+id/buttonContainer"
         android:layout_width="match_parent"
@@ -133,37 +164,39 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- Edit Info Button -->
+        <!-- edit button  -->
         <Button
             style="@style/CustomButtonStyle"
             android:id="@+id/editInfoButtonPatientInfoScreen"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Edit Info"
+            android:text="Edit"
             android:textSize="14sp"
             android:drawableStart="@drawable/edit"
+            android:drawablePadding="8dp"
             android:layout_marginEnd="4dp"
             android:padding="15dp"
+            android:elevation="6dp"
             android:background="@drawable/button_animation"
-            android:clickable="true"
-            android:focusable="true" />
+            android:textColor="@color/white" />
 
-        <!-- Delete User Button -->
+        <!-- delete  -->
         <Button
             style="@style/CustomButtonStyle"
             android:id="@+id/deleteButtonPatientInfoScreen"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Delete User"
+            android:text="Delete"
             android:textSize="14sp"
             android:drawableStart="@drawable/delete"
+            android:drawablePadding="8dp"
             android:layout_marginStart="4dp"
             android:padding="15dp"
+            android:elevation="6dp"
             android:background="@drawable/button_animation"
-            android:clickable="true"
-            android:focusable="true" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

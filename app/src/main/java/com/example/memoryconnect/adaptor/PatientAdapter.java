@@ -15,15 +15,21 @@ import com.example.memoryconnect.model.Patient;
 import java.util.List;
 import com.bumptech.glide.Glide;
 
+
+//adapter for patients
 public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientViewHolder> {
 
     private List<Patient> patients;
     private OnItemClickListener listener;
 
+
+    //interface for on item click listener
     public interface OnItemClickListener {
         void onItemClick(Patient patient);
     }
 
+
+    //constructor
     public PatientAdapter(List<Patient> patients, OnItemClickListener listener) {
         this.patients = patients;
         this.listener = listener;
@@ -47,30 +53,32 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
         return patients != null ? patients.size() : 0;
     }
 
-    // ViewHolder class for individual patient items
+    // view holder for patients
     public static class PatientViewHolder extends RecyclerView.ViewHolder {
         private ImageView patientPhoto;
         private TextView patientName;
 
+        //view holder -> contains views
         public PatientViewHolder(@NonNull View itemView) {
             super(itemView);
             patientPhoto = itemView.findViewById(R.id.patientPhoto);
             patientName = itemView.findViewById(R.id.patientName);
         }
 
+        //binds data to the - loads photo with glide
         public void bind(Patient patient, OnItemClickListener listener) {
             patientName.setText(patient.getName());
             Glide.with(patientPhoto.getContext())
                     .load(patient.getPhotoUrl())
-                    .circleCrop()
+                    //.circleCrop()
                     .into(patientPhoto);
             itemView.setOnClickListener(v -> listener.onItemClick(patient));
         }
     }
 
-    // Method to update the list of patients and notify the adapter
+    // updates the list of patients
     public void setPatients(List<Patient> newPatients) {
-        this.patients = newPatients;       // Update the adapter's patient list
-        notifyDataSetChanged();            // Notify RecyclerView that data has changed
+        this.patients = newPatients;
+        notifyDataSetChanged();   //update the recycler view
     }
 }

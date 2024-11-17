@@ -18,9 +18,13 @@ public class Patient {
     private String photoUrl; // URL for storing the uploaded photo
 
     // Default constructor for Firebase
-    public Patient() {}
+    public Patient(String patientId, String name, String nickname, int age, String comment, Object o) {}
 
-    public Patient(@NonNull String id, String name, String nickname, int age, String comment, String photoUrl) {
+    //no arg constructor
+    public Patient() {
+    }
+
+    public Patient(@NonNull String id,  String nickname, int age, String comment, String photoUrl) {
         this.id = id;
         this.name = name;
         this.nickname = nickname;
@@ -33,6 +37,7 @@ public class Patient {
     public String getId() {
         return id;
     }
+
 
     public void setId(@NonNull String id) {
         this.id = id;
