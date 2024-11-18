@@ -158,16 +158,24 @@ public class CreatePatientActivity extends AppCompatActivity {
 
                 Patient patient = new Patient(patientId, name, nickname, age, comment, uri.toString());
                 patientViewModel.savePatient(patient);
+
             });
+
+
+
         } else {
 
 
 
             //without url for photo
+
             Patient patient = new Patient(patientId, name, nickname, age, comment, null);
             patientViewModel.savePatient(patient);
         }
     }
+
+
+    //take photo
     public void takepic(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAMERA_ACTION_CODE);

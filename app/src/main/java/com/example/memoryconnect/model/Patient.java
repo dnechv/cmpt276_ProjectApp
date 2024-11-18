@@ -1,7 +1,5 @@
 package com.example.memoryconnect.model;
 
-
-//imports for room
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -15,16 +13,17 @@ public class Patient {
     private String nickname;
     private int age;
     private String comment;
-    private String photoUrl; // URL for storing the uploaded photo
+    private String photoUrl;
 
-    // Default constructor for Firebase
-    public Patient(String patientId, String name, String nickname, int age, String comment, Object o) {}
 
-    //no arg constructor
+    //default consturctor firebase
     public Patient() {
+
     }
 
-    public Patient(@NonNull String id,  String nickname, int age, String comment, String photoUrl) {
+
+    //argument
+    public Patient(@NonNull String id, String name, String nickname, int age, String comment, String photoUrl) {
         this.id = id;
         this.name = name;
         this.nickname = nickname;
@@ -37,7 +36,6 @@ public class Patient {
     public String getId() {
         return id;
     }
-
 
     public void setId(@NonNull String id) {
         this.id = id;
@@ -83,7 +81,6 @@ public class Patient {
         this.photoUrl = photoUrl;
     }
 
-    // Optional: Override toString method for easy debugging
     @Override
     public String toString() {
         return "Patient{" +

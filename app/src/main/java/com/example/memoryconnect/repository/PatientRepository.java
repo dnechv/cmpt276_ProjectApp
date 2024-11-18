@@ -110,10 +110,33 @@ public class PatientRepository {
 
     //saves a new patient
     public void savePatient(Patient patient, OnCompleteListener<Void> onCompleteListener) {
-        // Save the patient using their unique ID as the key
-        databaseReference.child(patient.getId()).setValue(patient)
-                .addOnCompleteListener(onCompleteListener);
-    }
+
+
+        //id
+        String id = databaseReference.push().getKey();
+
+
+        if (id != null) {
+            patient.setId(id);
+            databaseReference.child(id).setValue(patient)
+
+
+
+                    .addOnCompleteListener(onCompleteListener)
+
+
+
+
+                    .addOnFailureListener(e -> Log.e("PatientRepository", "Failed to save patient", e));
+
+
+
+        } else {
+
+
+        }
+            Log.e("PatientRepository", "Failed to generate unique ID for patient");
+        }
 
     /**
      * Uploads a patient's photo to Firebase Storage and retrieves the download URL.
