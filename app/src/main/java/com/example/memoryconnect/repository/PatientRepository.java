@@ -139,6 +139,7 @@ public class PatientRepository {
 
     //Local database functions:
 
+
     //sync local database with the firebase database
     private void synchLocalDatabase() {
         // Get all patients from Firebase Realtime Database
@@ -160,6 +161,7 @@ public class PatientRepository {
 
                 //local database patient insersion
                 ExecutorService executorService = java.util.concurrent.Executors.newSingleThreadExecutor();
+
                 executorService.execute(() -> {
 
 
@@ -255,9 +257,6 @@ public class PatientRepository {
 
 
                         listener.onSyncComplete();
-
-
-
 
 
 
@@ -359,9 +358,12 @@ public class PatientRepository {
             databaseReference.child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    // Convert the DataSnapshot to a Patient object
+                   //get patient
                     Patient patient = snapshot.getValue(Patient.class);
-                    patientLiveData.setValue(patient); // Update LiveData with the retrieved patient
+
+
+                    //update live data
+                    patientLiveData.setValue(patient);
                 }
 
                 //if does not work
@@ -369,6 +371,8 @@ public class PatientRepository {
                 public void onCancelled(@NonNull DatabaseError error) {
                     Log.w("PatientRepository", "getPatientById:onCancelled", error.toException());
                 }
+
+
             });
 
             return patientLiveData;
