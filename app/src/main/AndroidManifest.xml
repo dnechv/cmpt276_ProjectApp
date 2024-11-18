@@ -37,6 +37,7 @@
         <!-- Profile Activity -->
         <activity android:name=".controllers.ProfileActivity" />
         <activity android:name=".controllers.LoginActivity" />
+        <activity android:name=".controllers.UploadActivity" />
 
 
     </application>
