@@ -150,4 +150,6 @@ public class PatientRepository {
         StorageReference photoRef = FirebaseStorage.getInstance().getReferenceFromUrl(photoUrl);
         photoRef.delete().addOnSuccessListener(onSuccessListener).addOnFailureListener(onFailureListener);
     }
+
+
 }
