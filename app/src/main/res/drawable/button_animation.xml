@@ -1,0 +1,18 @@
+<!-- contains xml for button animation when tapped -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#CCCCCC" />
+        </shape>
+    </item>
+    >
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</ripple>

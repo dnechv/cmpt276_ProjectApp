@@ -1,6 +1,15 @@
 package com.example.memoryconnect.model;
 
+
+//imports for room
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "patients")
 public class Patient {
+    @PrimaryKey
+    @NonNull
     private String id;
     private String name;
     private String nickname;
@@ -11,7 +20,7 @@ public class Patient {
     // Default constructor for Firebase
     public Patient() {}
 
-    public Patient(String id, String name, String nickname, int age, String comment, String photoUrl) {
+    public Patient(@NonNull String id, String name, String nickname, int age, String comment, String photoUrl) {
         this.id = id;
         this.name = name;
         this.nickname = nickname;
@@ -25,7 +34,7 @@ public class Patient {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(@NonNull String id) {
         this.id = id;
     }
 

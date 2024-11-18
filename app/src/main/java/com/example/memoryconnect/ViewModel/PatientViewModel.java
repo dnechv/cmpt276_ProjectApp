@@ -1,8 +1,10 @@
 package com.example.memoryconnect.ViewModel;
 
+import android.app.Application;
 import android.net.Uri;
 import android.util.Log;
 
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -13,15 +15,16 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class PatientViewModel extends ViewModel {
+public class PatientViewModel extends AndroidViewModel {
     private final PatientRepository patientRepository;
     private final LiveData<List<Patient>> allPatients;
     private final MutableLiveData<Boolean> isPatientSaved = new MutableLiveData<>();
     private final MutableLiveData<String> uploadError = new MutableLiveData<>();
 
     //constructor
-    public PatientViewModel() {
-        patientRepository = new PatientRepository();
+    public PatientViewModel(Application application) {
+        super(application);
+        patientRepository = new PatientRepository(application);
         // Get all patients from the repository
         allPatients = patientRepository.getAllPatients();
     }

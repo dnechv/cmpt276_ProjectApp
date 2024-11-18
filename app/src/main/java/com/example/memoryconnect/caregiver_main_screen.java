@@ -1,6 +1,9 @@
 package com.example.memoryconnect;
 
 
+//TODO - Delete Patients by the caregiver
+
+
 //permissions go here
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,25 +60,14 @@ public class caregiver_main_screen extends AppCompatActivity {
         // Initialize ViewModel
         PatientViewModel patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
-//        //placeholder button logic
-//
-//        //finding the textview by id
-//        TextView placeHolderButtonToGoToPatientScreen = findViewById(R.id.placeholderButton);
-//
-//        //setting on click listener for the placeholder button
-//        placeHolderButtonToGoToPatientScreen.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //creating the intent to start the new activity-> patient_screen_that_displays_tab_layout.class
-//                Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
-//               //starting the activity
-//                startActivity(intent);
-//            }
-//        });
+
 
         //////////////////////////DB
         // Find the Add New Patient button
         Button addNewPatientButton = findViewById(R.id.add_new_patient);
+
+        //adding plus sign to the button
+        addNewPatientButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.plus, 0, 0, 0);
 
         // Set an OnClickListener on the button
         addNewPatientButton.setOnClickListener(new View.OnClickListener() {
@@ -87,8 +79,16 @@ public class caregiver_main_screen extends AppCompatActivity {
             }
         });
 
-        // Initialize RecyclerView and Adapter
+        // Initialize RecyclerView and Adapter -displaying the patients
+
+        // Find the RecyclerView from the xml -> assign to recyclerView variable
         RecyclerView recyclerView = findViewById(R.id.patientRecyclerView);
+
+        //setting layout view for the recycler manager -> position linearly
+         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        //setting up the adapter
         PatientAdapter adapter = new PatientAdapter(new ArrayList<>(), patient -> {
             ////////////////////////////////////////////////
             // Handle click event - navigate to tab layout Activity and then to patient info fragment
