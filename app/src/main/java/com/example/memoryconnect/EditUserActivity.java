@@ -40,7 +40,7 @@ public class EditUserActivity extends AppCompatActivity {
         }
 
         // Fetch and observe patient data from ViewModel
-        patientViewModel.getPatientById(userId).observe(this, patient -> {
+        patientViewModel.getPatientById(userId,false).observe(this, patient -> {
             if (patient != null) {
                 // Populate UI with patient data
                 editName.setText(patient.getName());

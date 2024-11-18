@@ -111,7 +111,7 @@ public class patient_info_fragment extends Fragment {
         PatientViewModel patientViewModel = new ViewModelProvider(requireActivity()).get(PatientViewModel.class);
 
         // Observe patient data using patientId
-        patientViewModel.getPatientById(patientId).observe(getViewLifecycleOwner(), patient -> {
+        patientViewModel.getPatientById(patientId,false).observe(getViewLifecycleOwner(), patient -> {
             if (patient != null) {
                 // Update UI elements with patient details
                 nameTextView.setText(patient.getName());

@@ -16,10 +16,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.example.memoryconnect.R;
-import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.memoryconnect.model.Patient;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,9 +37,9 @@ public class CreatePatientActivity extends AppCompatActivity {
     private EditText commentEditText;
     private Button saveButton;
     private Button cancelButton;
+    private Button takePhotoButton;
 
-    private Button takephotoButton;
-
+    public static final int CAMERA_ACTION_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class CreatePatientActivity extends AppCompatActivity {
         commentEditText = findViewById(R.id.commentEditText);
         saveButton = findViewById(R.id.saveButton);
         cancelButton = findViewById(R.id.cancelButton);
-        takephotoButton = findViewById(R.id.takephotoButton);
+        takePhotoButton = findViewById(R.id.takephotoButton);
 
         // Initialize ViewModel
         patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
@@ -68,11 +68,11 @@ public class CreatePatientActivity extends AppCompatActivity {
         // Set up Cancel button
         cancelButton.setOnClickListener(v -> finish());
 
-        // Observe ViewModel LiveData for save success or error handling
-        observeViewModel();
+        // Set up Take Photo button
+        takePhotoButton.setOnClickListener(v -> takePicture());
 
-        // set up take picture button
-        takephotoButton.setOnClickListener(v -> takepic());
+        // Observe LiveData from ViewModel
+        observeViewModel();
     }
 
     // Launch photo picker
@@ -111,113 +111,90 @@ public class CreatePatientActivity extends AppCompatActivity {
         });
     }
 
-    //save patient method
+    // Save patient method
     private void savePatient() {
+        // Get input
+        String name = nameEditText.getText().toString().trim();
+        String nickname = nicknameEditText.getText().toString().trim();
+        String ageText = ageEditText.getText().toString().trim();
+        String comment = commentEditText.getText().toString().trim();
 
-
-        //get input
-        String name = nameEditText.getText().toString();
-        String nickname = nicknameEditText.getText().toString();
-        String ageText = ageEditText.getText().toString();
-        String comment = commentEditText.getText().toString();
-
-
-        //check for valid input
+        // Check for valid input
         if (name.isEmpty() || nickname.isEmpty() || ageText.isEmpty()) {
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
             return;
         }
 
         int age;
-
-
         try {
             age = Integer.parseInt(ageText);
         } catch (NumberFormatException e) {
-
-
-
             Toast.makeText(this, "Please enter a valid age.", Toast.LENGTH_SHORT).show();
-
-
-
             return;
         }
 
-        //generate a unique patient ID
+        // Generate a unique patient ID
         String patientId = UUID.randomUUID().toString();
 
-        //check if photo is selected
+        // Check if photo is selected
         if (selectedPhotoUri != null) {
-            patientViewModel.uploadPhoto(selectedPhotoUri, uri -> {
-
-
-                //create a patient object
-
-
-
-                Patient patient = new Patient(patientId, name, nickname, age, comment, uri.toString());
-                patientViewModel.savePatient(patient);
-
-            });
-
-
-
+            patientViewModel.uploadPhoto(selectedPhotoUri,
+                    uri -> {
+                        // On photo upload success, create a Patient object and save it
+                        Patient patient = new Patient(patientId, name, nickname, age, comment, uri.toString());
+                        patientViewModel.savePatient(patient);
+                    },
+                    error -> {
+                        // On photo upload failure
+                        Toast.makeText(this, "Photo upload failed.", Toast.LENGTH_SHORT).show();
+                        Log.e("CreatePatientActivity", "Photo upload error: " + error.getMessage());
+                    }
+            );
         } else {
-
-
-
-            //without url for photo
-
+            // No photo selected, create a Patient object without a photo URL
             Patient patient = new Patient(patientId, name, nickname, age, comment, null);
             patientViewModel.savePatient(patient);
         }
     }
 
-
-    //take photo
-    public void takepic(){
+    // Launch camera for taking a picture
+    private void takePicture() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAMERA_ACTION_CODE);
     }
-    public static final int CAMERA_ACTION_CODE = 1;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == CAMERA_ACTION_CODE && resultCode == RESULT_OK && data != null) {
+            Bundle extras = data.getExtras();
+            Bitmap finalPhoto = (Bitmap) extras.get("data");
+            photoImageView.setImageBitmap(finalPhoto);
 
-        if(requestCode == CAMERA_ACTION_CODE && resultCode == RESULT_OK && data != null){
-           Bundle bundle = data.getExtras();
-           Bitmap finalphoto = (Bitmap) bundle.get("data");
-           photoImageView.setImageBitmap(finalphoto);
-
-           Uri photoUri = saveBitmapToFile(finalphoto);
-           if (photoUri != null) {
-               selectedPhotoUri = photoUri;
-               photoImageView.setImageURI(photoUri);
-
-           }
+            // Save the captured photo to a file and set it as the selected photo URI
+            Uri photoUri = saveBitmapToFile(finalPhoto);
+            if (photoUri != null) {
+                selectedPhotoUri = photoUri;
+                photoImageView.setImageURI(photoUri);
+            }
         }
     }
 
+    // Save bitmap to a file and return its URI
     private Uri saveBitmapToFile(Bitmap bitmap) {
         try {
-            // Create a temporary file
             File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             File photoFile = new File(storageDir, "photo_" + UUID.randomUUID().toString() + ".jpg");
 
-            // Write the bitmap to the file
             FileOutputStream fos = new FileOutputStream(photoFile);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
             fos.close();
 
-            // Return URI from the file
             return Uri.fromFile(photoFile);
         } catch (IOException e) {
             Log.e("CreatePatientActivity", "Error saving photo", e);
             return null;
         }
     }
-
 }
