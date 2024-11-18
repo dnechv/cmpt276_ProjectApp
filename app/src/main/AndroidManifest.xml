@@ -36,8 +36,12 @@
         <!--declares activity: patient_screen_that_displays_tab_layout   -->
         <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
         <activity android:name=".controllers.CreatePatientActivity"/>
+
         <activity android:name=".EditUserActivity"/>
         <activity android:name=".DeleteUserActivity"/>
+        <activity android:name=".youtube_view" />
+
+
 
 
 

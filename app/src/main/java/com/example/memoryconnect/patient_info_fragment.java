@@ -1,5 +1,8 @@
 package com.example.memoryconnect;
 
+
+//view model - > manages UI and data
+
 //imports
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -65,10 +68,6 @@ public class patient_info_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-
-
 
         //delete button - TODO:delete functionality from the database
 
