@@ -5,8 +5,10 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 
 import com.example.memoryconnect.model.Patient;
+import com.example.memoryconnect.model.PhotoEntry;
 
 import java.util.List;
 
@@ -16,12 +18,41 @@ import java.util.List;
 @Dao
 public interface LocaldatabaseDao {
 
+        //insert photo
+        @Query("SELECT * FROM photos WHERE patientId = :patientId")
+        LiveData<List<PhotoEntry>> getAllPhotosForPatient(String patientId);
+
+        //insert patient
         @Insert(onConflict = OnConflictStrategy.REPLACE)
         void insert(List<Patient> patients);
 
+
+        //insert patient
         @Query("DELETE FROM patients")
         void deleteAll();
 
+
+        //get all patients
         @Query("SELECT * from patients ORDER BY name ASC")
         LiveData<List<Patient>> getAllPatients();
+
+
+        //get patient by id
+        @Query("SELECT * FROM patients WHERE id = :patientId LIMIT 1")
+        LiveData<Patient> getPatientById(String patientId);
+
+        //insert photo
+        @Insert
+        void insertPhotoEntry(PhotoEntry photoEntry);
+
+        //isPatientExists -> uses int so anything bigger than 1 is true
+        @Query("SELECT EXISTS(SELECT 1 FROM patients WHERE id = :patientId)")
+        int isPatientIdExists(String patientId);
+
+
+        //get all ids
+        @Query("SELECT id FROM patients")
+        List<String> getAllPatientIds();
+
+
 }

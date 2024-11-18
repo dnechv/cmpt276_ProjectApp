@@ -1,7 +1,27 @@
 package com.example.memoryconnect;
 
 
+//view model - > manages the UI and data
+
+
 //TODO - Delete Patients by the caregiver
+
+
+
+//Release #1
+
+//TODO - Database - Firebase - Done
+//TODO - Local - Database -> sync with Firebase -> Done
+//TODO - populate list as entries in data bases added -> Done
+//TODO - caregiver clicks on name -> it takes him to that patient screen -> Done
+//TODO - Database items showing and adding in recycler view -> Done
+
+
+//Release #2
+//TODO - permissions check
+//TODO - Showing databse entries from local databse when the device is online
+//TODO - remove / keep 3 dots on top
+//TODO - PIN Logic for entry
 
 
 //permissions go here
@@ -13,17 +33,9 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
 
-//main screen - start of the app
+//caregiver_main_screen - start of the app
 //displays the patients list -> pulls data from the database
 
-
-//the screen shows patients list to caregiver
-//TODO - populate list as entries in data bases added
-//TODO - caregiver clicks on name -> it takes him to that patient screen
-//TODO - PIN Logic remote
-//TODO - permissions check
-//TODO - Database
-//TODO - Database items showing and adding in recycler view
 
 
 //imports will go here
@@ -58,7 +70,7 @@ public class caregiver_main_screen extends AppCompatActivity {
         setContentView(R.layout.caregiver_main_screen);
 
         // Initialize ViewModel
-        PatientViewModel patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+       patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
 
 
@@ -93,23 +105,24 @@ public class caregiver_main_screen extends AppCompatActivity {
             ////////////////////////////////////////////////
             // Handle click event - navigate to tab layout Activity and then to patient info fragment
             Intent intent = new Intent(caregiver_main_screen.this, patient_screen_that_displays_tab_layout.class);
-            intent.putExtra("PATIENT_ID", patient.getId());
+
+            intent.putExtra("PATIENT_ID", patient.getId()); // passing the patient id to the next activity -> displays patients
+
             startActivity(intent);
         });
 
         recyclerView.setAdapter(adapter);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Observe patient data from ViewModel and update RecyclerView
+        // observes data and updates the UI
         patientViewModel.getAllPatients().observe(this, patients -> {
             if (patients != null) {
-                adapter.setPatients(patients); // This method should call notifyDataSetChanged()
+                adapter.setPatients(patients);
             } else {
                 Log.d("MainActivity", "No patients found.");
             }
         });
-
-
 
 
     }
@@ -135,6 +148,8 @@ public class caregiver_main_screen extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 ///////////////////////////////////////DATABASE////////////
