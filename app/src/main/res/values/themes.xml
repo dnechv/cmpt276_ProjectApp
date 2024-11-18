@@ -3,7 +3,7 @@
 
     <style name="Theme.MemoryConnect" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color -->
-        <item name="colorPrimary">#384ec5</item> <!-- Light blue -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item> <!-- Base app color -->
         <item name="colorPrimaryVariant">#5fc7fa</item> <!-- Light blue -->
         <item name="colorOnPrimary">#FFFFFF</item> <!-- White text on primary -->
 
@@ -16,8 +16,8 @@
     <style name="Base.Theme.MemoryConnect" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimaryVariant">@color/light_blue</item>
-        <item name="colorSecondary">@color/light_blue</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorPrimaryDark</item>
 
     </style>
 
