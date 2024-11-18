@@ -24,11 +24,11 @@
 
         <!--declares activity: caregiver_main_screen   -->
         <activity
-            android:name=".caregiver_main_screen"
-            android:exported="true">
+            android:name=".splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -37,6 +37,7 @@
         <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
         <activity android:name=".controllers.CreatePatientActivity"/>
         <activity android:name=".youtube_view" />
+        <activity android:name=".caregiver_main_screen" />
 
 
 
