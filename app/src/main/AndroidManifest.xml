@@ -2,14 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Declarations of what the app is going to do -->
 
-    <!--Declarations of what is app going to do   -->
-
-
-    <!-- TODO: Add Permissions  -->
+    <!-- TODO: Add Permissions -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
 
     <application
         android:allowBackup="true"
@@ -22,25 +19,30 @@
         android:theme="@style/Theme.MemoryConnect"
         tools:targetApi="31">
 
-        <!--declares activity: caregiver_main_screen   -->
+        <!-- Declares activity: caregiver_main_screen -->
         <activity
             android:name=".caregiver_main_screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--declares activity: patient_screen_that_displays_tab_layout   -->
+        <!-- Declares activity: patient_screen_that_displays_tab_layout -->
         <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
-        <activity android:name=".controllers.CreatePatientActivity"/>
+
+        <!-- Declares activity: CreatePatientActivity -->
+        <activity android:name=".controllers.CreatePatientActivity" />
+
+        <!-- Declares activity: youtube_view -->
         <activity android:name=".youtube_view" />
 
+        <!-- New activity: EditUserActivity -->
+        <activity android:name=".EditUserActivity" />
 
-
-
+        <!-- New activity: DeleteUserActivity -->
+        <activity android:name=".DeleteUserActivity" />
 
     </application>
 
