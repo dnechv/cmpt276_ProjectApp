@@ -1,7 +1,17 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
 }
+
+val localProperties = Properties().apply {
+    load(FileInputStream(rootProject.file("local.properties")))
+}
+
+
 
 android {
     namespace = "com.example.memoryconnect"
@@ -14,7 +24,17 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        //youtbe api key loading -> key can be accessed anwywhere in the app
+
+        // Load API key from local.properties and add it as a BuildConfig field
+        buildConfigField(
+            "String",
+            "YOUTUBE_API_KEY",
+            "\"${localProperties.getProperty("YOUTUBE_API_KEY")}\""
+        )
     }
 
     buildTypes {
@@ -26,6 +46,14 @@ android {
             )
         }
     }
+
+
+    
+    buildFeatures {
+        buildConfig = true
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -33,7 +61,11 @@ android {
 }
 
 dependencies {
+
+
     implementation("com.github.bumptech.glide:glide:4.12.0")
+
+
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
     implementation(libs.appcompat)
@@ -49,4 +81,19 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-storage:20.2.1")
+
+
+    implementation ("com.google.android.material:material:1.9.0")
+
+
+
+
+
+    //room database
+    implementation ("androidx.room:room-runtime:2.5.0")
+    annotationProcessor ("androidx.room:room-compiler:2.5.0")
+
+
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }

@@ -111,38 +111,59 @@ public class CreatePatientActivity extends AppCompatActivity {
         });
     }
 
-    // Save patient information
+    //save patient method
     private void savePatient() {
-        // Retrieve input values
+
+
+        //get input
         String name = nameEditText.getText().toString();
         String nickname = nicknameEditText.getText().toString();
         String ageText = ageEditText.getText().toString();
         String comment = commentEditText.getText().toString();
 
+
+        //check for valid input
         if (name.isEmpty() || nickname.isEmpty() || ageText.isEmpty()) {
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
             return;
         }
 
         int age;
+
+
         try {
             age = Integer.parseInt(ageText);
         } catch (NumberFormatException e) {
+
+
+
             Toast.makeText(this, "Please enter a valid age.", Toast.LENGTH_SHORT).show();
+
+
+
             return;
         }
 
-        String patientId = UUID.randomUUID().toString(); // Use UUID for unique ID
+        //generate a unique patient ID
+        String patientId = UUID.randomUUID().toString();
 
-        // Check if a photo was selected
+        //check if photo is selected
         if (selectedPhotoUri != null) {
             patientViewModel.uploadPhoto(selectedPhotoUri, uri -> {
-                // Create Patient object with photo URL and save it
+
+
+                //create a patient object
+
+
+
                 Patient patient = new Patient(patientId, name, nickname, age, comment, uri.toString());
                 patientViewModel.savePatient(patient);
             });
         } else {
-            // Create Patient object without a photo URL
+
+
+
+            //without url for photo
             Patient patient = new Patient(patientId, name, nickname, age, comment, null);
             patientViewModel.savePatient(patient);
         }
