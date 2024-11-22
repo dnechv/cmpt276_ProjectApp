@@ -41,7 +41,9 @@ import com.example.memoryconnect.local_database.LocaldatabaseDao;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 //import for background thread
@@ -371,23 +373,18 @@ public class PatientRepository {
 
 
     public LiveData<Patient> getPatientById(String patientId, boolean isOffline) {
-
         if (isOffline) {
             return localdatabaseDao.getPatientById(patientId);
         } else {
-
             MutableLiveData<Patient> patientLiveData = new MutableLiveData<>();
 
-            //get patient reference
             databaseReference.child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    // Convert the DataSnapshot to a Patient object
                     Patient patient = snapshot.getValue(Patient.class);
-                    patientLiveData.setValue(patient); // Update LiveData with the retrieved patient
+                    patientLiveData.setValue(patient);
                 }
 
-                //if does not work
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                     Log.w("PatientRepository", "getPatientById:onCancelled", error.toException());
@@ -396,8 +393,36 @@ public class PatientRepository {
 
             return patientLiveData;
         }
-
     }
+
+    // Update patient
+    public void updatePatient(Patient patient, OnCompleteListener<Void> onCompleteListener) {
+        // Create a map of fields to update
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("name", patient.getName());
+        updates.put("nickname", patient.getNickname());
+        updates.put("age", patient.getAge());
+        updates.put("comment", patient.getComment());
+
+        // Only include photoUrl if it's not null
+        if (patient.getPhotoUrl() != null) {
+            updates.put("photoUrl", patient.getPhotoUrl());
+        }
+
+        // Update the patient data in Firebase
+        databaseReference.child(patient.getId()).updateChildren(updates)
+                .addOnCompleteListener(onCompleteListener)
+                .addOnFailureListener(e -> Log.e("PatientRepository", "Failed to update patient", e));
+    }
+
+
+    // Delete patient
+    public void deletePatient(String patientId, OnCompleteListener<Void> onCompleteListener) {
+        databaseReference.child(patientId).removeValue()
+                .addOnCompleteListener(onCompleteListener)
+                .addOnFailureListener(e -> Log.e("PatientRepository", "Failed to delete patient", e));
+    }
+
 
 
 
