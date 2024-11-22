@@ -1,53 +1,18 @@
 package com.example.memoryconnect.controllers;
 
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.memoryconnect.local_database.LocalDatabase;
-import com.example.memoryconnect.local_database.LocaldatabaseDao;
-
-import java.util.concurrent.Executors;
-
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.memoryconnect.R;
-import com.example.memoryconnect.local_database.LocalDatabase;
-import com.example.memoryconnect.local_database.LocaldatabaseDao;
-import com.example.memoryconnect.local_database.PinEntry;
-
-import java.util.concurrent.Executors;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.memoryconnect.caregiver_main_screen;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.memoryconnect.R;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.memoryconnect.local_database.LocalDatabase;
 import com.example.memoryconnect.local_database.LocaldatabaseDao;
-import com.example.memoryconnect.local_database.PinEntry;
 
 import java.util.concurrent.Executors;
-
 
 public class EnterPinActivity extends AppCompatActivity {
 
@@ -72,7 +37,13 @@ public class EnterPinActivity extends AppCompatActivity {
                     if (enteredPin.equals(storedPin)) {
                         runOnUiThread(() -> {
                             Toast.makeText(EnterPinActivity.this, "PIN matched!", Toast.LENGTH_SHORT).show();
-                            // Proceed to the next activity
+
+                            // Create an intent to start the caregiver_main_screen
+                            Intent intent = new Intent(EnterPinActivity.this, caregiver_main_screen.class);
+                            startActivity(intent);
+
+                            // Optionally, finish this activity so the user cannot go back
+                            finish();
                         });
                     } else {
                         runOnUiThread(() -> {
@@ -86,3 +57,4 @@ public class EnterPinActivity extends AppCompatActivity {
         });
     }
 }
+

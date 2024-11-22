@@ -22,26 +22,22 @@
         android:theme="@style/Theme.MemoryConnect"
         tools:targetApi="31">
 
-        <!--declares activity: caregiver_main_screen   -->
+        <!-- Set AddPinActivity as the main launcher activity and exported as true -->
         <activity
-            android:name=".caregiver_main_screen"
+            android:name=".controllers.AddPinActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--declares activity: patient_screen_that_displays_tab_layout   -->
+        <!-- Other activities -->
+        <activity android:name=".caregiver_main_screen" android:exported="true" />
         <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
-        <activity android:name=".controllers.CreatePatientActivity"/>
+        <activity android:name=".controllers.CreatePatientActivity" />
         <activity android:name=".youtube_view" />
-
-        <!--declares activity: add Pin   -->
-        <activity android:name=".controllers.AddPinActivity" />
         <activity android:name=".controllers.EnterPinActivity" />
-
 
     </application>
 
