@@ -5,6 +5,6 @@
 
     <string name="app_name">MemoryConnect</string>
     <string name="action_bar_icon">MemoryConnect</string>
-    <string name="settings">Settings</string>
+    <string name="addPin">Add Pin</string>
 
 </resources>

@@ -38,8 +38,9 @@
         <activity android:name=".controllers.CreatePatientActivity"/>
         <activity android:name=".youtube_view" />
 
-
-
+        <!--declares activity: add Pin   -->
+        <activity android:name=".controllers.AddPinActivity" />
+        <activity android:name=".controllers.EnterPinActivity" />
 
 
     </application>

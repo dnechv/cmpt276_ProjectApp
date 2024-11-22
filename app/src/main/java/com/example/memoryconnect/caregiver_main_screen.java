@@ -50,6 +50,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.memoryconnect.adaptor.PatientAdapter;
 import com.example.memoryconnect.controllers.CreatePatientActivity;
 import com.example.memoryconnect.controllers.patient_screen_that_displays_tab_layout;
+import com.example.memoryconnect.controllers.AddPinActivity;
 
 
 import java.util.ArrayList;
@@ -131,6 +132,7 @@ public class caregiver_main_screen extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        Log.d("menu action bar", "menu action bar");
         return true;
     }
 
@@ -139,14 +141,16 @@ public class caregiver_main_screen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //click on settings
-        if (id == R.id.action_settings) {
-            //TODO: if needed - possibly patient managment for the caregiver
+        // Debug logging
+        Log.d("MenuClick", "Clicked item ID: " + id);
+
+            Log.d("MenuClick", "Navigating to AddPinActivity");
+            Intent intent = new Intent(this, AddPinActivity.class);
+            startActivity(intent);
             return true;
-        }
 
 
-        return super.onOptionsItemSelected(item);
+
     }
 
 
