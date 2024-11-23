@@ -29,6 +29,6 @@ public class SplashActivity extends AppCompatActivity {
             Intent intent = new Intent(SplashActivity.this, caregiver_main_screen.class);
             startActivity(intent);
             finish();
-        }, 2000); // Delay for 3 seconds
+        }, 2000); // delay for 3 seconds
     }
 }
