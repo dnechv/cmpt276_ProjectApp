@@ -36,7 +36,7 @@ The Family Member App allows family members to upload relevant files for patient
 
 The repository is organized as follows:
 
-\begin{verbatim}
+\Project
 /
 ├── app1/                 # All files related to the Caregiver App
 │   ├── app/              # Main source code for App1
@@ -49,7 +49,7 @@ The repository is organized as follows:
 ├── build.gradle.kts      # Root Gradle build script
 ├── settings.gradle.kts   # Gradle project settings
 └── README.md             # This file
-\end{verbatim}
+
 
 
 # Code Style Guide
