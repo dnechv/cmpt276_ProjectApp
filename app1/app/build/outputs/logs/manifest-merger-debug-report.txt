@@ -1,0 +1,874 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:2:1-49:12
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/46ef3fc7d3cdacabb92cd3e1771a6aba/transformed/glide-4.12.0/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.material:material:1.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d434c2a01f6136b8980e3a697d70c70f/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04a78ff85aee080b99935d104b5608a4/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/94e3faac52e3656768a7ed4e7f027471/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1c345956e7eec97637a8634254bd7f3b/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:17:1-75:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbb2928700f3d375e227106801ec0b52/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ded008d62055ba3b9ed647e8278caf35/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d133ddefffa8f7ff7927fdeddb3fd799/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:17:1-43:12
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:15:1-34:12
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbbbfd4be186eb530b0312e79b95d1f6/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/a151d7999d18a0cc140ba7c6629e6102/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d8cb0c8e26ae15c83be9aa01d0c3205d/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.play:integrity:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/88a3e650edfad53fa00cb5fc9ace6b5a/transformed/integrity-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/412e9952d3576db548d3d8b6244b1a04/transformed/play-services-fido-20.1.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e9ee6c9a861f5d6ce2e44e490b1d85b7/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:17:1-32:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9d64ee99af0564502ad75bd79e130570/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.core:core-ktx:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d50956fb08fc0c651060211dccc54ff3/transformed/core-ktx-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b115e3dc3beed92a58c13e28b74fb624/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bd7f30999dc2151882ca2f1ccb6fad56/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf37bf4d5486b547810a218d3085cc7b/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f6aca7eb616572aa91204e82e643033f/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0a5673a4c79d619e127ffe10d9978f9c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/21987f8eecec0a38f7a4afc1175c4575/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9352c4159544812906fc61bc20020771/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.browser:browser:1.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/feed6489d94b246ee24c92a035ca1fea/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ddfb649ff0cbe3d47fe27e7588805434/transformed/play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/721f69e05391b66d495c3efedadb7d05/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/608931a1c2544666b7e07061e070c5ba/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf12073d9b0d2306b88985c88b0ed0eb/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/98cb5b37971a8c3695a0037e3b208ef3/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b72ae134323bd1d9499fa77de4fd832a/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f35c06ec924067ca46e85a2c3c3b3493/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f3691d4bdbf02694deab92711660b640/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ae274d60f32e180453be4780795d6774/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/25dda8707fdaf6b6dfee1c6430dfa503/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/c9705e83a07c29db199cee02571f65df/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/fb714767577cdb49b148fca450d01488/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba13d7dee4e0ec7fc72cdeb758f754e0/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/6669a3fd181165f20bae8251ef356648/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f23cd3061db882cc2ba79cdd18f88a29/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:15:1-19:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bb13f26436e4a50a23ca3f7e62ea3b05/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/562fed89c644a6ff03e26977fc2c177c/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3af7bcc5c6943a4ba858ef2d65f3831a/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.fragment:fragment:1.5.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e5a52ca519fe67ab480fb3ddd8e0f7e1/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.9.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/29c32281132c62b4cb3c31194bc1cd48/transformed/activity-1.9.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9951dd64ef07f03e36dec9051e15decb/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/afeb022cc91e921b19a2c8af269bf916/transformed/gifdecoder-4.12.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/66fb2014c0addeabbbd70c1a6971cf70/transformed/exifinterface-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3556ac49fff363ad318f11092c6db6a0/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e2c0682b384a1d2a2d7cd0bee342d590/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-components:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8d3481dc94d028b4c1d0f6125aa5d911/transformed/firebase-components-18.0.0/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ec23467958c9e9a22424789bbc9760b6/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ea17d370c4f43cd1f80a4dca8fa6b28/transformed/sqlite-framework-2.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f64a6dd26b66bf97286c3623e498f8d2/transformed/sqlite-2.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bc538a53f578db3238a6781c22d981d2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc78ab82c927a23be893de5f5612c981/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5f06144e4612e28ab29cf0d50b3bfc8d/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ed3e9e5499047b11fa9681b1a5d94f5b/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1b462f8025eeb45caf31d61ded308923/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1acbba89f9751349b9b5e2da054d0408/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0fd706755e561d5dd9d77c1d644ef191/transformed/googleid-1.1.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:2:1-21:12
+	package
+		INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:10:5-66
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:10:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:11:5-78
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:11:22-76
+application
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:14:5-47:19
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:14:5-47:19
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/46ef3fc7d3cdacabb92cd3e1771a6aba/transformed/glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/46ef3fc7d3cdacabb92cd3e1771a6aba/transformed/glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.material:material:1.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d434c2a01f6136b8980e3a697d70c70f/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d434c2a01f6136b8980e3a697d70c70f/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04a78ff85aee080b99935d104b5608a4/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04a78ff85aee080b99935d104b5608a4/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:26:5-37:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:26:5-37:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ded008d62055ba3b9ed647e8278caf35/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ded008d62055ba3b9ed647e8278caf35/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d133ddefffa8f7ff7927fdeddb3fd799/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d133ddefffa8f7ff7927fdeddb3fd799/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:21:5-32:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:21:5-32:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbbbfd4be186eb530b0312e79b95d1f6/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:21:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbbbfd4be186eb530b0312e79b95d1f6/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:21:5-20
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.play:integrity:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/88a3e650edfad53fa00cb5fc9ace6b5a/transformed/integrity-1.3.0/AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.play:integrity:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/88a3e650edfad53fa00cb5fc9ace6b5a/transformed/integrity-1.3.0/AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/412e9952d3576db548d3d8b6244b1a04/transformed/play-services-fido-20.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/412e9952d3576db548d3d8b6244b1a04/transformed/play-services-fido-20.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e9ee6c9a861f5d6ce2e44e490b1d85b7/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e9ee6c9a861f5d6ce2e44e490b1d85b7/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:29:5-30:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ddfb649ff0cbe3d47fe27e7588805434/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ddfb649ff0cbe3d47fe27e7588805434/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bb13f26436e4a50a23ca3f7e62ea3b05/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bb13f26436e4a50a23ca3f7e62ea3b05/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/562fed89c644a6ff03e26977fc2c177c/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/562fed89c644a6ff03e26977fc2c177c/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3af7bcc5c6943a4ba858ef2d65f3831a/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3af7bcc5c6943a4ba858ef2d65f3831a/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:5:5-7:19
+MERGED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:23:5-29:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/afeb022cc91e921b19a2c8af269bf916/transformed/gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/afeb022cc91e921b19a2c8af269bf916/transformed/gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bc538a53f578db3238a6781c22d981d2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bc538a53f578db3238a6781c22d981d2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:11:5-19:19
+	android:extractNativeLibs
+		INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:21:9-35
+	android:label
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:19:9-41
+	android:fullBackupContent
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:17:9-54
+	android:roundIcon
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:20:9-54
+	tools:targetApi
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:23:9-29
+	android:icon
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:18:9-43
+	android:allowBackup
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:15:9-35
+	android:theme
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:22:9-51
+	android:dataExtractionRules
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:16:9-65
+activity#com.example.memoryconnect.splash.SplashActivity
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:26:9-34:20
+	android:exported
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:28:13-36
+	android:theme
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:29:13-63
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:27:13-50
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:30:13-33:29
+action#android.intent.action.MAIN
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:31:17-69
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:32:27-74
+activity#com.example.memoryconnect.controllers.patient_screen_that_displays_tab_layout
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:37:9-89
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:37:19-86
+activity#com.example.memoryconnect.controllers.CreatePatientActivity
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:38:9-70
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:38:19-68
+activity#com.example.memoryconnect.youtube_view
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:39:9-50
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:39:19-47
+activity#com.example.memoryconnect.caregiver_main_screen
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:40:9-59
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:40:19-56
+activity#com.example.memoryconnect.EditPatientActivity
+ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:45:9-57
+	android:name
+		ADDED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml:45:19-54
+uses-sdk
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/46ef3fc7d3cdacabb92cd3e1771a6aba/transformed/glide-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/46ef3fc7d3cdacabb92cd3e1771a6aba/transformed/glide-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.material:material:1.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d434c2a01f6136b8980e3a697d70c70f/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d434c2a01f6136b8980e3a697d70c70f/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04a78ff85aee080b99935d104b5608a4/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04a78ff85aee080b99935d104b5608a4/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/94e3faac52e3656768a7ed4e7f027471/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/94e3faac52e3656768a7ed4e7f027471/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1c345956e7eec97637a8634254bd7f3b/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1c345956e7eec97637a8634254bd7f3b/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:21:5-23:151
+MERGED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:21:5-23:151
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbb2928700f3d375e227106801ec0b52/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbb2928700f3d375e227106801ec0b52/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ded008d62055ba3b9ed647e8278caf35/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ded008d62055ba3b9ed647e8278caf35/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d133ddefffa8f7ff7927fdeddb3fd799/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d133ddefffa8f7ff7927fdeddb3fd799/transformed/firebase-analytics-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbbbfd4be186eb530b0312e79b95d1f6/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbbbfd4be186eb530b0312e79b95d1f6/transformed/firebase-appcheck-interop-17.1.0/AndroidManifest.xml:18:5-44
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/a151d7999d18a0cc140ba7c6629e6102/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/a151d7999d18a0cc140ba7c6629e6102/transformed/credentials-1.2.0-rc01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d8cb0c8e26ae15c83be9aa01d0c3205d/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d8cb0c8e26ae15c83be9aa01d0c3205d/transformed/play-services-auth-api-phone-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:integrity:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/88a3e650edfad53fa00cb5fc9ace6b5a/transformed/integrity-1.3.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.play:integrity:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/88a3e650edfad53fa00cb5fc9ace6b5a/transformed/integrity-1.3.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/412e9952d3576db548d3d8b6244b1a04/transformed/play-services-fido-20.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/412e9952d3576db548d3d8b6244b1a04/transformed/play-services-fido-20.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e9ee6c9a861f5d6ce2e44e490b1d85b7/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e9ee6c9a861f5d6ce2e44e490b1d85b7/transformed/play-services-measurement-sdk-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9d64ee99af0564502ad75bd79e130570/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9d64ee99af0564502ad75bd79e130570/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d50956fb08fc0c651060211dccc54ff3/transformed/core-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d50956fb08fc0c651060211dccc54ff3/transformed/core-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b115e3dc3beed92a58c13e28b74fb624/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b115e3dc3beed92a58c13e28b74fb624/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bd7f30999dc2151882ca2f1ccb6fad56/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bd7f30999dc2151882ca2f1ccb6fad56/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf37bf4d5486b547810a218d3085cc7b/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf37bf4d5486b547810a218d3085cc7b/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f6aca7eb616572aa91204e82e643033f/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f6aca7eb616572aa91204e82e643033f/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0a5673a4c79d619e127ffe10d9978f9c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0a5673a4c79d619e127ffe10d9978f9c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/21987f8eecec0a38f7a4afc1175c4575/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/21987f8eecec0a38f7a4afc1175c4575/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9352c4159544812906fc61bc20020771/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9352c4159544812906fc61bc20020771/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/feed6489d94b246ee24c92a035ca1fea/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/feed6489d94b246ee24c92a035ca1fea/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ddfb649ff0cbe3d47fe27e7588805434/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ddfb649ff0cbe3d47fe27e7588805434/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/721f69e05391b66d495c3efedadb7d05/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/721f69e05391b66d495c3efedadb7d05/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/608931a1c2544666b7e07061e070c5ba/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/608931a1c2544666b7e07061e070c5ba/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf12073d9b0d2306b88985c88b0ed0eb/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf12073d9b0d2306b88985c88b0ed0eb/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/98cb5b37971a8c3695a0037e3b208ef3/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/98cb5b37971a8c3695a0037e3b208ef3/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b72ae134323bd1d9499fa77de4fd832a/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b72ae134323bd1d9499fa77de4fd832a/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f35c06ec924067ca46e85a2c3c3b3493/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f35c06ec924067ca46e85a2c3c3b3493/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f3691d4bdbf02694deab92711660b640/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f3691d4bdbf02694deab92711660b640/transformed/play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ae274d60f32e180453be4780795d6774/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ae274d60f32e180453be4780795d6774/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/25dda8707fdaf6b6dfee1c6430dfa503/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/25dda8707fdaf6b6dfee1c6430dfa503/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/c9705e83a07c29db199cee02571f65df/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/c9705e83a07c29db199cee02571f65df/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/fb714767577cdb49b148fca450d01488/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/fb714767577cdb49b148fca450d01488/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba13d7dee4e0ec7fc72cdeb758f754e0/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba13d7dee4e0ec7fc72cdeb758f754e0/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/6669a3fd181165f20bae8251ef356648/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/6669a3fd181165f20bae8251ef356648/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f23cd3061db882cc2ba79cdd18f88a29/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f23cd3061db882cc2ba79cdd18f88a29/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bb13f26436e4a50a23ca3f7e62ea3b05/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bb13f26436e4a50a23ca3f7e62ea3b05/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/562fed89c644a6ff03e26977fc2c177c/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/562fed89c644a6ff03e26977fc2c177c/transformed/play-services-measurement-base-22.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3af7bcc5c6943a4ba858ef2d65f3831a/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3af7bcc5c6943a4ba858ef2d65f3831a/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:3:5-44
+MERGED from [androidx.fragment:fragment:1.5.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e5a52ca519fe67ab480fb3ddd8e0f7e1/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e5a52ca519fe67ab480fb3ddd8e0f7e1/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.9.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/29c32281132c62b4cb3c31194bc1cd48/transformed/activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/29c32281132c62b4cb3c31194bc1cd48/transformed/activity-1.9.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9951dd64ef07f03e36dec9051e15decb/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9951dd64ef07f03e36dec9051e15decb/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/afeb022cc91e921b19a2c8af269bf916/transformed/gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/afeb022cc91e921b19a2c8af269bf916/transformed/gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/66fb2014c0addeabbbd70c1a6971cf70/transformed/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/66fb2014c0addeabbbd70c1a6971cf70/transformed/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3556ac49fff363ad318f11092c6db6a0/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3556ac49fff363ad318f11092c6db6a0/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e2c0682b384a1d2a2d7cd0bee342d590/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e2c0682b384a1d2a2d7cd0bee342d590/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-components:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8d3481dc94d028b4c1d0f6125aa5d911/transformed/firebase-components-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8d3481dc94d028b4c1d0f6125aa5d911/transformed/firebase-components-18.0.0/AndroidManifest.xml:18:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ec23467958c9e9a22424789bbc9760b6/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ec23467958c9e9a22424789bbc9760b6/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ea17d370c4f43cd1f80a4dca8fa6b28/transformed/sqlite-framework-2.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ea17d370c4f43cd1f80a4dca8fa6b28/transformed/sqlite-framework-2.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f64a6dd26b66bf97286c3623e498f8d2/transformed/sqlite-2.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f64a6dd26b66bf97286c3623e498f8d2/transformed/sqlite-2.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bc538a53f578db3238a6781c22d981d2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bc538a53f578db3238a6781c22d981d2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc78ab82c927a23be893de5f5612c981/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc78ab82c927a23be893de5f5612c981/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5f06144e4612e28ab29cf0d50b3bfc8d/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5f06144e4612e28ab29cf0d50b3bfc8d/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ed3e9e5499047b11fa9681b1a5d94f5b/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ed3e9e5499047b11fa9681b1a5d94f5b/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1b462f8025eeb45caf31d61ded308923/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1b462f8025eeb45caf31d61ded308923/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1acbba89f9751349b9b5e2da054d0408/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1acbba89f9751349b9b5e2da054d0408/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0fd706755e561d5dd9d77c1d644ef191/transformed/googleid-1.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0fd706755e561d5dd9d77c1d644ef191/transformed/googleid-1.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:23:9-148
+	android:targetSdkVersion
+		INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/AndroidManifest.xml
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:27:9-36:19
+MERGED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:27:9-36:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:22:9-31:19
+MERGED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:22:9-31:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:30:9-38:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:68:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:67:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:23.1.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/4082b65c1eed180a006c7bcece11a195/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+meta-data#com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar
+ADDED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:29:13-31:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:31:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:30:17-120
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/785c0c85421a501b25dea28f8e512779/transformed/firebase-database-21.0.0/AndroidManifest.xml:33:17-109
+meta-data#com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar
+ADDED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:31:17-118
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:21.0.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/142f6bbba03ffde527cdb5e7032b947f/transformed/firebase-storage-21.0.1/AndroidManifest.xml:34:17-107
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ac81ccc2a91580e4c0d387294137181/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:27:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/117ea5a3920a8360f40885f2864b9850/transformed/play-services-measurement-sdk-api-22.1.2/AndroidManifest.xml:28:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:22-79
+property#android.adservices.AD_SERVICES_CONFIG
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:30:9-32:61
+	android:resource
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:32:13-58
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:31:13-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:37:13-39:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:39:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:38:17-139
+meta-data#com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar
+ADDED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:25:13-27:85
+	android:value
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:27:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:26:17-120
+meta-data#com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar
+ADDED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:28:13-30:85
+	android:value
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:30:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-appcheck:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/91f37bede3e47f28d2a7a66aec82a5ad/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:29:17-117
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+ADDED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:18.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d9d38b4e1a435198e560a012c05d9d0b/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/47c4b3eade1b83093465e35a4aa6756c/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+service#androidx.credentials.playservices.CredentialProviderMetadataHolder
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+	android:enabled
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+	android:exported
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:28:13-60
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+meta-data#androidx.credentials.CREDENTIAL_PROVIDER_KEY
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+	android:value
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+activity#androidx.credentials.playservices.HiddenActivity
+ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+	android:fitsSystemWindows
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+	android:enabled
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+	android:configChanges
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+	android:theme
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+	android:name
+		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
+	android:name
+		ADDED from [com.google.android.recaptcha:recaptcha:18.5.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/20efda32ba51c945536c1c47fea7269e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2b5d94020d0f5917c61e001db630d458/transformed/play-services-measurement-impl-22.1.2/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.1.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d09827000309748372b2bd532dbd9b38/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:40:13-87
+uses-library#android.ext.adservices
+ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+permission#com.example.memoryconnect.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.memoryconnect.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.5.0] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/AndroidManifest.xml:25:13-74
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+	android:exported
+		ADDED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+	android:theme
+		ADDED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+	android:name
+		ADDED from [com.google.android.play:core-common:2.0.3] /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93

@@ -20,4 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MemoryConnect"
-include(":app")
+include(":app1", ":app2")
+project(":app1").projectDir = file("app1/app")
+project(":app2").projectDir = file("app2/app")
+

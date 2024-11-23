@@ -1,0 +1,182 @@
+[
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_music_timeline_entry.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/music_timeline_entry.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/menu_menu.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/menu/menu.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_ic_default_photo.png.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/ic_default_photo.png"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_plus.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/plus.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_splash.png.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/splash.png"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/raw_splash.mp3.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/raw/splash.mp3"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_add_new_patient.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/add_new_patient.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_profile_default.png.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/profile_default.png"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_circle_shadow.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/circle_shadow.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_play_icon_timeline.png.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/play_icon_timeline.png"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_timeline_entry.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/timeline_entry.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/xml_backup_rules.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_item_patient.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/item_patient.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_activity_edit_patient.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/activity_edit_patient.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_delete.png.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/delete.png"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_rounded_button_background.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/rounded_button_background.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_button_animation.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/button_animation.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_youtube_player.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/youtube_player.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_patient_timeline_fragment.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/patient_timeline_fragment.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/menu_action_bar_menu.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/menu/action_bar_menu.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_caregiver_main_screen.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/caregiver_main_screen.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_patient_info_fragment.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/patient_info_fragment.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_activity_splash.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/drawable_edit.png.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/drawable/edit.png"
+    },
+    {
+        "merged": "com.example.memoryconnect.app1-debug-47:/layout_patient_screen_that_displays_tab_layout.xml.flat",
+        "source": "com.example.memoryconnect.app1-main-49:/layout/patient_screen_that_displays_tab_layout.xml"
+    }
+]

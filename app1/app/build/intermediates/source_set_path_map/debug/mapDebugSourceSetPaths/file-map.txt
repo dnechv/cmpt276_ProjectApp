@@ -1,0 +1,50 @@
+com.example.memoryconnect.app1-constraintlayout-2.1.4-0 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04a78ff85aee080b99935d104b5608a4/transformed/constraintlayout-2.1.4/res
+com.example.memoryconnect.app1-core-1.13.0-1 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/04b3b722f797eea5bdd48a87076e5088/transformed/core-1.13.0/res
+com.example.memoryconnect.app1-play-services-auth-20.7.0-2 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/0bfb6d9df018cfa652504e4197c63371/transformed/play-services-auth-20.7.0/res
+com.example.memoryconnect.app1-annotation-experimental-1.4.0-3 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1acbba89f9751349b9b5e2da054d0408/transformed/annotation-experimental-1.4.0/res
+com.example.memoryconnect.app1-appcompat-1.7.0-4 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/1c345956e7eec97637a8634254bd7f3b/transformed/appcompat-1.7.0/res
+com.example.memoryconnect.app1-lifecycle-livedata-core-2.6.2-5 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/25dda8707fdaf6b6dfee1c6430dfa503/transformed/lifecycle-livedata-core-2.6.2/res
+com.example.memoryconnect.app1-activity-1.9.3-6 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/29c32281132c62b4cb3c31194bc1cd48/transformed/activity-1.9.3/res
+com.example.memoryconnect.app1-emoji2-1.3.0-7 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/2d101609585539ef3dab8bec9dee43ba/transformed/emoji2-1.3.0/res
+com.example.memoryconnect.app1-play-services-base-18.5.0-8 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/3622acd522a806465f5de10c52cbf6ba/transformed/play-services-base-18.5.0/res
+com.example.memoryconnect.app1-startup-runtime-1.1.1-9 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/45e86f9aa0b56dac203d38b39814b199/transformed/startup-runtime-1.1.1/res
+com.example.memoryconnect.app1-glide-4.12.0-10 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/46ef3fc7d3cdacabb92cd3e1771a6aba/transformed/glide-4.12.0/res
+com.example.memoryconnect.app1-lifecycle-process-2.6.2-11 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5e44d68a945f4519f1cc534cbee756d4/transformed/lifecycle-process-2.6.2/res
+com.example.memoryconnect.app1-core-runtime-2.2.0-12 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/5f06144e4612e28ab29cf0d50b3bfc8d/transformed/core-runtime-2.2.0/res
+com.example.memoryconnect.app1-savedstate-1.2.1-13 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/6669a3fd181165f20bae8251ef356648/transformed/savedstate-1.2.1/res
+com.example.memoryconnect.app1-ads-adservices-1.0.0-beta05-14 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/69e6e91f5ced00e864cdec07f77d35fa/transformed/ads-adservices-1.0.0-beta05/res
+com.example.memoryconnect.app1-firebase-common-21.0.0-15 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8aae8699cb20daa5e0ed2863a929c2da/transformed/firebase-common-21.0.0/res
+com.example.memoryconnect.app1-sqlite-framework-2.3.0-16 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/8ea17d370c4f43cd1f80a4dca8fa6b28/transformed/sqlite-framework-2.3.0/res
+com.example.memoryconnect.app1-core-common-2.0.3-17 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9279899ca5d1e1afd3f6fda30359a909/transformed/core-common-2.0.3/res
+com.example.memoryconnect.app1-appcompat-resources-1.7.0-18 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/94e3faac52e3656768a7ed4e7f027471/transformed/appcompat-resources-1.7.0/res
+com.example.memoryconnect.app1-play-services-basement-18.4.0-19 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9731345086ee321a40c67ce7f1080805/transformed/play-services-basement-18.4.0/res
+com.example.memoryconnect.app1-recyclerview-1.1.0-20 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/98cb5b37971a8c3695a0037e3b208ef3/transformed/recyclerview-1.1.0/res
+com.example.memoryconnect.app1-cardview-1.0.0-21 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9951dd64ef07f03e36dec9051e15decb/transformed/cardview-1.0.0/res
+com.example.memoryconnect.app1-ads-adservices-java-1.0.0-beta05-22 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/9d64ee99af0564502ad75bd79e130570/transformed/ads-adservices-java-1.0.0-beta05/res
+com.example.memoryconnect.app1-credentials-1.2.0-rc01-23 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/a151d7999d18a0cc140ba7c6629e6102/transformed/credentials-1.2.0-rc01/res
+com.example.memoryconnect.app1-lifecycle-viewmodel-2.6.2-24 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ae274d60f32e180453be4780795d6774/transformed/lifecycle-viewmodel-2.6.2/res
+com.example.memoryconnect.app1-emoji2-views-helper-1.3.0-25 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b115e3dc3beed92a58c13e28b74fb624/transformed/emoji2-views-helper-1.3.0/res
+com.example.memoryconnect.app1-credentials-play-services-auth-1.2.0-rc01-26 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/b8376624af1bc5b23b4645c62555ecd9/transformed/credentials-play-services-auth-1.2.0-rc01/res
+com.example.memoryconnect.app1-lifecycle-viewmodel-savedstate-2.6.2-27 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba13d7dee4e0ec7fc72cdeb758f754e0/transformed/lifecycle-viewmodel-savedstate-2.6.2/res
+com.example.memoryconnect.app1-profileinstaller-1.3.1-28 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/ba7b8341d4c6f385316f2c0dd604e50e/transformed/profileinstaller-1.3.1/res
+com.example.memoryconnect.app1-viewpager2-1.0.0-29 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bbb2928700f3d375e227106801ec0b52/transformed/viewpager2-1.0.0/res
+com.example.memoryconnect.app1-drawerlayout-1.1.1-30 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/bd7f30999dc2151882ca2f1ccb6fad56/transformed/drawerlayout-1.1.1/res
+com.example.memoryconnect.app1-lifecycle-livedata-2.6.2-31 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/c9705e83a07c29db199cee02571f65df/transformed/lifecycle-livedata-2.6.2/res
+com.example.memoryconnect.app1-coordinatorlayout-1.1.0-32 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/cf37bf4d5486b547810a218d3085cc7b/transformed/coordinatorlayout-1.1.0/res
+com.example.memoryconnect.app1-material-1.12.0-33 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d434c2a01f6136b8980e3a697d70c70f/transformed/material-1.12.0/res
+com.example.memoryconnect.app1-core-ktx-1.13.0-34 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/d50956fb08fc0c651060211dccc54ff3/transformed/core-ktx-1.13.0/res
+com.example.memoryconnect.app1-play-services-measurement-api-22.1.2-35 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/dc435721eaa5a2ea66d969d1dcbec59a/transformed/play-services-measurement-api-22.1.2/res
+com.example.memoryconnect.app1-room-runtime-2.5.0-36 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/df2ca5e5d5cbf8b2f02603fab3926636/transformed/room-runtime-2.5.0/res
+com.example.memoryconnect.app1-fragment-1.5.4-37 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/e5a52ca519fe67ab480fb3ddd8e0f7e1/transformed/fragment-1.5.4/res
+com.example.memoryconnect.app1-sqlite-2.3.0-38 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f64a6dd26b66bf97286c3623e498f8d2/transformed/sqlite-2.3.0/res
+com.example.memoryconnect.app1-transition-1.5.0-39 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/f6aca7eb616572aa91204e82e643033f/transformed/transition-1.5.0/res
+com.example.memoryconnect.app1-lifecycle-runtime-2.6.2-40 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/fb714767577cdb49b148fca450d01488/transformed/lifecycle-runtime-2.6.2/res
+com.example.memoryconnect.app1-browser-1.4.0-41 /Applications/Android Studio.app/Contents/jbr/Contents/Home/caches/8.9/transforms/feed6489d94b246ee24c92a035ca1fea/transformed/browser-1.4.0/res
+com.example.memoryconnect.app1-pngs-42 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/build/generated/res/pngs/debug
+com.example.memoryconnect.app1-res-43 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/build/generated/res/processDebugGoogleServices
+com.example.memoryconnect.app1-resValues-44 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/build/generated/res/resValues/debug
+com.example.memoryconnect.app1-packageDebugResources-45 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.memoryconnect.app1-packageDebugResources-46 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.memoryconnect.app1-debug-47 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.memoryconnect.app1-debug-48 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/debug/res
+com.example.memoryconnect.app1-main-49 /Users/kristmas/AndroidStudioProjects/cmpt276_ProjectApp/app1/app/src/main/res
