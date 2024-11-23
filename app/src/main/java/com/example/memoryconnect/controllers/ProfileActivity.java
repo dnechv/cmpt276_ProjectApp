@@ -46,6 +46,8 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         // Initialize Firebase Auth and Database
+
+
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -82,6 +84,8 @@ public class ProfileActivity extends AppCompatActivity {
             addMemberButton.setOnClickListener(v -> showAddPatientDialog());
 
             // Logout button logic
+
+
             logoutButton.setOnClickListener(v -> {
                 mAuth.signOut();
                 Toast.makeText(ProfileActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
@@ -89,6 +93,7 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
             });
         } else {
+
             // Redirect to login if no user is logged in
             Toast.makeText(this, "No user logged in", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
@@ -140,13 +145,61 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void addPatient(String patientId) {
-        databaseReference.child("Users").child(userId).child("linkedPatients").child(patientId)
-                .setValue(true)
-                .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(ProfileActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(ProfileActivity.this, "Failed to add patient", Toast.LENGTH_SHORT).show();
-                });
+        databaseReference.child("patients").child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+
+
+                    String name = snapshot.child("name").getValue(String.class);
+                    if (name == null) name = "Unknown";
+
+                    Long age = snapshot.child("age").getValue(Long.class);
+
+
+                    String ageString = (age != null) ? String.valueOf(age) : "Unknown Age";
+
+                    String nickname = snapshot.child("nickname").getValue(String.class);
+                    if (nickname == null) nickname = "No Nickname";
+
+                    String comment = snapshot.child("comment").getValue(String.class);
+                    if (comment == null) comment = "No Comment";
+
+                    String photoUrl = snapshot.child("photoUrl").getValue(String.class);
+                    if (photoUrl == null) photoUrl = "No Photo URL";
+
+
+                    Log.d("ProfileActivity", "Patient Data: Name: " + name + ", Age: " + ageString +
+                            ", Nickname: " + nickname + ", Comment: " + comment +
+                            ", Photo URL: " + photoUrl);
+
+                    // Add the patient to the user's linkedPatients
+                    databaseReference.child("Users").child(userId).child("linkedPatients").child(patientId)
+                            .setValue(true)
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(ProfileActivity.this, "Patient added successfully.", Toast.LENGTH_SHORT).show();
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(ProfileActivity.this, "Failed to add patient.", Toast.LENGTH_SHORT).show();
+                                Log.e("FirebaseError", "Failed to write linkedPatients: " + e.getMessage());
+                            });
+                } else {
+
+
+                    Log.e("ProfileActivity", "Patient ID does not exist.");
+                    Toast.makeText(ProfileActivity.this, "Patient ID does not exist.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+
+                Log.e("ProfileActivity", "Error retrieving pat" +
+                        "Patient data: " + error.getMessage());
+                Toast.makeText(ProfileActivity.this, "Error checking patient ID.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

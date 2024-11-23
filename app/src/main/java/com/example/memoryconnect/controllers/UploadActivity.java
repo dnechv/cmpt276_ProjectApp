@@ -38,12 +38,15 @@ public class UploadActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+
+
                     String name = snapshot.child("name").getValue(String.class);
-                    String age = snapshot.child("age").getValue(String.class);
+                    Long age = snapshot.child("age").getValue(Long.class);
+                    String ageString = (age != null) ? String.valueOf(age) : "Unknown Age";
                     String comment = snapshot.child("comment").getValue(String.class);
 
-                    // Log or display data
-                    Log.d("FirebaseDebug", "Name: " + name + ", Age: " + age + ", Comment: " + comment);
+
+                    Log.d("FirebaseDebug", "Name: " + name + ", Age: " + ageString + ", Comment: " + comment);
                 } else {
                     Log.e("FirebaseDebug", "Patient not found");
                 }
