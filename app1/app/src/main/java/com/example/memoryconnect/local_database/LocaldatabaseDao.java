@@ -54,5 +54,21 @@ public interface LocaldatabaseDao {
         @Query("SELECT id FROM patients")
         List<String> getAllPatientIds();
 
+        // Insert a PIN
+        @Insert
+        void insertPin(PinEntry pinEntry);
+
+        // Get the stored PIN
+        @Query("SELECT pin FROM pin_table LIMIT 1")
+        String getPin();
+
+        // Check existing PIN
+        @Query("SELECT EXISTS(SELECT 1 FROM pin_table WHERE pin = :pin LIMIT 1)")
+        boolean isPinExists(String pin);
+
+        //get all PIN
+        @Query("SELECT pin FROM pin_table")
+        LiveData<List<String>> getAllPins();
+
 
 }

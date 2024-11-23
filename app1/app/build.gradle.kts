@@ -74,6 +74,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
     implementation(libs.firebase.auth)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -85,7 +86,8 @@ dependencies {
 
     implementation ("com.google.android.material:material:1.9.0")
 
-
+    ////new
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
 
 
 

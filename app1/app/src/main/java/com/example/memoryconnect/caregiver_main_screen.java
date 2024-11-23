@@ -32,6 +32,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.memoryconnect.ViewModel.PatientViewModel;
+import com.example.memoryconnect.controllers.AddPinActivity;
 
 //caregiver_main_screen - start of the app
 //displays the patients list -> pulls data from the database
@@ -70,7 +71,7 @@ public class caregiver_main_screen extends AppCompatActivity {
         setContentView(R.layout.caregiver_main_screen);
 
         // Initialize ViewModel
-       patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+        patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);
 
 
 
@@ -97,7 +98,7 @@ public class caregiver_main_screen extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.patientRecyclerView);
 
         //setting layout view for the recycler manager -> position linearly
-         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         //setting up the adapter
@@ -139,14 +140,14 @@ public class caregiver_main_screen extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //click on settings
-        if (id == R.id.action_settings) {
-            //TODO: if needed - possibly patient managment for the caregiver
+
+            // Start AddPinActivity
+            Intent intent = new Intent(this, AddPinActivity.class);
+            startActivity(intent);
             return true;
-        }
 
 
-        return super.onOptionsItemSelected(item);
+
     }
 
 

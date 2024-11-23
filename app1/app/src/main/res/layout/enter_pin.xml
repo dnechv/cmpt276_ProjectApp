@@ -1,0 +1,37 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!--Enter pin-->
+    <TextView
+        android:id="@+id/pin_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your 4-digit PIN"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- PIN Field -->
+    <EditText
+        android:id="@+id/pin_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:layout_marginBottom="20dp"
+        android:ems="6"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:hint="****"/>
+
+    <!-- confirm PIN -->
+    <Button
+        android:id="@+id/btn_confirm_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"/>
+</LinearLayout>
