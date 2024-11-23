@@ -20,12 +20,11 @@
 
         <!-- Set SplashActivity as the main launcher activity and exported as true -->
         <activity
-            android:name=".splash.SplashActivity"
+            android:name=".controllers.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
-            android:name=".controllers.SplashActivity"
-            android:exported="true">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,7 +37,7 @@
         <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
         <activity android:name=".controllers.CreatePatientActivity" />
         <activity android:name=".youtube_view" />
-        <activity android:name=".caregiver_main_screen" />
+        <!--  <activity android:name=".caregiver_main_screen" /> -->
 
         <activity android:name=".EditPatientActivity" />
         <activity android:name=".controllers.EnterPinActivity" />
