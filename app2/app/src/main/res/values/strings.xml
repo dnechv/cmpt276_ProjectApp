@@ -1,10 +1,53 @@
 <resources>
+    <!-- General Strings -->
+    <string name="app_name">Memory Connect</string>
 
-    <!-- This contains text files for the app -->
-    <!-- They are defined separately for usability -->
+    <!-- ProfileActivity Strings -->
+    <string name="welcome_text">Welcome!</string>
+    <string name="email_placeholder">Email: user@example.com</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="view_timeline">View Timeline</string>
+    <string name="logout">Logout</string>
 
-    <string name="app_name">MemoryConnect</string>
-    <string name="action_bar_icon">MemoryConnect</string>
+    <!-- Patient Management -->
+    <string name="enter_patient_id_title">Enter Patient ID</string>
+    <string name="fetch_button_text">Fetch</string>
+    <string name="patient_details_text">Patient Details Will Appear Here</string>
+    <string name="patient_id_hint">Enter Patient ID</string>
+    <string name="error_patient_id_empty">Patient ID cannot be empty</string>
+    <string name="error_patient_not_found">Patient ID not found.</string>
+    <string name="patient_manage_title">Manage Patient: %1$s</string>
+
+    <!-- Patient Options Dialog -->
+    <string name="option_add_to_timeline">Add to Timeline</string>
+    <string name="option_view_timeline">View Timeline</string>
+    <string name="option_delete_patient">Delete Patient</string>
+
+    <!-- Delete Confirmation Dialog -->
+    <string name="delete_patient_title">Delete Patient</string>
+    <string name="delete_patient_message">Are you sure you want to delete this patient?</string>
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
+
+    <!-- Timeline Entry Strings -->
+    <string name="event_image">Event Image</string>
+    <string name="youtube_thumbnail">YouTube Thumbnail</string>
+    <string name="event_title">Event Title</string>
+    <string name="event_date">Event Date</string>
     <string name="addPin">Add Pin</string>
 
+    <!-- Settings String -->
+    <string name="settings">Settings</string>
+
+        <!-- Add to Timeline Activity -->
+        <string name="title_label">Title</string>
+        <string name="title_hint">Enter the title of the event</string>
+        <string name="youtube_url_label">YouTube URL</string>
+        <string name="youtube_url_hint">Enter a YouTube video URL</string>
+        <string name="choose_photo_button">Choose Photo</string>
+        <string name="upload_button">Upload</string>
+
+
+    <!-- Add to Timeline Activity Label -->
+    <string name="add_to_timeline_label">Add to Timeline</string>
 </resources>

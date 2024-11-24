@@ -14,15 +14,17 @@ import java.util.List;
 
 public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientViewHolder> {
 
-    private List<String> patientList;
+    private List<String> patientNames;
+    private List<String> patientIds;
     private OnPatientClickListener onPatientClickListener;
 
     public interface OnPatientClickListener {
-        void onPatientClick(String patientId);
+        void onPatientClick(String patientName, String patientId);
     }
 
-    public PatientAdapter(List<String> patientList, OnPatientClickListener onPatientClickListener) {
-        this.patientList = patientList;
+    public PatientAdapter(List<String> patientNames, List<String> patientIds, OnPatientClickListener onPatientClickListener) {
+        this.patientNames = patientNames;
+        this.patientIds = patientIds;
         this.onPatientClickListener = onPatientClickListener;
     }
 
@@ -35,27 +37,27 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
 
     @Override
     public void onBindViewHolder(@NonNull PatientViewHolder holder, int position) {
-        String patientId = patientList.get(position);
-        holder.bind(patientId, onPatientClickListener);
+        String patientName = patientNames.get(position);
+        String patientId = patientIds.get(position);
+        holder.bind(patientName, patientId, onPatientClickListener);
     }
 
     @Override
     public int getItemCount() {
-        return patientList.size();
+        return patientNames.size();
     }
 
     static class PatientViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView patientIdText;
+        private TextView patientNameText;
 
         public PatientViewHolder(@NonNull View itemView) {
             super(itemView);
-            patientIdText = itemView.findViewById(R.id.patientIdTextView);
+            patientNameText = itemView.findViewById(R.id.patientIdTextView);
         }
 
-        public void bind(String patientId, OnPatientClickListener onPatientClickListener) {
-            patientIdText.setText(patientId);
-            itemView.setOnClickListener(v -> onPatientClickListener.onPatientClick(patientId));
+        public void bind(String patientName, String patientId, OnPatientClickListener onPatientClickListener) {
+            patientNameText.setText(patientName);
+            itemView.setOnClickListener(v -> onPatientClickListener.onPatientClick(patientName, patientId));
         }
     }
 }

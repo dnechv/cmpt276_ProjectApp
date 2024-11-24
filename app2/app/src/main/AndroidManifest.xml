@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--Declarations of what is app going to do   -->
-
-    <!-- TODO: Add Permissions  -->
+    <!-- Permissions for Internet and Network -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -19,9 +19,9 @@
         android:theme="@style/Theme.MemoryConnect"
         tools:targetApi="31">
 
+        <!-- Splash Activity -->
         <activity
             android:name=".splash.SplashActivity"
-
             android:theme="@style/SplashScreenTheme"
             android:exported="true">
             <intent-filter>
@@ -30,15 +30,36 @@
             </intent-filter>
         </activity>
 
-        <!-- Other activities -->
+        <!-- Login Activity -->
+        <activity android:name=".controllers.LoginActivity" />
+
         <!-- Sign Up Activity -->
         <activity android:name=".controllers.SignUpActivity" />
 
         <!-- Profile Activity -->
         <activity android:name=".controllers.ProfileActivity" />
-        <activity android:name=".controllers.LoginActivity" />
+
+        <!-- Upload Activity -->
         <activity android:name=".controllers.UploadActivity" />
 
+        <!-- Add to Timeline Activity -->
+        <activity
+            android:name=".controllers.AddToTimelineActivity"
+            android:label="@string/add_to_timeline_label"
+            android:theme="@style/Theme.MemoryConnect" />
+
+        <!-- Patient Timeline Fragment -->
+        <activity android:name=".controllers.patient_timeline_fragment" />
+
+
+
+        <!-- Other Activities -->
+
+
+        <!-- Firebase Configuration -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="default" />
 
     </application>
 
