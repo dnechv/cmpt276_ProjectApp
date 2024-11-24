@@ -30,12 +30,6 @@
         android:layout_marginTop="16dp"
         android:text="View Timeline" />
 
-    <!-- Delete Patient Button -->
-    <Button
-        android:id="@+id/deletePatientButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Delete Patient" />
+
 
 </LinearLayout>
