@@ -7,56 +7,27 @@ import android.util.Log;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+
 import com.example.memoryconnect.model.Patient;
 import com.example.memoryconnect.repository.PatientRepository;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.List;
 import java.util.function.Consumer;
 
-
-//imports for connectivity
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-
 public class PatientViewModel extends AndroidViewModel {
 
-    //variables for the repository, LiveData, and MutableLiveData
+    // Variables for the repository and LiveData
     private final PatientRepository patientRepository;
-    private final LiveData<List<Patient>> allPatients;
     private final MutableLiveData<Boolean> isPatientSaved = new MutableLiveData<>();
     private final MutableLiveData<String> uploadError = new MutableLiveData<>();
 
-    //constructor
+    // Constructor
     public PatientViewModel(Application application) {
         super(application);
 
-        //initialize the repository
+        // Initialize the repository
         patientRepository = new PatientRepository(application);
-
-        //fetch data dynamically based on connectivity
-        allPatients = fetchPatients(application);
-
-
-
     }
-
-
-    //method to fetch patients based on connectivity
-    private LiveData<List<Patient>> fetchPatients(Application application) {
-        if (isOffline(application)) {
-            Log.d("PatientViewModel", "Fetching patients from local database (Room)");
-            return patientRepository.getAllPatientsFromLocalDatabase();
-        } else {
-            Log.d("PatientViewModel", "Fetching patients from Firebase");
-            return patientRepository.getAllPatients();
-        }
-    }
-
-
-
-
 
     // LiveData to observe the save operation status
     public LiveData<Boolean> getIsPatientSaved() {
@@ -91,53 +62,30 @@ public class PatientViewModel extends AndroidViewModel {
      */
     public void uploadPhoto(Uri photoUri, Consumer<Uri> onSuccess) {
         patientRepository.uploadPatientPhoto(photoUri, uri -> {
-            //success message if uploaded
+            // Success callback
             onSuccess.accept(uri);
         }, error -> {
-            //error message if not uploaded
+            // Error callback
             uploadError.setValue("Failed to upload photo: " + error.getMessage());
         });
     }
 
-
-
-    //get the list of all patients for observation in the UI
+    /**
+     * Get the list of all patients from Firebase.
+     *
+     * @return LiveData<List<Patient>> for observing in the UI.
+     */
     public LiveData<List<Patient>> getAllPatients() {
-        return allPatients;
+        return patientRepository.getAllPatients(); // Fetch directly from Firebase
     }
 
-
-
-    // get patient by id
+    /**
+     * Get a specific patient by ID from Firebase.
+     *
+     * @param patientId The ID of the patient to fetch.
+     * @return LiveData<Patient> of the requested patient.
+     */
     public LiveData<Patient> getPatientById(String patientId) {
-
-        //check if offline
-        boolean isOffline = isOffline(getApplication());
-
-        //return patient by id
-        return patientRepository.getPatientById(patientId, isOffline);
+        return patientRepository.getPatientById(patientId); // Fetch directly from Firebase
     }
-
-    //method to check network -> connectivity Manger
-    public boolean isOffline(Application application) {
-
-        //connectivity manager
-        ConnectivityManager cm = (ConnectivityManager) application.getSystemService(Application.CONNECTIVITY_SERVICE);
-
-        //get active network
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-
-        //return true if no network is connected
-        return activeNetwork == null || !activeNetwork.isConnected();
-    }
-
-    
-
-
-
-
-
-
-
-
 }

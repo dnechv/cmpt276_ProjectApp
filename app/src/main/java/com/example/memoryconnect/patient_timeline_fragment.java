@@ -1,9 +1,8 @@
 package com.example.memoryconnect;
 
-//view model -> manages the UI and data
+// View model -> manages the UI and data
 
-
-//imports
+// Imports
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,12 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.memoryconnect.adaptor.TimelineAdapter;
 import com.example.memoryconnect.local_database.PhotoEntry;
 
-
-
-//photo entry view model
+// Photo entry view model
 import com.example.memoryconnect.ViewModel.PhotoEntryViewModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,117 +34,89 @@ public class patient_timeline_fragment extends Fragment {
 
     private static final String ARG_PATIENT_ID = "patient_id";
     private String patientId;
-    private RecyclerView recyclerView; // recyclerView for timeline
-    private TimelineAdapter adapter; // adapter for the timeline events
-    private PhotoEntryViewModel photoEntryViewModel; // view model for photo entries
+    private RecyclerView recyclerView; // RecyclerView for timeline
+    private TimelineAdapter adapter; // Adapter for the timeline events
+    private PhotoEntryViewModel photoEntryViewModel; // ViewModel for photo entries
+    private DatabaseReference databaseReference; // Firebase reference
 
-
-
-
-    //creates a new instance of the fragment with the patient id as an argument
+    // Creates a new instance of the fragment with the patient id as an argument
     public static patient_timeline_fragment newInstance(String patientId) {
-
         patient_timeline_fragment fragment = new patient_timeline_fragment();
-
         Bundle args = new Bundle();
-
         args.putString(ARG_PATIENT_ID, patientId);
-
         fragment.setArguments(args);
-
         return fragment;
     }
 
-
-    //creates view
+    // Initializes the fragment
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             patientId = getArguments().getString(ARG_PATIENT_ID);
         }
+
+        // Initialize Firebase database reference
+        databaseReference = FirebaseDatabase.getInstance().getReference();
     }
 
-
-    //creates view
+    // Creates and returns the fragment's view
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.patient_timeline_fragment, container, false);
 
-        //initialize the layout
-
-        //find recycler view from the xml
+        // Initialize the RecyclerView
         recyclerView = view.findViewById(R.id.timelineRecyclerViewPatientTimeLineFragment);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext())); // Layout manager for the RecyclerView
 
-
-
-        //set layout manager
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext())); //layout manager for the recycler view
-
-        //initialize adapter with an empty list
+        // Initialize adapter with an empty list
         adapter = new TimelineAdapter(new ArrayList<>(), event -> {
-
-
             // TODO: Navigate to event details if we decide to work on it
+        });
+        recyclerView.setAdapter(adapter);
 
-
-
-        }); recyclerView.setAdapter(adapter);
-
-        //initialize the view model
+        // Initialize the ViewModel
         photoEntryViewModel = new ViewModelProvider(this).get(PhotoEntryViewModel.class);
 
-        //fetch the data for the specific patient
-        photoEntryViewModel.initializePhotos(patientId);
-
-        //observe data + update recycler view when it changes
-        photoEntryViewModel.getAllPhotos().observe(getViewLifecycleOwner(), photoEntries -> {
-            List<PhotoEntry> events = new ArrayList<>();
-            for (com.example.memoryconnect.model.PhotoEntry photoEntry : photoEntries) {
-                events.add(new PhotoEntry(
-                        photoEntry.getId(),
-                        photoEntry.getTitle(),
-                        "https://youtu.be/dQw4w9WgXcQ", "patientId3", System.currentTimeMillis()));
-            }
-
-            //update the adapter with the new data
-            adapter.setEvents(events);
-        });
+        // Fetch the data for the specific patient
+        fetchTimelineEntriesFromFirebase(patientId);
 
         return view;
-
     }
 
-    //upload photo to database - testing
-    private void uploadPhotoToDatabase() {
+    // Fetches timeline entries for the patient from Firebase and updates the adapter
+    private void fetchTimelineEntriesFromFirebase(String patientId) {
+        DatabaseReference timelineRef = databaseReference
+                .child("patients")
+                .child(patientId)
+                .child("timelineEntries");
 
+        // Fetch data using a Firebase ValueEventListener
+        timelineRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<PhotoEntry> events = new ArrayList<>();
+                for (DataSnapshot entrySnapshot : snapshot.getChildren()) {
+                    // Parse each timeline entry from Firebase
+                    com.example.memoryconnect.model.PhotoEntry entry = entrySnapshot.getValue(com.example.memoryconnect.model.PhotoEntry.class);
+                    if (entry != null) {
+                        events.add(new PhotoEntry(
+                                entry.getId(),
+                                entry.getTitle(),
+                                entry.getPhotoUrl(),
+                                entry.getPatientId(),
+                                entry.getTimestamp()
+                        ));
+                    }
+                }
+                // Update the adapter with the fetched data
+                adapter.setEvents(events);
+            }
 
-        //get firebase reference
-        DatabaseReference photosRef = FirebaseDatabase.getInstance().getReference("photos");
-
-        //template date
-        String photoId = "photoId1";
-        String patientId = "4c308aa2-c767-4181-af92-a0d5a3e6dd17";
-        String photoUrl = "https://firebasestorage.googleapis.com/v0/b/memoryconnect-fa6e5.appspot.com/o/patientTimelinePhotos%2Ftest.jpg?alt=media";  // Public URL of the image
-        long timeWhenPhotoAdded = System.currentTimeMillis();
-
-
-        //photo entry - firebase
-        com.example.memoryconnect.model.PhotoEntry photoEntry = new com.example.memoryconnect.model.PhotoEntry(photoId, patientId, photoUrl, timeWhenPhotoAdded);
-
-        //adding to database
-        photosRef.child(photoId).setValue(photoEntry)
-
-
-                .addOnSuccessListener(aVoid -> {
-
-                    Log.d("Firebase", "manual phone was added");
-                })
-                .addOnFailureListener(e -> {
-
-                    Log.e("Firebase", "manual error adding photo", e);
-
-                });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Error fetching timeline entries: " + error.getMessage());
+            }
+        });
     }
-
 }

@@ -1,14 +1,13 @@
 package com.example.memoryconnect.model;
 
-
 //imports for room
 import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity(tableName = "patients")
+
+import java.util.Map;
+
+
 public class Patient {
-    @PrimaryKey
     @NonNull
     private String id;
     private String name;
@@ -17,14 +16,15 @@ public class Patient {
     private String comment;
     private String photoUrl; // URL for storing the uploaded photo
 
-    // Default constructor for Firebase
-    public Patient(String patientId, String name, String nickname, int age, String comment, Object o) {}
+    // New field for timeline entries
+    private Map<String, PhotoEntry> timelineEntries;
 
-    //no arg constructor
+    // Default constructor for Firebase
     public Patient() {
     }
 
-    public Patient(@NonNull String id,  String nickname, int age, String comment, String photoUrl) {
+    // Constructor with all fields
+    public Patient(@NonNull String id, String name, String nickname, int age, String comment, String photoUrl) {
         this.id = id;
         this.name = name;
         this.nickname = nickname;
@@ -37,7 +37,6 @@ public class Patient {
     public String getId() {
         return id;
     }
-
 
     public void setId(@NonNull String id) {
         this.id = id;
@@ -83,7 +82,15 @@ public class Patient {
         this.photoUrl = photoUrl;
     }
 
-    // Optional: Override toString method for easy debugging
+    public Map<String, PhotoEntry> getTimelineEntries() {
+        return timelineEntries;
+    }
+
+    public void setTimelineEntries(Map<String, PhotoEntry> timelineEntries) {
+        this.timelineEntries = timelineEntries;
+    }
+
+    // toString
     @Override
     public String toString() {
         return "Patient{" +
@@ -93,6 +100,7 @@ public class Patient {
                 ", age=" + age +
                 ", comment='" + comment + '\'' +
                 ", photoUrl='" + photoUrl + '\'' +
+                ", timelineEntries=" + timelineEntries +
                 '}';
     }
 }

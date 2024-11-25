@@ -1,78 +1,54 @@
 package com.example.memoryconnect.model;
 
-
-//imports
 import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
-import androidx.room.Index;
 
-
-
-//defined data class for the photo entry
-//uses foreginKey to link to the patient
-
-
-//room entety for photo entry
-@Entity(tableName = "photos",
-        foreignKeys = @ForeignKey(entity = Patient.class,
-                parentColumns = "id",
-                childColumns = "patientId",
-                onDelete = ForeignKey.CASCADE), //deletes photos whe the patient is deleted
-        indices = {@Index("patientId")})
-
+// Defines a data class for timeline entries (photos or YouTube links)
 public class PhotoEntry {
-
-    @NonNull // each photo has no null id with unique identifier
-    @PrimaryKey // ensures every row has a unique identifier
+    @NonNull
     private String id;
     private String photoUrl;
     private String youtubeUrl;
-    private String patientId; // foreign key that links to the patient
-    private long timeWhenPhotoAdded;
+    private String patientId;
+    private long timestamp;
     private String title;
-    private String date;
 
-  // photos
-    public PhotoEntry(@NonNull String id, String title, String photoUrl, long timeWhenPhotoAdded) {
+    // Default no-argument constructor (required for Firebase)
+    public PhotoEntry() {}
+
+    // Constructor for photo entries
+    public PhotoEntry(@NonNull String id, String title, String photoUrl, long timestamp) {
         this.id = id;
         this.title = title;
         this.photoUrl = photoUrl;
-        this.patientId = patientId;
-        this.timeWhenPhotoAdded = timeWhenPhotoAdded;
+        this.timestamp = timestamp;
         this.youtubeUrl = null;
     }
 
-    // yotube
-    public PhotoEntry(@NonNull String id, String title, String youtubeUrl, String patientId, long timeWhenPhotoAdded, boolean isYouTube) {
+    // Constructor for YouTube entries
+    public PhotoEntry(@NonNull String id, String title, String youtubeUrl, String patientId, long timestamp) {
         this.id = id;
         this.title = title;
         this.youtubeUrl = youtubeUrl;
         this.patientId = patientId;
-        this.timeWhenPhotoAdded = timeWhenPhotoAdded;
+        this.timestamp = timestamp;
         this.photoUrl = null;
     }
 
-
-    //set patient id
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
+    // Getters and setters
+    public String getId() {
+        return id;
     }
 
-    //set time when photo added
-    public void setTimeWhenPhotoAdded(long timeWhenPhotoAdded) {
-        this.timeWhenPhotoAdded = timeWhenPhotoAdded;
+    public void setId(String id) {
+        this.id = id;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
 
-    //set photo url
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
-    }
-
-    //no arg constructor
-    public PhotoEntry() {
     }
 
     public String getYoutubeUrl() {
@@ -83,54 +59,39 @@ public class PhotoEntry {
         this.youtubeUrl = youtubeUrl;
     }
 
-
-    public String getId() {
-        return id;
-    }
-
-    // set photo id
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public long getTimeWhenPhotoAdded(){
-        return timeWhenPhotoAdded;
-    }
-
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
     public String getPatientId() {
         return patientId;
     }
 
-    //getTitle
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public String getTitle() {
         return title;
     }
 
-    //setTitle
     public void setTitle(String title) {
         this.title = title;
     }
 
-    //getDate
-    public String getDate() {
-        return date;
-    }
-
-    //setDate
-    public void setDate(String date) {
-        this.date = date;
-    }
-
+    @Override
     public String toString() {
         return "PhotoEntry{" +
                 "id='" + id + '\'' +
                 ", photoUrl='" + photoUrl + '\'' +
+                ", youtubeUrl='" + youtubeUrl + '\'' +
                 ", patientId='" + patientId + '\'' +
-                ", timeWhenPhotoAdded=" + timeWhenPhotoAdded +
+                ", timestamp=" + timestamp +
+                ", title='" + title + '\'' +
                 '}';
     }
 }
