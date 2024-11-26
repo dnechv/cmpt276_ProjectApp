@@ -25,7 +25,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,14 +42,18 @@ public class ProfileActivity extends AppCompatActivity {
     private List<String> patientNames;
     private List<String> patientIds;
 
+    private static final String TAG = "ProfileActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        // Initialize Firebase
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
+        // Get current user information
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             userId = currentUser.getUid();
@@ -78,10 +81,11 @@ public class ProfileActivity extends AppCompatActivity {
             });
             recyclerView.setAdapter(adapter);
 
+            // Fetch patients and then remove if required
             fetchLinkedPatients();
 
+            // Set up buttons
             addMemberButton.setOnClickListener(v -> showAddPatientDialog());
-
             logoutButton.setOnClickListener(v -> {
                 mAuth.signOut();
                 Toast.makeText(ProfileActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
@@ -95,7 +99,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void fetchLinkedPatients() {
         databaseReference.child("Users").child(userId).child("linkedPatients")
-                .addValueEventListener(new ValueEventListener() {
+                .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         patientNames.clear();
@@ -109,6 +113,15 @@ public class ProfileActivity extends AppCompatActivity {
                             }
                         }
                         adapter.notifyDataSetChanged();
+
+                        // Check if there's a patient to remove from the intent after data is fetched
+                        String removedPatientId = getIntent().getStringExtra("REMOVED_PATIENT_ID");
+                        if (removedPatientId != null) {
+                            Log.d(TAG, "Received REMOVED_PATIENT_ID: " + removedPatientId);
+                            removePatientFromList(removedPatientId);
+                        }
+
+                        Log.d(TAG, "Linked patients updated: " + patientNames);
                     }
 
                     @Override
@@ -118,7 +131,7 @@ public class ProfileActivity extends AppCompatActivity {
                 });
     }
 
-    private void showAddPatientDialog() {
+     private void showAddPatientDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Add Patient");
 
@@ -142,7 +155,6 @@ public class ProfileActivity extends AppCompatActivity {
         builder.show();
     }
 
-
     private void addPatient(String patientId) {
         databaseReference.child("patients").child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -151,7 +163,16 @@ public class ProfileActivity extends AppCompatActivity {
                     String patientName = snapshot.child("name").getValue(String.class);
                     databaseReference.child("Users").child(userId).child("linkedPatients").child(patientId)
                             .setValue(patientName)
-                            .addOnSuccessListener(aVoid -> Toast.makeText(ProfileActivity.this, "Patient added successfully.", Toast.LENGTH_SHORT).show())
+                            .addOnSuccessListener(aVoid -> {
+                                // Add the new patient directly to the list
+                                if (patientName != null) {
+                                    patientNames.add(patientName);
+                                    patientIds.add(patientId);
+                                    adapter.notifyItemInserted(patientNames.size() - 1);
+                                }
+
+                                Toast.makeText(ProfileActivity.this, "Patient added successfully.", Toast.LENGTH_SHORT).show();
+                            })
                             .addOnFailureListener(e -> Toast.makeText(ProfileActivity.this, "Failed to add patient.", Toast.LENGTH_SHORT).show());
                 } else {
                     Toast.makeText(ProfileActivity.this, "Patient ID not found.", Toast.LENGTH_SHORT).show();
@@ -164,4 +185,24 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void removePatientFromList(String patientId) {
+        // Find the index of the patient to be removed
+        int index = patientIds.indexOf(patientId);
+
+        // If the patient exists in the list, remove them
+        if (index >= 0) {
+            // Remove patient from both lists
+            patientNames.remove(index);
+            patientIds.remove(index);
+
+            // Notify the adapter about the removed item
+            adapter.notifyItemRemoved(index);
+
+            Log.d(TAG, "Patient removed from list: " + patientId + " at index: " + index);
+        } else {
+            Log.d(TAG, "Patient ID not found in the list: " + patientId);
+        }
+    }
 }
+

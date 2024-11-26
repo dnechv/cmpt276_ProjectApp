@@ -41,6 +41,8 @@
 
         <!-- Upload Activity -->
         <activity android:name=".controllers.UploadActivity" />
+        <activity android:name=".controllers.PatientTimelineActivity" />
+
 
         <!-- Add to Timeline Activity -->
         <activity
