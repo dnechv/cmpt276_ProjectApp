@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Contains code for the menu button in the action bar - 3 dots  -->
+    <!-- Let's think on the functionality for this button. I will keep it as settings now  -->
+    <!-- Settings Button from the action bar  -->
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+
+
+</menu>
