@@ -84,39 +84,77 @@ public class patient_timeline_fragment extends Fragment {
         return view;
     }
 
-    // Fetches timeline entries for the patient from Firebase and updates the adapter
+    //fet data for timeline from fireabse and update the adapter
     private void fetchTimelineEntriesFromFirebase(String patientId) {
+
+
+
+        //create a reference to the timeline entries
         DatabaseReference timelineRef = databaseReference
+
+                //organize structure of the database for fetching
+                //patients have timeline entries node with data
                 .child("patients")
                 .child(patientId)
                 .child("timelineEntries");
 
-        // Fetch data using a Firebase ValueEventListener
+
+        //fetch data from firebase
         timelineRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+
+                //create a list of photo entries
                 List<PhotoEntry> events = new ArrayList<>();
+
+
+                //loop through the data
                 for (DataSnapshot entrySnapshot : snapshot.getChildren()) {
-                    // Parse each timeline entry from Firebase
-                    com.example.memoryconnect.model.PhotoEntry entry = entrySnapshot.getValue(com.example.memoryconnect.model.PhotoEntry.class);
-                    if (entry != null) {
+
+
+
+                    //get firebase data
+                    String id = entrySnapshot.child("id").getValue(String.class);
+                    String title = entrySnapshot.child("title").getValue(String.class);
+                    String photoUrl = entrySnapshot.child("photoUrl").getValue(String.class);
+                    String youtubeLink = entrySnapshot.child("youtubeLink").getValue(String.class);
+                    Long timestamp = entrySnapshot.child("timestamp").getValue(Long.class);
+
+                    //check for either link to photo or youtube
+                    if ((photoUrl != null && !photoUrl.isEmpty()) || (youtubeLink != null && !youtubeLink.isEmpty())) {
+
+                        //new photo entry object
                         events.add(new PhotoEntry(
-                                entry.getId(),
-                                entry.getTitle(),
-                                entry.getPhotoUrl(),
-                                entry.getPatientId(),
-                                entry.getTimestamp()
+                                id != null ? id : entrySnapshot.getKey(),
+                                title != null ? title : "Timeline Event",
+                                patientId,
+                                null,
+                                photoUrl,
+                                youtubeLink,
+                                timestamp != null ? timestamp : System.currentTimeMillis()
+
                         ));
+
+
+                    } else {
+
+
+
+
+                        Log.e("firebase", "error here: " + entrySnapshot.getKey());
                     }
                 }
-                // Update the adapter with the fetched data
+
+                //update adpater
                 adapter.setEvents(events);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("Firebase", "Error fetching timeline entries: " + error.getMessage());
+                Log.e("firebase", " error: " + error.getMessage());
             }
         });
     }
-}
+    }

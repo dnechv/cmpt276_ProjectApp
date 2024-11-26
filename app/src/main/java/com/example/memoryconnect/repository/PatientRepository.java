@@ -33,19 +33,21 @@ public class PatientRepository {
     private final StorageReference storageReference;  // Firebase storage reference
 
 
-
     public PatientRepository(Application application) {
         // Initialize Firebase references
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("patients");
         storageReference = FirebaseStorage.getInstance().getReference("patientPhotos");
 
+
+        //enable synching
+        databaseReference.keepSynced(true);
     }
 
     /**
      * Saves patient information to Firebase Realtime Database.
      *
-     * @param patient The Patient object to save.
+     * @param patient            The Patient object to save.
      * @param onCompleteListener Listener to handle the completion of the save operation.
      */
     public void savePatient(Patient patient, OnCompleteListener<Void> onCompleteListener) {
@@ -56,7 +58,7 @@ public class PatientRepository {
     /**
      * Uploads a patient's photo to Firebase Storage and retrieves the download URL.
      *
-     * @param photoUri The Uri of the photo to upload.
+     * @param photoUri          The Uri of the photo to upload.
      * @param onSuccessListener Listener to handle success and retrieve the photo URL.
      * @param onFailureListener Listener to handle any errors during the upload.
      */
@@ -67,7 +69,6 @@ public class PatientRepository {
                         photoRef.getDownloadUrl().addOnSuccessListener(onSuccessListener))
                 .addOnFailureListener(onFailureListener);
     }
-
 
 
     /**
@@ -101,7 +102,7 @@ public class PatientRepository {
     /**
      * Fetches all patients from Firebase and returns LiveData.
      *
-     * @return LiveData<List<Patient>> of patients.
+     * @return LiveData<List < Patient>> of patients.
      */
     public LiveData<List<Patient>> getAllPatients() {
         MutableLiveData<List<Patient>> patientsLiveData = new MutableLiveData<>();
@@ -159,7 +160,7 @@ public class PatientRepository {
      * Fetches timeline entries for a specific patient from Firebase and returns LiveData.
      *
      * @param patientId The ID of the patient.
-     * @return LiveData<List<PhotoEntry>> containing the patient's timeline entries.
+     * @return LiveData<List < PhotoEntry>> containing the patient's timeline entries.
      */
     public LiveData<List<PhotoEntry>> getTimelineEntries(String patientId) {
         MutableLiveData<List<PhotoEntry>> timelineEntriesLiveData = new MutableLiveData<>();
@@ -189,7 +190,6 @@ public class PatientRepository {
 
         return timelineEntriesLiveData;
     }
-
 
 
     // Interface for sync completion

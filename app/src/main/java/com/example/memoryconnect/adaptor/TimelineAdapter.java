@@ -29,7 +29,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
     private List<PhotoEntry> events;
     private OnItemClickListener listener;
 
-    // Variable for the media type
+    //media type - photo or music
     private static final int VIEW_TYPE_PHOTO = 0;
     private static final int VIEW_TYPE_MUSIC = 1;
 
@@ -37,16 +37,20 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
         void onItemClick(PhotoEntry event);
     }
 
-    // Constructor initializes the list and listener
+    //adapter
     public TimelineAdapter(List<PhotoEntry> events, OnItemClickListener listener) {
         this.events = events != null ? events : new ArrayList<>(); // Ensure events is never null
         this.listener = listener;
     }
 
-    // Determines the view type for the entry
+    //gets the view type
     @Override
     public int getItemViewType(int position) {
+
+        //gets the event at the position
         PhotoEntry event = events.get(position);
+
+        //returns the view type based on the event
         return (event.getYoutubeUrl() != null && !event.getYoutubeUrl().isEmpty())
                 ? VIEW_TYPE_MUSIC
                 : VIEW_TYPE_PHOTO;
@@ -54,6 +58,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
 
     @NonNull
     @Override
+
     // Creates view dynamically based on type
     public TimelineViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
@@ -69,15 +74,21 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
 
     // Updates the events dynamically with Firebase data
     public void setEvents(List<PhotoEntry> newEvents) {
+
+
         if (newEvents == null || newEvents.isEmpty()) {
+
+
             Log.d("TimelineAdapter", "No new events to display.");
+
+
             return;
         }
 
         // Log the number of events being updated
-        Log.d("TimelineAdapter", "Updating events with " + newEvents.size() + " new entries.");
+        Log.d("timeline adapter", "events " + newEvents.size() + " new entries.");
 
-        // Use DiffUtil to calculate differences and update efficiently
+        // Calculate the difference between the old and new events
         DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new DiffUtil.Callback() {
             @Override
             public int getOldListSize() {
@@ -106,7 +117,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
 
         this.events.clear();
         this.events.addAll(newEvents);
-        diffResult.dispatchUpdatesTo(this); // Efficiently update only changed items
+        diffResult.dispatchUpdatesTo(this);
     }
 
     // Binds the ViewHolder to the data
@@ -114,9 +125,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
     public void onBindViewHolder(@NonNull TimelineViewHolder holder, int position) {
         PhotoEntry event = events.get(position);
 
-        // Log if photo or YouTube URL is missing
+        // check for presence of both
         if ((event.getPhotoUrl() == null || event.getPhotoUrl().isEmpty()) &&
+
+
                 (event.getYoutubeUrl() == null || event.getYoutubeUrl().isEmpty())) {
+
+
+
             Log.e("TimelineAdapter", "Both Photo URL and YouTube URL are missing for event: " + event.getId());
             return;
         }
@@ -130,13 +146,22 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
         return events.size();
     }
 
-    // Extracts YouTube video ID from the URL
+    // get youtube id
     private static String extractVideoId(String youtubeUrl) {
+
         String videoId = null;
+
+
         Pattern pattern = Pattern.compile("(?<=v=|/)([A-Za-z0-9_-]{11})");
+
+
         Matcher matcher = pattern.matcher(youtubeUrl);
+
+
         if (matcher.find()) {
             videoId = matcher.group(1);
+
+
         }
         return videoId;
     }
@@ -154,49 +179,81 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
 
             // Initialize views based on the type
             if (viewType == VIEW_TYPE_MUSIC) {
+
+
                 musicCover = itemView.findViewById(R.id.timelineMusicCover);
                 musicTitle = itemView.findViewById(R.id.timelineMusicTitle);
                 playButton = itemView.findViewById(R.id.timelinePlayButton);
+
+
             } else {
+
+
                 photoCover = itemView.findViewById(R.id.timelineEventImage);
                 photoTitle = itemView.findViewById(R.id.timelineEventTitle);
+
+
             }
         }
 
         // Bind method handles both music and photo entries
         public void bind(PhotoEntry event, OnItemClickListener listener) {
             if (event.getYoutubeUrl() != null && !event.getYoutubeUrl().isEmpty()) {
+
+
                 // Handle YouTube music entry
                 musicTitle.setText(event.getTitle());
+
+
                 String videoId = extractVideoId(event.getYoutubeUrl());
+
+
                 if (videoId != null) {
+
+
                     String youtubeThumbnailUrl = "https://img.youtube.com/vi/" + videoId + "/0.jpg";
+
+                    //load cover
                     Glide.with(itemView.getContext())
-                            .load(youtubeThumbnailUrl) // Load thumbnail from YouTube
+                            .load(youtubeThumbnailUrl)
                             .into(musicCover);
                 }
 
                 playButton.setOnClickListener(v -> {
+
+
                     String youtubeUrl = event.getYoutubeUrl();
+
+
                     if (youtubeUrl != null && !youtubeUrl.isEmpty()) {
                         try {
+
+
                             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
                             intent.setPackage("com.google.android.youtube");
                             itemView.getContext().startActivity(intent);
+
+
                         } catch (Exception e) {
+
+
                             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
                             itemView.getContext().startActivity(intent);
                         }
                     } else {
+
+
                         Log.e("TimelineAdapter", "YouTube URL is null or empty");
+
+
                     }
                 });
 
             } else if (event.getPhotoUrl() != null && !event.getPhotoUrl().isEmpty()) {
-                // Regular photo entry
+                //if not use regular photo netry
                 photoTitle.setText(event.getTitle());
                 Glide.with(itemView.getContext())
-                        .load(event.getPhotoUrl()) // Load photo
+                        .load(event.getPhotoUrl())
                         .into(photoCover);
                 itemView.setOnClickListener(v -> listener.onItemClick(event));
             }

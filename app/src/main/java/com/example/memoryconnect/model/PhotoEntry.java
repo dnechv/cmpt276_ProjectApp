@@ -24,6 +24,16 @@ public class PhotoEntry {
         this.youtubeUrl = null;
     }
 
+    // Add this constructor to PhotoEntry
+    public PhotoEntry(String id, String title, String photoUrl, String patientId, long timeWhenPhotoAdded, String youtubeUrl) {
+        this.id = id;
+        this.title = title;
+        this.photoUrl = photoUrl;
+        this.patientId = patientId;
+        this.timestamp = timeWhenPhotoAdded;
+        this.youtubeUrl = youtubeUrl;
+    }
+
     // Constructor for YouTube entries
     public PhotoEntry(@NonNull String id, String title, String youtubeUrl, String patientId, long timestamp) {
         this.id = id;

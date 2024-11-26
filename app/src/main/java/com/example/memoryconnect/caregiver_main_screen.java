@@ -50,6 +50,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.memoryconnect.adaptor.PatientAdapter;
 import com.example.memoryconnect.controllers.CreatePatientActivity;
 import com.example.memoryconnect.controllers.patient_screen_that_displays_tab_layout;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.ArrayList;
@@ -68,6 +69,8 @@ public class caregiver_main_screen extends AppCompatActivity {
 
         //setting the content view from caregiver_main_screen.xml
         setContentView(R.layout.caregiver_main_screen);
+
+
 
         // Initialize ViewModel
        patientViewModel = new ViewModelProvider(this).get(PatientViewModel.class);

@@ -2,16 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Declarations of what the app is going to do -->
 
-    <!--Declarations of what is app going to do   -->
-
-
-    <!-- TODO: Add Permissions  -->
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-
     <application
+
+
+        android:name=".MemoryConnect"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,26 +22,20 @@
         android:theme="@style/Theme.MemoryConnect"
         tools:targetApi="31">
 
-        <!--declares activity: caregiver_main_screen   -->
-        <activity
-            android:name=".caregiver_main_screen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+    <!-- Declares the main activity: caregiver_main_screen -->
+    <activity
+        android:name=".caregiver_main_screen"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <!-- Declares other activities -->
+    <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
+    <activity android:name=".controllers.CreatePatientActivity" />
+    <activity android:name=".youtube_view" />
 
-        <!--declares activity: patient_screen_that_displays_tab_layout   -->
-        <activity android:name=".controllers.patient_screen_that_displays_tab_layout" />
-        <activity android:name=".controllers.CreatePatientActivity"/>
-        <activity android:name=".youtube_view" />
-
-
-
-
-
-    </application>
-
-</manifest>
+</application>
+    </manifest>

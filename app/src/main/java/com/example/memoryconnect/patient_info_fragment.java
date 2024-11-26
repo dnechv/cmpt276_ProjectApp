@@ -77,10 +77,17 @@ public class patient_info_fragment extends Fragment {
 
         // getting the icon from xml
         Drawable deleteIcon = getResources().getDrawable(R.drawable.delete, null);
+
+
         //adjusting size
         deleteIcon.setBounds(0, 0, 48, 48);
+
+
+
         //setting icon on the button
         deleteButton.setCompoundDrawables(deleteIcon, null, null, null);
+
+
         //adding padding to the icon
         deleteButton.setCompoundDrawablePadding(5);
 
@@ -95,14 +102,21 @@ public class patient_info_fragment extends Fragment {
 
         //adjusting the size
         editIcon.setBounds(0,0,48,48);
+
+
+
         //setting the icon on the button
+
+
         editButton.setCompoundDrawables(editIcon, null, null, null);
+
+
         //adding padding to the icon
         editButton.setCompoundDrawablePadding(5);
 
 
 
-        // Retrieve the patient ID passed to this fragment
+        //get patient id
         if (getArguments() != null) {
             patientId = getArguments().getString(ARG_PATIENT_ID);
         }
@@ -119,10 +133,16 @@ public class patient_info_fragment extends Fragment {
                 ageTextView.setText(String.valueOf(patient.getAge()));
                 commentTextView.setText(patient.getComment());
 
-                // Load image using Glide
+                //load image -> glide
                 Glide.with(this)
+
+
                         .load(patient.getPhotoUrl())
-                        .placeholder(R.drawable.ic_default_photo) // Fallback image
+
+
+                        .placeholder(R.drawable.ic_default_photo)
+
+
                         .into(patientProfilePicture);
             }
         });
