@@ -27,6 +27,15 @@ public class LoginActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        //check if the user already logged in
+        // Check if user is already logged in
+        if (mAuth.getCurrentUser() != null) {
+            // Redirect to ProfileActivity if logged in
+            startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+            finish();
+            return;
+        }
+
         // UI references
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.password);
@@ -58,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+    // Login User
     private void loginUser() {
         String email = emailField.getText().toString().trim();
         String password = passwordField.getText().toString().trim();
