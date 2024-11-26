@@ -1,0 +1,5 @@
+com.example.memoryconnect.test.app-core-1.6.1-0 /Users/dnechv/.gradle/caches/8.9/transforms/a613b22d2400ab3ce3ccc716861a5996/transformed/core-1.6.1/res
+com.example.memoryconnect.test.app-androidTest-1 /Users/dnechv/MemoryConnect/app/build/generated/res/resValues/androidTest/debug
+com.example.memoryconnect.test.app-mergeDebugAndroidTestResources-2 /Users/dnechv/MemoryConnect/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.memoryconnect.test.app-mergeDebugAndroidTestResources-3 /Users/dnechv/MemoryConnect/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.memoryconnect.test.app-debugAndroidTest-4 /Users/dnechv/MemoryConnect/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
