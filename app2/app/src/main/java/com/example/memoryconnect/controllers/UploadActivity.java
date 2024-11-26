@@ -1,62 +1,110 @@
 package com.example.memoryconnect.controllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.memoryconnect.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class UploadActivity extends AppCompatActivity {
 
-    private DatabaseReference databaseReference;
+    private TextView patientDetailsTextView;
+    private Button addToTimelineButton, deletePatientButton, viewTimelineButton, removePatientButton;
+    private String patientId, patientName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
 
+        // Get patient details passed from the previous activity
+        patientId = getIntent().getStringExtra("PATIENT_ID");
+        patientName = getIntent().getStringExtra("PATIENT_NAME");
 
-        // Get patient ID passed from the previous activity
-        String patientId = getIntent().getStringExtra("PATIENT_ID");
+        // Initialize UI components
+        patientDetailsTextView = findViewById(R.id.patientDetailsTextView);
+        addToTimelineButton = findViewById(R.id.addPhotosButton);
+        deletePatientButton = findViewById(R.id.deletePatientButton);
+        viewTimelineButton = findViewById(R.id.viewTimelineButton);
+        removePatientButton = findViewById(R.id.removePatientButton);
 
-        // Initialize Firebase Database
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        // Display patient details
+        if (patientName != null) {
+            patientDetailsTextView.setText("Name: " + patientName);
+        } else {
+            patientDetailsTextView.setText("Patient details not found.");
+        }
 
-        // Run the Firebase Database Query
-        fetchPatientData(patientId);
+        // Add to Timeline button logic
+        addToTimelineButton.setOnClickListener(v -> {
+            Intent intent = new Intent(UploadActivity.this, AddToTimelineActivity.class);
+            intent.putExtra("PATIENT_ID", patientId);
+            startActivity(intent);
+        });
+
+        // View Timeline button logic
+        viewTimelineButton.setOnClickListener(v -> {
+            Intent intent = new Intent(UploadActivity.this, PatientTimelineActivity.class);
+            intent.putExtra("PATIENT_ID", patientId);
+            startActivity(intent);
+        });
+
+        // Delete Patient Timeline button logic
+        deletePatientButton.setOnClickListener(v -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Delete Timeline")
+                    .setMessage("Are you sure you want to delete the patient's timeline?")
+                    .setPositiveButton("Yes", (dialog, which) -> deletePatientTimeline(patientId))
+                    .setNegativeButton("No", null)
+                    .show();
+        });
+
+        // Remove Patient button logic
+        removePatientButton.setOnClickListener(v -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Remove Patient")
+                    .setMessage("Are you sure you want to remove the patient from the screen?")
+                    .setPositiveButton("Yes", (dialog, which) -> removePatientFromScreenAndNavigate())
+                    .setNegativeButton("No", null)
+                    .show();
+        });
     }
 
-    private void fetchPatientData(String patientId) {
-        databaseReference.child("patients").child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
+    // Method to delete patient timeline data from Firebase
+    private void deletePatientTimeline(String patientId) {
+        // Reference to Firebase Realtime Database
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference("patientTimeline")
+                .child(patientId);
 
-
-                    String name = snapshot.child("name").getValue(String.class);
-                    Long age = snapshot.child("age").getValue(Long.class);
-                    String ageString = (age != null) ? String.valueOf(age) : "Unknown Age";
-                    String comment = snapshot.child("comment").getValue(String.class);
-
-
-                    Log.d("FirebaseDebug", "Name: " + name + ", Age: " + ageString + ", Comment: " + comment);
-                } else {
-                    Log.e("FirebaseDebug", "Patient not found");
+        // Remove the patient's timeline data
+        databaseReference.removeValue().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(UploadActivity.this, "Patient timeline deleted successfully", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(UploadActivity.this, "Failed to delete patient timeline", Toast.LENGTH_SHORT).show();
+                if (task.getException() != null) {
+                    Log.e("UploadActivity", "Deletion error: " + task.getException().getMessage());
                 }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("FirebaseDebug", "Error: " + error.getMessage());
             }
         });
     }
+
+    // Method to remove patient details from the screen and navigate back to ProfileActivity
+    private void removePatientFromScreenAndNavigate() {
+        // Navigate back to ProfileActivity and pass the patient ID to remove
+        Intent intent = new Intent(UploadActivity.this, ProfileActivity.class);
+        intent.putExtra("REMOVED_PATIENT_ID", patientId);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish(); // Close the current activity so it is removed from the back stack
+    }
 }
-//8a70605d-7cbd-4705-b8d0-51e9c0991a48
