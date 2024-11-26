@@ -163,6 +163,30 @@ public class PatientRepository {
                 .addOnFailureListener(e -> Log.e("PatientRepository", "Failed to delete patient", e));
     }
 
+    // Save PIN for a patient
+    public void savePin(String patientId, String pin, OnCompleteListener<Void> onCompleteListener) {
+        databaseReference.child(patientId).child("pin").setValue(pin)
+                .addOnCompleteListener(onCompleteListener)
+                .addOnFailureListener(e -> Log.e("PatientRepository", "Failed to save PIN", e));
+    }
+
+    public LiveData<String> getPin(String patientId) {
+        MutableLiveData<String> pinLiveData = new MutableLiveData<>();
+        databaseReference.child(patientId).child("pin").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pin = snapshot.getValue(String.class);
+                pinLiveData.setValue(pin);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("PatientRepository", "Failed to fetch PIN: " + error.getMessage());
+            }
+        });
+        return pinLiveData;
+    }
+
     // Interface for sync completion
     public interface OnSyncCompleteListener {
         void onSyncComplete();

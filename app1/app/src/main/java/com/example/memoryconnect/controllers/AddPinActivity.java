@@ -1,5 +1,5 @@
 package com.example.memoryconnect.controllers;
-
+import com.example.memoryconnect.local_database.LocalDatabase;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,7 +9,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.memoryconnect.R;
-import com.example.memoryconnect.local_database.LocalDatabase;
 import com.example.memoryconnect.local_database.LocaldatabaseDao;
 import com.example.memoryconnect.local_database.PinEntry;
 

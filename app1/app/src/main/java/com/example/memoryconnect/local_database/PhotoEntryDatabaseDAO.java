@@ -20,29 +20,6 @@ import com.example.memoryconnect.model.PhotoEntry;
 import java.util.*;
 @Dao
 public interface PhotoEntryDatabaseDAO {
-    @Insert
-    void insert(PhotoEntry photoEntry);
-    @Update
-    void update(PhotoEntry photoEntry);
-    @Delete
-    void delete(PhotoEntry photoEntry);
-
-
-    //get all patient photos
-    @Query("SELECT * FROM photos WHERE patientId = :patientId")
-    LiveData<List<PhotoEntry>> getAllPhotosForPatient(String patientId);
-
-    //get all photos
-    @Query("SELECT * FROM photos")
-    LiveData<List<PhotoEntry>> getAllPhotos();
-
-    //delete all photos
-    @Query("DELETE FROM photos WHERE patientId = :patientId")
-    void deletePhotosByPatient(String patientId);
-
-    @Query("SELECT EXISTS(SELECT 1 FROM patients WHERE id = :patientId)")
-    int isPatientIdExists(String patientId);
-
 
 
 
