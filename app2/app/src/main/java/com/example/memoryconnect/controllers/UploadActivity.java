@@ -3,7 +3,9 @@ package com.example.memoryconnect.controllers;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.memoryconnect.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,11 +33,18 @@ import java.util.Map;
 public class UploadActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
+
+
+    //photo
     private Uri photoUri;
 
-    private EditText youtubeLinkInput;
+
+    //youtube link, song name
+    private EditText youtubeLinkInput, songNameInput,photoDescriptionInput;
     private ImageView photoPreview;
     private Button uploadPhotoButton, saveButton, viewTimelineButton;
+
+
 
     private static final int GALLERY_REQUEST_CODE = 1;
 
@@ -49,6 +59,8 @@ public class UploadActivity extends AppCompatActivity {
         uploadPhotoButton = findViewById(R.id.upload_photo_button);
         saveButton = findViewById(R.id.save_button);
         viewTimelineButton = findViewById(R.id.viewTimelineButton);
+        songNameInput = findViewById(R.id.song_name_input);
+        photoDescriptionInput = findViewById(R.id.photo_description_input);
 
 
         // Get patient ID passed from the previous activity
@@ -56,6 +68,27 @@ public class UploadActivity extends AppCompatActivity {
 
         // Initialize Firebase Database
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+        // textWatcher for YouTube Link - > load the youtube thumbnail
+        youtubeLinkInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
+                String youtubeUrl = s.toString().trim();
+                if (isValidYouTubeUrl(youtubeUrl)) {
+                    loadYouTubeThumbnail(youtubeUrl); // Load the YouTube thumbnail
+                } else {
+                    photoPreview.setVisibility(View.GONE); // Hide preview for invalid links
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
 
         // Upload Photo Button
         uploadPhotoButton.setOnClickListener(v -> openGallery());
@@ -90,6 +123,63 @@ public class UploadActivity extends AppCompatActivity {
 
         // Fetch patient data for debugging or preloading purposes (optional)
         fetchPatientData(patientId);
+    }
+
+
+    //this method extracts the youtube video id from the youtube url
+    private void loadYouTubeThumbnail(String youtubeUrl) {
+        String videoId = extractYouTubeVideoId(youtubeUrl);
+
+        if (videoId != null) {
+            String thumbnailUrl = "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
+
+            //loads image with youtube thumbnail url
+            Glide.with(this)
+                    .load(thumbnailUrl)
+                    .into(photoPreview);
+
+
+            //show the cover
+            photoPreview.setVisibility(View.VISIBLE);
+        } else {
+
+            //link broken -> no cover
+            photoPreview.setVisibility(View.GONE);
+        }
+    }
+
+    // Extract YouTube Video ID from YouTube URL
+    private String extractYouTubeVideoId(String youtubeUrl) {
+
+        //set video id
+        String videoId = null;
+
+        //check if the url is a youtube video url
+        if (youtubeUrl.contains("youtube.com/watch?v=")) {
+
+            //extract the video id
+            videoId = youtubeUrl.split("v=")[1];
+
+
+            //get the first occurance of & and remove everything after that
+            int ampersandPosition = videoId.indexOf("&");
+
+            //if -1 means character not there so
+            if (ampersandPosition != -1) {
+
+                //just get the video id
+                videoId = videoId.substring(0, ampersandPosition);
+            }
+
+            //if the url contains this
+        } else if (youtubeUrl.contains("youtu.be/")) {
+
+            //extract the video id
+            videoId = youtubeUrl.substring(youtubeUrl.lastIndexOf("/") + 1);
+        }
+
+        //return the video id
+        return videoId;
     }
 
     // Open the Gallery to Select a Photo
@@ -142,26 +232,46 @@ public class UploadActivity extends AppCompatActivity {
     private void saveToFirebase(String patientId, @Nullable String photoUrl, @Nullable String youtubeLink) {
         DatabaseReference timelineRef = databaseReference.child("patients").child(patientId).child("timelineEntries");
 
-        String entryId = timelineRef.push().getKey(); // Generate unique entry ID
+
+        //get unique entry id
+        String entryId = timelineRef.push().getKey();
+
+
+        //get song name from the input field
+        String songName = songNameInput.getText().toString().trim();
+
+        //get photo description from the input field
+        String photoDescription = photoDescriptionInput.getText().toString().trim();
+
+        //create a map to hold the entry -> allows to display names of patient with combination of user id
         Map<String, Object> entry = new HashMap<>();
+
         entry.put("photoUrl", photoUrl);
         entry.put("youtubeLink", youtubeLink);
+        entry.put("songName", songName);
         entry.put("timestamp", System.currentTimeMillis());
+        entry.put("photoDescription", photoDescription);
+
 
         timelineRef.child(entryId).setValue(entry)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(this, "Timeline entry added successfully!", Toast.LENGTH_SHORT).show();
-                    clearInputs(); // Clear inputs after saving
+                    clearInputs();
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to add entry: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
-    // Clear Inputs After Saving
+
+
+    // clears inputs after saving
     private void clearInputs() {
         photoUri = null;
         photoPreview.setImageURI(null);
         photoPreview.setVisibility(View.GONE);
         youtubeLinkInput.setText("");
+        ((EditText) findViewById(R.id.song_name_input)).setText("");
+        ((EditText) findViewById(R.id.photo_description_input)).setText("");
+
     }
 
     private void fetchPatientData(String patientId) {

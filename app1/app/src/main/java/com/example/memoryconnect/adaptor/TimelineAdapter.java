@@ -1,8 +1,5 @@
 package com.example.memoryconnect.adaptor;
 
-// Manages the data in the UI for the RecyclerView
-
-// Imports
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
@@ -11,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.memoryconnect.R;
 import com.example.memoryconnect.local_database.PhotoEntry;
@@ -29,7 +28,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
     private List<PhotoEntry> events;
     private OnItemClickListener listener;
 
-    //media type - photo or music
+    // Media type - photo or music
     private static final int VIEW_TYPE_PHOTO = 0;
     private static final int VIEW_TYPE_MUSIC = 1;
 
@@ -37,20 +36,18 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
         void onItemClick(PhotoEntry event);
     }
 
-    //adapter
+    // Constructor
     public TimelineAdapter(List<PhotoEntry> events, OnItemClickListener listener) {
         this.events = events != null ? events : new ArrayList<>(); // Ensure events is never null
         this.listener = listener;
     }
 
-    //gets the view type
+    //determines view type
     @Override
     public int getItemViewType(int position) {
-
-        //gets the event at the position
         PhotoEntry event = events.get(position);
 
-        //returns the view type based on the event
+        //get view type
         return (event.getYoutubeUrl() != null && !event.getYoutubeUrl().isEmpty())
                 ? VIEW_TYPE_MUSIC
                 : VIEW_TYPE_PHOTO;
@@ -59,33 +56,35 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
     @NonNull
     @Override
 
-    // Creates view dynamically based on type
+
+    //inflate layout based on view type
     public TimelineViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
+
+
         if (viewType == VIEW_TYPE_MUSIC) {
             view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.music_timeline_entry, parent, false); // Music layout
+
+                    //music
+                    .inflate(R.layout.music_timeline_entry, parent, false);
         } else {
             view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.timeline_entry, parent, false); // Photo layout
+
+
+                    //photo
+                    .inflate(R.layout.timeline_entry, parent, false);
         }
         return new TimelineViewHolder(view, viewType);
     }
 
-    // Updates the events dynamically with Firebase data
+    //update dynamically based on new events
     public void setEvents(List<PhotoEntry> newEvents) {
-
-
         if (newEvents == null || newEvents.isEmpty()) {
-
-
             Log.d("TimelineAdapter", "No new events to display.");
-
-
             return;
         }
 
-        // Log the number of events being updated
+        //deubgging
         Log.d("timeline adapter", "events " + newEvents.size() + " new entries.");
 
         // Calculate the difference between the old and new events
@@ -115,30 +114,83 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
             }
         });
 
+
+
+
         this.events.clear();
         this.events.addAll(newEvents);
         diffResult.dispatchUpdatesTo(this);
     }
 
-    // Binds the ViewHolder to the data
+
+
+    // Binds the view holder to the data
     @Override
     public void onBindViewHolder(@NonNull TimelineViewHolder holder, int position) {
         PhotoEntry event = events.get(position);
 
-        // check for presence of both
-        if ((event.getPhotoUrl() == null || event.getPhotoUrl().isEmpty()) &&
-
-
-                (event.getYoutubeUrl() == null || event.getYoutubeUrl().isEmpty())) {
+        //check view type
+        if (event.getYoutubeUrl() != null && !event.getYoutubeUrl().isEmpty()) {
 
 
 
-            Log.e("TimelineAdapter", "Both Photo URL and YouTube URL are missing for event: " + event.getId());
-            return;
+            // Bind YouTube data
+
+
+            //song name
+
+            //set musix title
+            holder.musicTitle.setText(event.getSongName());
+
+            //get youtube video id
+            String videoId = extractVideoId(event.getYoutubeUrl());
+
+
+
+
+            if (videoId != null) {
+
+
+
+                String youtubeThumbnailUrl = "https://img.youtube.com/vi/" + videoId + "/0.jpg";
+                Glide.with(holder.itemView.getContext())
+                        .load(youtubeThumbnailUrl)
+                        .into(holder.musicCover);
+            }
+
+            holder.playButton.setOnClickListener(v -> {
+                String youtubeUrl = event.getYoutubeUrl();
+                if (youtubeUrl != null && !youtubeUrl.isEmpty()) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
+                    intent.setPackage("com.google.android.youtube");
+                    holder.itemView.getContext().startActivity(intent);
+                }
+            });
+
+        } else if (event.getPhotoUrl() != null && !event.getPhotoUrl().isEmpty()) {
+
+
+            //bind photo data
+
+
+
+            //get title
+            holder.photoTitle.setText(event.getTitle());
+
+
+            //get description
+            holder.photoDescription.setText(event.getPhotoDescription());
+
+            //set visibility for description
+            holder.photoDescription.setVisibility( View.VISIBLE);
+
+
+
+            Glide.with(holder.itemView.getContext())
+                    .load(event.getPhotoUrl())
+                    .into(holder.photoCover);
+            holder.itemView.setOnClickListener(v -> listener.onItemClick(event));
         }
-
-        // Bind the view data
-        holder.bind(event, listener);
     }
 
     @Override
@@ -146,116 +198,55 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.Timeli
         return events.size();
     }
 
-    // get youtube id
+    //extract video id from youtube
     private static String extractVideoId(String youtubeUrl) {
-
         String videoId = null;
-
-
         Pattern pattern = Pattern.compile("(?<=v=|/)([A-Za-z0-9_-]{11})");
-
-
         Matcher matcher = pattern.matcher(youtubeUrl);
-
-
         if (matcher.find()) {
             videoId = matcher.group(1);
-
-
         }
         return videoId;
     }
 
-    // Timeline ViewHolder class manages and displays entries
+    //timeline views
     static class TimelineViewHolder extends RecyclerView.ViewHolder {
 
-        // Variables for views
+        // views
         private ImageView musicCover, photoCover;
-        private TextView musicTitle, photoTitle;
+        private TextView musicTitle, photoTitle, photoDescription;
         private MaterialButton playButton;
 
         public TimelineViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
 
-            // Initialize views based on the type
+            //create view based on media type
             if (viewType == VIEW_TYPE_MUSIC) {
-
-
                 musicCover = itemView.findViewById(R.id.timelineMusicCover);
                 musicTitle = itemView.findViewById(R.id.timelineMusicTitle);
                 playButton = itemView.findViewById(R.id.timelinePlayButton);
 
-
             } else {
-
-
                 photoCover = itemView.findViewById(R.id.timelineEventImage);
                 photoTitle = itemView.findViewById(R.id.timelineEventTitle);
-
-
+                photoDescription = itemView.findViewById(R.id.photoDescriptionText);
             }
         }
 
-        // Bind method handles both music and photo entries
+        //bind to create views
         public void bind(PhotoEntry event, OnItemClickListener listener) {
             if (event.getYoutubeUrl() != null && !event.getYoutubeUrl().isEmpty()) {
+                // YouTube Binding
 
 
-                // Handle YouTube music entry
-                musicTitle.setText(event.getTitle());
-
-
-                String videoId = extractVideoId(event.getYoutubeUrl());
-
-
-                if (videoId != null) {
-
-
-                    String youtubeThumbnailUrl = "https://img.youtube.com/vi/" + videoId + "/0.jpg";
-
-                    //load cover
-                    Glide.with(itemView.getContext())
-                            .load(youtubeThumbnailUrl)
-                            .into(musicCover);
-                }
-
-                playButton.setOnClickListener(v -> {
-
-
-                    String youtubeUrl = event.getYoutubeUrl();
-
-
-                    if (youtubeUrl != null && !youtubeUrl.isEmpty()) {
-                        try {
-
-
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
-                            intent.setPackage("com.google.android.youtube");
-                            itemView.getContext().startActivity(intent);
-
-
-                        } catch (Exception e) {
-
-
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl));
-                            itemView.getContext().startActivity(intent);
-                        }
-                    } else {
-
-
-                        Log.e("TimelineAdapter", "YouTube URL is null or empty");
-
-
-                    }
-                });
-
+                musicTitle.setText(event.getSongName());
             } else if (event.getPhotoUrl() != null && !event.getPhotoUrl().isEmpty()) {
-                //if not use regular photo netry
-                photoTitle.setText(event.getTitle());
-                Glide.with(itemView.getContext())
-                        .load(event.getPhotoUrl())
-                        .into(photoCover);
-                itemView.setOnClickListener(v -> listener.onItemClick(event));
+
+
+                // Photo Binding
+
+
+                photoDescription.setText(event.getPhotoDescription());
             }
         }
     }

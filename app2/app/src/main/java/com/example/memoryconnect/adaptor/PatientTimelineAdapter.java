@@ -76,8 +76,9 @@ public class PatientTimelineAdapter extends RecyclerView.Adapter<PatientTimeline
         //set view data based on view type
         if (holder.viewType == VIEW_TYPE_YOUTUBE) {
 
-            //set title
-            holder.timelineTitle.setText(entry.getTitle());
+
+            //set song name
+            holder.songNameView.setText(entry.getSongName());
 
             //get video id
             String videoId = extractVideoId(entry.getYoutubeLink());
@@ -102,7 +103,10 @@ public class PatientTimelineAdapter extends RecyclerView.Adapter<PatientTimeline
 
             //if photo
         } else if (holder.viewType == VIEW_TYPE_PHOTO) {
+
+            //set title + description
             holder.timelineTitle.setText(entry.getTitle());
+            holder.photoDescriptionView.setText(entry.getPhotoDescription());
 
 
             //do photo stuff with glide
@@ -129,6 +133,8 @@ public class PatientTimelineAdapter extends RecyclerView.Adapter<PatientTimeline
         private TextView timelineTitle;
         private ImageView timelineImage;
         private int viewType;
+        private TextView songNameView;
+        private TextView photoDescriptionView;
 
         public TimelineViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
@@ -139,13 +145,24 @@ public class PatientTimelineAdapter extends RecyclerView.Adapter<PatientTimeline
             if (viewType == VIEW_TYPE_YOUTUBE) {
 
 
-                timelineTitle = itemView.findViewById(R.id.timelineMusicTitle);
+                songNameView = itemView.findViewById(R.id.timelineMusicTitle);
+
+
                 timelineImage = itemView.findViewById(R.id.timelineMusicCover);
+
+                if (songNameView == null || timelineImage == null) {
+                    Log.e("TimelineAdapter", "YouTube layout views not found");
+                }
 
 
             } else {
                 timelineTitle = itemView.findViewById(R.id.timelineEventTitle);
                 timelineImage = itemView.findViewById(R.id.timelineEventImage);
+                photoDescriptionView = itemView.findViewById(R.id.patientTimelineFragmentTitle);
+
+                if (timelineTitle == null || timelineImage == null || photoDescriptionView == null) {
+                    Log.e("TimelineAdapter", "Photo layout views not found");
+                }
             }
         }
     }

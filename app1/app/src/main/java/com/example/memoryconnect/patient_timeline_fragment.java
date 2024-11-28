@@ -121,6 +121,8 @@ public class patient_timeline_fragment extends Fragment {
                     String photoUrl = entrySnapshot.child("photoUrl").getValue(String.class);
                     String youtubeLink = entrySnapshot.child("youtubeLink").getValue(String.class);
                     Long timestamp = entrySnapshot.child("timestamp").getValue(Long.class);
+                    String songName = entrySnapshot.child("songName").getValue(String.class);
+                    String photoDescription = entrySnapshot.child("photoDescription").getValue(String.class);
 
                     //check for either link to photo or youtube
                     if ((photoUrl != null && !photoUrl.isEmpty()) || (youtubeLink != null && !youtubeLink.isEmpty())) {
@@ -133,8 +135,9 @@ public class patient_timeline_fragment extends Fragment {
                                 null,
                                 photoUrl,
                                 youtubeLink,
-                                timestamp != null ? timestamp : System.currentTimeMillis()
-
+                                timestamp != null ? timestamp : System.currentTimeMillis(),  // <-- add the comma here
+                                songName != null ? songName : "No song name",  // <-- Now it's correct
+                                photoDescription != null ? photoDescription : "No description available"
                         ));
 
 
@@ -157,4 +160,4 @@ public class patient_timeline_fragment extends Fragment {
             }
         });
     }
-    }
+}

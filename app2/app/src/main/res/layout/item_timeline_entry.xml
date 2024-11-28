@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="20dp"
     app:cardCornerRadius="16dp"
+    android:padding="12dp"
     app:cardElevation="8dp"
-    android:layout_margin="16dp"
     android:backgroundTint="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="0dp">
 
+        <!-- Image -->
         <ImageView
             android:id="@+id/timelineEventImage"
             android:layout_width="match_parent"
@@ -21,11 +24,12 @@
             android:scaleType="centerCrop"
             android:layout_gravity="center" />
 
+        <!-- Title -->
         <TextView
             android:id="@+id/timelineEventTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="title"
+            android:text="Event Title"
             android:textSize="18sp"
             android:textColor="#333333"
             android:textStyle="bold"
@@ -34,15 +38,19 @@
             android:shadowDy="1"
             android:shadowRadius="1" />
 
+        <!-- Photo Description -->
         <TextView
-            android:id="@+id/timelineEventDate"
+            android:id="@+id/patientTimelineFragmentTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="text"
+            android:text="Photo Description"
             android:textSize="14sp"
-            android:textColor="#888888"
-            android:textStyle="italic" />
+            android:textColor="#333333"
+            android:paddingTop="4dp"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:maxLines="2" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

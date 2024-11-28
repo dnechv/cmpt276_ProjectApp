@@ -92,10 +92,24 @@ public class PatientTimeLine extends AppCompatActivity {
                 //iterate through timeline entries
                 for (DataSnapshot timelineSnapshot : snapshot.getChildren()) {
 
-                    //get media ulrs for photo and youtube
+                    //get firebase data
+
+
+                    //get photo from firebase
                     String photoUrl = timelineSnapshot.child("photoUrl").getValue(String.class);
+
+                    //get title
                     String title = timelineSnapshot.child("title").getValue(String.class);
+
+                    //get youtube link
                     String youtubeLink = timelineSnapshot.child("youtubeLink").getValue(String.class);
+
+                    //get event name
+                    String photoDescription = timelineSnapshot.child("photoDescription").getValue(String.class);
+
+
+                    //get song name
+                    String songName = timelineSnapshot.child("songName").getValue(String.class);
 
 
 
@@ -105,7 +119,7 @@ public class PatientTimeLine extends AppCompatActivity {
 
 
 
-                        TimelineEntry entry = new TimelineEntry(title, photoUrl, youtubeLink);
+                        TimelineEntry entry = new TimelineEntry(title, photoUrl, youtubeLink, songName, photoDescription);
                         timelineEntries.add(entry);
                     }
                 }

@@ -1,19 +1,22 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginHorizontal="16dp"
     android:layout_marginBottom="12dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
     app:contentPadding="12dp">
 
+    <!-- Root Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
+        <!-- Music Cover -->
         <androidx.cardview.widget.CardView
             android:layout_width="72dp"
             android:layout_height="72dp"
@@ -28,6 +31,7 @@
                 android:contentDescription="Music Cover" />
         </androidx.cardview.widget.CardView>
 
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -37,6 +41,7 @@
             android:paddingStart="12dp"
             android:paddingEnd="8dp">
 
+            <!-- Title Text -->
             <TextView
                 android:id="@+id/timelineMusicTitle"
                 android:layout_width="wrap_content"
@@ -49,6 +54,7 @@
                 android:maxLines="1" />
         </LinearLayout>
 
+        <!-- Play Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/timelinePlayButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
