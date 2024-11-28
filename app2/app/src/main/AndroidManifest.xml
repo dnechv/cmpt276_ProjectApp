@@ -49,6 +49,7 @@
         <activity android:name=".controllers.ProfileActivity" />
         <activity android:name=".controllers.LoginActivity" />
         <activity android:name=".controllers.UploadActivity" />
+        <activity android:name=".controllers.PatientTimeLine" />
 
     </application>
 

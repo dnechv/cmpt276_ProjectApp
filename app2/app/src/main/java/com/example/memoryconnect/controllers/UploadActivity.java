@@ -34,7 +34,7 @@ public class UploadActivity extends AppCompatActivity {
 
     private EditText youtubeLinkInput;
     private ImageView photoPreview;
-    private Button uploadPhotoButton, saveButton;
+    private Button uploadPhotoButton, saveButton, viewTimelineButton;
 
     private static final int GALLERY_REQUEST_CODE = 1;
 
@@ -48,6 +48,8 @@ public class UploadActivity extends AppCompatActivity {
         photoPreview = findViewById(R.id.photoPreview);
         uploadPhotoButton = findViewById(R.id.upload_photo_button);
         saveButton = findViewById(R.id.save_button);
+        viewTimelineButton = findViewById(R.id.viewTimelineButton);
+
 
         // Get patient ID passed from the previous activity
         String patientId = getIntent().getStringExtra("PATIENT_ID");
@@ -66,6 +68,23 @@ public class UploadActivity extends AppCompatActivity {
                 saveYouTubeLink(patientId);
             } else {
                 Toast.makeText(this, "Please add a photo or YouTube link", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // View Timeline Button Logic
+        viewTimelineButton.setOnClickListener(v -> {
+
+            //get patient id
+            String patientIdForTimeLine = getIntent().getStringExtra("PATIENT_ID");
+
+
+            //pass id and go to view timeline
+            if (patientId != null) {
+                Intent intent = new Intent(UploadActivity.this, PatientTimeLine.class);
+                intent.putExtra("PATIENT_ID", patientIdForTimeLine);
+                startActivity(intent);
+            } else {
+                Toast.makeText(UploadActivity.this, "No Patient ID found", Toast.LENGTH_SHORT).show();
             }
         });
 

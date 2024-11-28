@@ -26,7 +26,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -39,6 +41,10 @@ public class ProfileActivity extends AppCompatActivity {
     private PatientAdapter adapter;
     private List<String> linkedPatients;
 
+
+    //map to store patient id and name
+    private Map<String, String> patientIdToNameMap; // Maps Patient ID to Patient Name
+
     //4804a8a7-f06e-4e2c-9574-b1b6ba273953
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +53,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Initialize Firebase Auth and Database
 
+
+        //hash map for name and patient id
+        patientIdToNameMap = new HashMap<>();
 
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -69,7 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
             // Initialize RecyclerView
             linkedPatients = new ArrayList<>();
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            adapter = new PatientAdapter(linkedPatients, patientId -> {
+            adapter = new PatientAdapter(linkedPatients, patientIdToNameMap, patientId -> {
                 // Open UploadActivity when a patient is clicked
                 Intent intent = new Intent(ProfileActivity.this, UploadActivity.class);
                 intent.putExtra("PATIENT_ID", patientId);
@@ -107,11 +116,37 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         linkedPatients.clear();
+                        patientIdToNameMap.clear();
+
                         for (DataSnapshot patientSnapshot : snapshot.getChildren()) {
                             String patientId = patientSnapshot.getKey();
-                            linkedPatients.add(patientId);
+
+                            // Fetch the patient name from the "patients" node
+                            databaseReference.child("patients").child(patientId)
+                                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot patientDataSnapshot) {
+                                            String patientName = patientDataSnapshot.child("name").getValue(String.class);
+
+                                            // If name is null, fallback to the ID for display
+                                            if (patientName == null) {
+                                                patientName = patientId;
+                                            }
+
+                                            // Update the map and list
+                                            patientIdToNameMap.put(patientId, patientName);
+                                            linkedPatients.add(patientId);
+
+                                            // Notify adapter about data changes
+                                            adapter.notifyDataSetChanged();
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            Log.e("FetchLinkedPatients", "Failed to fetch patient details: " + error.getMessage());
+                                        }
+                                    });
                         }
-                        adapter.notifyDataSetChanged();
                     }
 
                     @Override

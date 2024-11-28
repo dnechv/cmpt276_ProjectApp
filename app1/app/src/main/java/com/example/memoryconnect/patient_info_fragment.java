@@ -26,8 +26,12 @@ public class patient_info_fragment extends Fragment {
     private static final String ARG_PATIENT_ID = "patient_id";
     private String patientId;
 
-    private TextView nameTextView, nicknameTextView, ageTextView, commentTextView;
+
+    //text views
+    private TextView nameTextView, nicknameTextView, ageTextView, commentTextView, patientIDTextView;
     private ImageView patientProfilePicture;
+
+
 
     public static patient_info_fragment newInstance(String patientId) {
         patient_info_fragment fragment = new patient_info_fragment();
@@ -47,6 +51,7 @@ public class patient_info_fragment extends Fragment {
         ageTextView = view.findViewById(R.id.patientAge);
         commentTextView = view.findViewById(R.id.patientComment);
         patientProfilePicture = view.findViewById(R.id.patientProfilePicture);
+        patientIDTextView = view.findViewById(R.id.patientID);
 
         return view;
     }
@@ -71,6 +76,7 @@ public class patient_info_fragment extends Fragment {
                 nicknameTextView.setText(patient.getNickname());
                 ageTextView.setText(String.valueOf(patient.getAge()));
                 commentTextView.setText(patient.getComment());
+                patientIDTextView.setText(patientId);
 
                 // Load profile picture using Glide
                 Glide.with(this)
