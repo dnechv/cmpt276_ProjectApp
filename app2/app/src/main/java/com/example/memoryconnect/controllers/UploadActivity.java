@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -61,13 +62,20 @@ public class UploadActivity extends AppCompatActivity {
         viewTimelineButton = findViewById(R.id.viewTimelineButton);
         songNameInput = findViewById(R.id.song_name_input);
         photoDescriptionInput = findViewById(R.id.photo_description_input);
+        TextView patientDetailsTextView = findViewById(R.id.patientDetailsTextView); // Add this
 
+        // Initialize Back Button
+        ImageView backButton = findViewById(R.id.backButton); // Reference to the ImageView
+        backButton.setOnClickListener(v -> finish()); // Close the activity and go back
 
         // Get patient ID passed from the previous activity
         String patientId = getIntent().getStringExtra("PATIENT_ID");
 
         // Initialize Firebase Database
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        // Fetch and display patient name
+        fetchPatientName(patientId, patientDetailsTextView); // Add this method call
 
 
         // textWatcher for YouTube Link - > load the youtube thumbnail
@@ -296,4 +304,29 @@ public class UploadActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void fetchPatientName(String patientId, TextView patientDetailsTextView) {
+        databaseReference.child("patients").child(patientId).child("name")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            String patientName = snapshot.getValue(String.class);
+                            if (patientName != null) {
+                                patientDetailsTextView.setText(patientName); // Set the name in TextView
+                            } else {
+                                patientDetailsTextView.setText("No Name Available");
+                            }
+                        } else {
+                            patientDetailsTextView.setText("Patient not found");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(UploadActivity.this, "Failed to fetch patient name.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 }

@@ -73,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
             recyclerView = findViewById(R.id.recycler_view);
 
             welcomeText.setText("Welcome!");
-            emailText.setText("Account registered under email: " + email);
+            emailText.setText("Account registered with: " + email);
 
             // Initialize RecyclerView
             linkedPatients = new ArrayList<>();

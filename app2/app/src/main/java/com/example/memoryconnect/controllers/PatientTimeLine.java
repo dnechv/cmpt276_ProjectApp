@@ -1,6 +1,7 @@
 package com.example.memoryconnect.controllers;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,10 @@ public class PatientTimeLine extends AppCompatActivity {
         //initialize recycler view
         recyclerView = findViewById(R.id.timelineRecyclerViewPatientTimeLineFragment);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        ImageView backButton = findViewById(R.id.backButton); // Reference to the ImageView
+        backButton.setOnClickListener(v -> finish()); // Close the activity and go back
+
 
 
         //initialize timeline entries
