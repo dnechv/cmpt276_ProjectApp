@@ -27,6 +27,6 @@ public class SplashActivity extends AppCompatActivity {
             Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
             startActivity(intent);
             finish(); // Close the splash activity so it doesn't remain in the back stack
-        }, 3000); // 3000 milliseconds = 3 seconds
+        }, 2000); // 2000 milliseconds = 3 seconds
     }
 }
