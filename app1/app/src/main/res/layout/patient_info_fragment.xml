@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+
     <!-- ScrollView: contains patient details  -->
     <ScrollView
         android:layout_width="match_parent"
