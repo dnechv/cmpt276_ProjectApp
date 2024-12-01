@@ -37,6 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         passwordField = findViewById(R.id.password);
         confirmPasswordField = findViewById(R.id.confirm_password);
         signUpButton = findViewById(R.id.sign_up_button);
+        loginRedirect = findViewById(R.id.login_link); // Added login link reference
 
         // Retrieve email and password passed from LoginActivity
         Intent intent = getIntent();
@@ -56,6 +57,17 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signUpUser();
+            }
+        });
+
+        // Set up the Log In link click listener
+        loginRedirect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to LoginActivity
+                Intent loginIntent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(loginIntent);
+                finish(); // Optional: finish the current activity
             }
         });
     }

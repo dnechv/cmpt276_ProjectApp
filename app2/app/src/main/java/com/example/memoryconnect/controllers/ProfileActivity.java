@@ -73,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
             recyclerView = findViewById(R.id.recycler_view);
 
             welcomeText.setText("Welcome!");
-            emailText.setText("Email: " + email);
+            emailText.setText("Account registered under email: " + email);
 
             // Initialize RecyclerView
             linkedPatients = new ArrayList<>();
@@ -178,7 +178,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         builder.show();
     }
-
+//4804a8a7-f06e-4e2c-9574-b1b6ba273953
+    //8a70605d-7cbd-4705-b8d0-51e9c0991a48
     private void addPatient(String patientId) {
         databaseReference.child("patients").child(patientId).addListenerForSingleValueEvent(new ValueEventListener() {
 
